@@ -10,5 +10,6 @@ import UIKit
 
 struct K {
     // Colors
-    static let red = CGColor(red: 248, green: 72, blue: 37, alpha: 1)
+    static let red = UIColor(named: "Red")!
+    static let yellow = UIColor(named: "Yellow")!
 }
