@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Curve1View: UIView {
+class CurveView: UIView {
     
     override func draw(_ rect: CGRect) {
         // Card view frame dimensions
@@ -16,17 +16,17 @@ class Curve1View: UIView {
         let path = UIBezierPath()
         
         // Start from origin
-        // Create first curve which should take up the left 1/2 of the screen
+        // Create first curve which should take up the left 1/2 of the curve view
         path.move(to: CGPoint(x: 0, y: 0))
         let topCenter = CGPoint(x: 1/2 * viewSize.width, y: 0)
         path.addLine(to: topCenter)
-        let controlPoint11 = CGPoint(x: 11/24 * viewSize.width, y: 1/3 * viewSize.height)
-        let controlPoint12 = CGPoint(x: 5/24 * viewSize.width, y: 1/8 * viewSize.height)
-        let endPoint1 = CGPoint(x: 1/6 * viewSize.width, y: 1/2 * viewSize.height)
+        let controlPoint11 = CGPoint(x: 11/24 * viewSize.width, y: 5/24 * viewSize.height)
+        let controlPoint12 = CGPoint(x: 5/24 * viewSize.width, y: 5/64 * viewSize.height)
+        let endPoint1 = CGPoint(x: 1/6 * viewSize.width, y: 5/16 * viewSize.height)
         path.addCurve(to: endPoint1, controlPoint1: controlPoint11, controlPoint2: controlPoint12)
-        let controlPoint21 = CGPoint(x: 1/8 * viewSize.width, y: 3/4 * viewSize.height)
-        let controlPoint22 = CGPoint(x: 1/12 * viewSize.width, y: 7/8 * viewSize.height)
-        let endPoint2 = CGPoint(x: 0, y: viewSize.height)
+        let controlPoint21 = CGPoint(x: 1/8 * viewSize.width, y: 15/32 * viewSize.height)
+        let controlPoint22 = CGPoint(x: 1/12 * viewSize.width, y: 35/64 * viewSize.height)
+        let endPoint2 = CGPoint(x: 0, y: 5/8 * viewSize.height)
         path.addCurve(to: endPoint2, controlPoint1: controlPoint21, controlPoint2: controlPoint22)
         // Close path join to origin
         path.close()
@@ -37,22 +37,41 @@ class Curve1View: UIView {
         // Create second curve which should take up the area that starts from the 1/4 of the screen and is 1/3 of the width
         let path2 = UIBezierPath()
         path2.move(to: endPoint1)
-        let endPoint3 = CGPoint(x: 5/8 * viewSize.width, y: 5/16 * viewSize.height)
-        let controlPoint31 = CGPoint(x: 6/16 * viewSize.width, y: 14/16 * viewSize.height)
-        let controlPoint32 = CGPoint(x: 7/16 * viewSize.width, y: 4/16 * viewSize.height)
+        let endPoint3 = CGPoint(x: 5/8 * viewSize.width, y: 25/128 * viewSize.height)
+        let controlPoint31 = CGPoint(x: 6/16 * viewSize.width, y: 70/128 * viewSize.height)
+        let controlPoint32 = CGPoint(x: 7/16 * viewSize.width, y: 20/128 * viewSize.height)
         path2.addCurve(to: endPoint3, controlPoint1: controlPoint31, controlPoint2: controlPoint32)
-        let controlPoint41 = CGPoint(x: 10/16 * viewSize.width, y: 1/8 * viewSize.height)
-        let controlPoint42 = CGPoint(x: 4/8 * viewSize.width, y: 3/8 * viewSize.height)
+        let controlPoint41 = CGPoint(x: 10/16 * viewSize.width, y: 5/64 * viewSize.height)
+        let controlPoint42 = CGPoint(x: 4/8 * viewSize.width, y: 15/64 * viewSize.height)
+        let endPoint4 = path2.currentPoint
         path2.addCurve(to: topCenter, controlPoint1: controlPoint41, controlPoint2: controlPoint42)
+        
         // close curve
         path2.addCurve(to: endPoint1, controlPoint1: controlPoint11, controlPoint2: controlPoint12)
         // Set the background color of the view
         K.yellow.set()
         path2.fill()
-//        // Test to see the curve
+        
+        // Create third curve which should take up the right 1/2 of the curve view
+        let path3 = UIBezierPath()
+        path3.move(to: topCenter)
+        path3.addCurve(to: endPoint4, controlPoint1: controlPoint42, controlPoint2: controlPoint41)
+        let endPoint5 = CGPoint(x: 22/32 * viewSize.width, y: 5/8 * viewSize.height)
+        let controlPoint51 = CGPoint(x: 9/16 * viewSize.width, y: 7/16 * viewSize.height)
+        let controlPoint52 = CGPoint(x: 22/32 * viewSize.width, y: 1/2 * viewSize.height)
+        path3.addCurve(to: endPoint5, controlPoint1: controlPoint51, controlPoint2: controlPoint52)
+        let endPoint6 = CGPoint(x: viewSize.width, y: viewSize.height)
+        let controlPoint61 = CGPoint(x: 11/16 * viewSize.width, y: 30/32 * viewSize.height)
+        let controlPoint62 = CGPoint(x: 13/16 * viewSize.width, y: 10/16 * viewSize.height)
+        path3.addCurve(to: endPoint6, controlPoint1: controlPoint61, controlPoint2: controlPoint62)
+        path3.addLine(to:CGPoint(x: viewSize.width, y: 0))
+        path3.close()
+        K.orange.set()
+        path3.fill()
+        // Test to see the curve
 //                UIColor.black.setStroke()
-//                        path2.lineWidth = 1
-//                        path2.stroke()
+//                        path3.lineWidth = 1
+//                        path3.stroke()
         //            // Sub-curve 1
         //        let subcurve1Radius = 1/16 * viewSize.height
         //            path.addArc(

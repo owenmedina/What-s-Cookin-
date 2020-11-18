@@ -12,4 +12,5 @@ struct K {
     // Colors
     static let red = UIColor(named: "Red")!
     static let yellow = UIColor(named: "Yellow")!
+    static let orange = UIColor(named: "Orange")!
 }

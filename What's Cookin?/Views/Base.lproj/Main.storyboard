@@ -16,15 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60w-SD-s7L" customClass="Curve1View" customModule="What_s_Cookin_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="179"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60w-SD-s7L" customClass="CurveView" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="269"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="60w-SD-s7L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="11Q-Fd-7Ea"/>
+                            <constraint firstItem="60w-SD-s7L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="11Q-Fd-7Ea"/>
                             <constraint firstItem="60w-SD-s7L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IB4-ox-H8G"/>
                             <constraint firstItem="60w-SD-s7L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Naj-bg-dtj"/>
                             <constraint firstItem="60w-SD-s7L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bO6-93-CxD"/>
