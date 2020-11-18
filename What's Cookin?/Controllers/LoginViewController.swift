@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         // Password Text Field
         passwordTextField.isSecureTextEntry = true
         let passwordUnderline = CALayer()
-        passwordUnderline.frame = CGRect(origin: CGPoint(x: 0, y: emailTextField.frame.height - 1), size: CGSize(width: emailTextField.frame.width, height:  1))
+        passwordUnderline.frame = CGRect(origin: CGPoint(x: 0, y: passwordTextField.frame.height - 1), size: CGSize(width: passwordTextField.frame.width, height:  1))
         passwordUnderline.backgroundColor = UIColor.lightGray.cgColor
         passwordTextField.borderStyle = .none
         passwordTextField.layer.addSublayer(passwordUnderline)
@@ -40,10 +40,8 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        // Ensures fields and buttons stay circular even if view is re-drawn and frame sizes are re-calculated
+        // Ensures buttons stay circular even if view is re-drawn and frame sizes are re-calculated
         loginButton.layer.cornerRadius = loginButton.frame.size.height/2
-        emailTextField.layer.cornerRadius = emailTextField.frame.size.height/2
-        passwordTextField.layer.cornerRadius = passwordTextField.frame.size.height/2
     }
     
 
