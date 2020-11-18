@@ -26,6 +26,7 @@
 		5AF225482564B73700D1EB98 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */; };
 		5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225512565A33000D1EB98 /* BottomCurveView.swift */; };
 		5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225562565BD6400D1EB98 /* LoginViewController.swift */; };
+		5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225592565C80400D1EB98 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
 		5AF225512565A33000D1EB98 /* BottomCurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurveView.swift; sourceTree = "<group>"; };
 		5AF225562565BD6400D1EB98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5AF225592565C80400D1EB98 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */,
 				5AF225562565BD6400D1EB98 /* LoginViewController.swift */,
+				5AF225592565C80400D1EB98 /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
+				5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,

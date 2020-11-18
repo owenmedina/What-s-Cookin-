@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -22,35 +22,38 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="What_s_Cookin_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60w-SD-s7L" customClass="CurveView" customModule="What_s_Cookin_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="410"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-Ev-zRo">
-                                <rect key="frame" x="20" y="377" width="614.5" height="128"/>
+                                <rect key="frame" x="20" y="63.5" width="192" height="116.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create thousands of unforgettable memories with great cooking." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-NE-kbv">
-                                <rect key="frame" x="20" y="505" width="819" height="35"/>
+                                <rect key="frame" x="20" y="180" width="256" height="69.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-Cc-WaH">
-                                <rect key="frame" x="205" y="1093" width="614" height="68"/>
+                                <rect key="frame" x="64" y="384" width="192" height="24"/>
                                 <accessibility key="accessibilityConfiguration" label="Log In Button"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="t3b-7T-McG" kind="presentation" identifier="WelcomeToRegister" id="eJJ-u4-zRT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-XQ-noc">
-                                <rect key="frame" x="205" y="1173" width="614" height="68.5"/>
+                                <rect key="frame" x="64" y="420" width="192" height="24"/>
                                 <accessibility key="accessibilityConfiguration" label="Log In Button"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
@@ -98,33 +101,33 @@
             <objects>
                 <viewController id="DxB-ic-vCF" customClass="LoginViewController" customModule="What_s_Cookin_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QCA-L4-jcQ">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvs-A7-TuI" customClass="BottomCurveView" customModule="What_s_Cookin_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="746.5" width="704" height="249"/>
+                                <rect key="frame" x="0.0" y="345" width="320" height="115"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
-                                <rect key="frame" x="35" y="129" width="493" height="97.5"/>
+                                <rect key="frame" x="16" y="15.5" width="224" height="89"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-TV-4qC">
-                                <rect key="frame" x="88" y="514" width="528" height="47"/>
+                                <rect key="frame" x="40" y="246" width="240" height="22"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwL-dN-HFQ">
-                                <rect key="frame" x="88" y="448" width="528" height="50"/>
+                                <rect key="frame" x="40" y="207" width="240" height="23"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
-                                <rect key="frame" x="176" y="646.5" width="352" height="43"/>
+                                <rect key="frame" x="80" y="298.5" width="160" height="35"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="Orange"/>
@@ -163,7 +166,91 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uR5-Jl-aq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="521.53846153846155" y="61.848341232227483"/>
+            <point key="canvasLocation" x="560" y="-203"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="5Cz-eI-pzJ">
+            <objects>
+                <viewController id="t3b-7T-McG" customClass="RegisterViewController" customModule="What_s_Cookin_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GqF-yA-nBP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9l-pA-XOk" customClass="BottomCurveView" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="345" width="320" height="115"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
+                                <rect key="frame" x="16" y="15.5" width="224" height="89"/>
+                                <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayt-IZ-zw8" userLabel="Name Text Field">
+                                <rect key="frame" x="40" y="186" width="240" height="23"/>
+                                <accessibility key="accessibilityConfiguration" label="Name Text Field"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-xW-x6D" userLabel="Email Text Field">
+                                <rect key="frame" x="40" y="225" width="240" height="22"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
+                                <rect key="frame" x="80" y="298.5" width="160" height="35"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" name="Orange"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETf-VP-WOu" userLabel="Password Text Field">
+                                <rect key="frame" x="40" y="263" width="240" height="23"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lsR-sO-aFF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="top" secondItem="ayt-IZ-zw8" secondAttribute="bottom" constant="16" id="4cW-K8-eBK"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="ayt-IZ-zw8" secondAttribute="bottom" multiplier="1.1" id="5En-pZ-kDy"/>
+                            <constraint firstItem="lsR-sO-aFF" firstAttribute="trailing" secondItem="T9l-pA-XOk" secondAttribute="trailing" id="AFg-0L-pgY"/>
+                            <constraint firstItem="Nss-qV-Pby" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.7" id="BRw-6o-W8r"/>
+                            <constraint firstItem="ayt-IZ-zw8" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.75" id="Ffw-aI-SJa"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="height" secondItem="ayt-IZ-zw8" secondAttribute="height" id="HUy-EN-GVp"/>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="JoY-tK-jBp"/>
+                            <constraint firstAttribute="centerY" secondItem="ACB-f3-oGb" secondAttribute="top" multiplier="0.77" id="Kjk-r6-l9L"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="Nss-qV-Pby" secondAttribute="bottom" multiplier="2.2" id="UwY-jp-75C"/>
+                            <constraint firstAttribute="bottom" secondItem="T9l-pA-XOk" secondAttribute="bottom" id="Xot-La-ZWz"/>
+                            <constraint firstItem="T9l-pA-XOk" firstAttribute="height" secondItem="GqF-yA-nBP" secondAttribute="height" multiplier="0.25" id="XwC-Ru-cUw"/>
+                            <constraint firstItem="ayt-IZ-zw8" firstAttribute="height" secondItem="GqF-yA-nBP" secondAttribute="height" multiplier="0.05" id="Y8e-Xs-Z3W"/>
+                            <constraint firstItem="Nss-qV-Pby" firstAttribute="leading" secondItem="lsR-sO-aFF" secondAttribute="centerX" multiplier="0.1" id="dHm-6d-7Ol"/>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="width" secondItem="ayt-IZ-zw8" secondAttribute="width" id="fco-FE-5QA"/>
+                            <constraint firstItem="ACB-f3-oGb" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.5" id="iKG-A7-ycF"/>
+                            <constraint firstItem="ACB-f3-oGb" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="jOr-Rf-BGK"/>
+                            <constraint firstItem="T9l-pA-XOk" firstAttribute="leading" secondItem="lsR-sO-aFF" secondAttribute="leading" id="l3x-Gb-iO5"/>
+                            <constraint firstItem="T9l-pA-XOk" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" id="q3b-ao-SSA"/>
+                            <constraint firstItem="ayt-IZ-zw8" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="tL0-TB-kad"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="tO8-yS-io2"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="width" secondItem="ayt-IZ-zw8" secondAttribute="width" id="tnW-rT-9ZW"/>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="height" secondItem="ayt-IZ-zw8" secondAttribute="height" multiplier="0.949153" id="xMi-1x-Ikj"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="top" secondItem="ZUq-xW-x6D" secondAttribute="bottom" constant="16" id="ypa-Pn-wM4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ZUq-xW-x6D" id="FlK-Ke-tNB"/>
+                        <outlet property="nameTextField" destination="ayt-IZ-zw8" id="SVs-Dq-elX"/>
+                        <outlet property="passwordTextField" destination="ETf-VP-WOu" id="N0B-i6-rwr"/>
+                        <outlet property="registerButton" destination="ACB-f3-oGb" id="zUf-ZC-VNm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9G-tn-aJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560" y="513"/>
         </scene>
     </scenes>
     <resources>
