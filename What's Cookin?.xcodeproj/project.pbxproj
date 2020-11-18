@@ -9,25 +9,43 @@
 /* Begin PBXBuildFile section */
 		5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2250F256374DB00D1EB98 /* AppDelegate.swift */; };
 		5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF22511256374DB00D1EB98 /* SceneDelegate.swift */; };
-		5AF22514256374DB00D1EB98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF22513256374DB00D1EB98 /* ViewController.swift */; };
+		5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */; };
 		5AF22517256374DB00D1EB98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AF22515256374DB00D1EB98 /* Main.storyboard */; };
 		5AF22519256374DC00D1EB98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AF22518256374DC00D1EB98 /* Assets.xcassets */; };
 		5AF2251C256374DC00D1EB98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AF2251A256374DC00D1EB98 /* LaunchScreen.storyboard */; };
 		5AF225282563804700D1EB98 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225272563804700D1EB98 /* CurveView.swift */; };
 		5AF2252E2564601500D1EB98 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2252D2564601500D1EB98 /* K.swift */; };
+		5AF225342564B49100D1EB98 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225332564B49100D1EB98 /* Lora-Regular.ttf */; };
+		5AF225382564B49B00D1EB98 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225362564B49B00D1EB98 /* Lora-Bold.ttf */; };
+		5AF225392564B49B00D1EB98 /* Lora-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225372564B49B00D1EB98 /* Lora-Medium.ttf */; };
+		5AF2253E2564B72500D1EB98 /* HindSiliguri-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF2253B2564B72500D1EB98 /* HindSiliguri-Medium.ttf */; };
+		5AF2253F2564B72500D1EB98 /* HindSiliguri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF2253C2564B72500D1EB98 /* HindSiliguri-Regular.ttf */; };
+		5AF225402564B72500D1EB98 /* HindSiliguri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF2253D2564B72500D1EB98 /* HindSiliguri-Bold.ttf */; };
+		5AF225462564B73700D1EB98 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225422564B73600D1EB98 /* WorkSans-Regular.ttf */; };
+		5AF225472564B73700D1EB98 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225432564B73600D1EB98 /* WorkSans-Medium.ttf */; };
+		5AF225482564B73700D1EB98 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5AF2250C256374DB00D1EB98 /* What's Cookin?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Cookin?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF2250F256374DB00D1EB98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AF22511256374DB00D1EB98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5AF22513256374DB00D1EB98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5AF22516256374DB00D1EB98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AF22518256374DC00D1EB98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AF2251B256374DC00D1EB98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AF2251D256374DC00D1EB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AF225272563804700D1EB98 /* CurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
 		5AF2252D2564601500D1EB98 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		5AF225332564B49100D1EB98 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
+		5AF225362564B49B00D1EB98 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
+		5AF225372564B49B00D1EB98 /* Lora-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Medium.ttf"; sourceTree = "<group>"; };
+		5AF2253B2564B72500D1EB98 /* HindSiliguri-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindSiliguri-Medium.ttf"; sourceTree = "<group>"; };
+		5AF2253C2564B72500D1EB98 /* HindSiliguri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindSiliguri-Regular.ttf"; sourceTree = "<group>"; };
+		5AF2253D2564B72500D1EB98 /* HindSiliguri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HindSiliguri-Bold.ttf"; sourceTree = "<group>"; };
+		5AF225422564B73600D1EB98 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		5AF225432564B73600D1EB98 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
+		5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +78,7 @@
 		5AF2250E256374DB00D1EB98 /* What's Cookin? */ = {
 			isa = PBXGroup;
 			children = (
+				5AF225312564B42500D1EB98 /* Assets */,
 				5AF2252425637FE900D1EB98 /* Models */,
 				5AF2252525637FF100D1EB98 /* Views */,
 				5AF2252625637FF700D1EB98 /* Controllers */,
@@ -92,9 +111,33 @@
 		5AF2252625637FF700D1EB98 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5AF22513256374DB00D1EB98 /* ViewController.swift */,
+				5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5AF225312564B42500D1EB98 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5AF225322564B42B00D1EB98 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5AF225322564B42B00D1EB98 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5AF225332564B49100D1EB98 /* Lora-Regular.ttf */,
+				5AF225362564B49B00D1EB98 /* Lora-Bold.ttf */,
+				5AF225372564B49B00D1EB98 /* Lora-Medium.ttf */,
+				5AF2253D2564B72500D1EB98 /* HindSiliguri-Bold.ttf */,
+				5AF2253B2564B72500D1EB98 /* HindSiliguri-Medium.ttf */,
+				5AF2253C2564B72500D1EB98 /* HindSiliguri-Regular.ttf */,
+				5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */,
+				5AF225432564B73600D1EB98 /* WorkSans-Medium.ttf */,
+				5AF225422564B73600D1EB98 /* WorkSans-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +198,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF2251C256374DC00D1EB98 /* LaunchScreen.storyboard in Resources */,
+				5AF225342564B49100D1EB98 /* Lora-Regular.ttf in Resources */,
 				5AF22519256374DC00D1EB98 /* Assets.xcassets in Resources */,
+				5AF225472564B73700D1EB98 /* WorkSans-Medium.ttf in Resources */,
+				5AF2253E2564B72500D1EB98 /* HindSiliguri-Medium.ttf in Resources */,
+				5AF225382564B49B00D1EB98 /* Lora-Bold.ttf in Resources */,
 				5AF22517256374DB00D1EB98 /* Main.storyboard in Resources */,
+				5AF2253F2564B72500D1EB98 /* HindSiliguri-Regular.ttf in Resources */,
+				5AF225402564B72500D1EB98 /* HindSiliguri-Bold.ttf in Resources */,
+				5AF225392564B49B00D1EB98 /* Lora-Medium.ttf in Resources */,
+				5AF225462564B73700D1EB98 /* WorkSans-Regular.ttf in Resources */,
+				5AF225482564B73700D1EB98 /* WorkSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +221,7 @@
 			files = (
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
-				5AF22514256374DB00D1EB98 /* ViewController.swift in Sources */,
+				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,
 			);

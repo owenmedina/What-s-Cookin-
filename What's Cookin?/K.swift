@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 struct K {
+    // Buttons
+    static let buttonRadius = CGFloat(25)
+    static let buttonBorderWidth = CGFloat(1)
     // Colors
     static let red = UIColor(named: "Red")!
     static let yellow = UIColor(named: "Yellow")!
