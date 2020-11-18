@@ -16,4 +16,7 @@ struct K {
     static let red = UIColor(named: "Red")!
     static let yellow = UIColor(named: "Yellow")!
     static let orange = UIColor(named: "Orange")!
+    // Segues
+    static let welcomeToRegister = "WelcomeToRegister"
+    static let welcomeToLogin = "WelcomeToLogin"
 }

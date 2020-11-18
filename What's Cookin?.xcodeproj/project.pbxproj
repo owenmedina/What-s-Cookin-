@@ -24,6 +24,8 @@
 		5AF225462564B73700D1EB98 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225422564B73600D1EB98 /* WorkSans-Regular.ttf */; };
 		5AF225472564B73700D1EB98 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225432564B73600D1EB98 /* WorkSans-Medium.ttf */; };
 		5AF225482564B73700D1EB98 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */; };
+		5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225512565A33000D1EB98 /* BottomCurveView.swift */; };
+		5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225562565BD6400D1EB98 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		5AF225422564B73600D1EB98 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		5AF225432564B73600D1EB98 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		5AF225442564B73700D1EB98 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		5AF225512565A33000D1EB98 /* BottomCurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurveView.swift; sourceTree = "<group>"; };
+		5AF225562565BD6400D1EB98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 				5AF22515256374DB00D1EB98 /* Main.storyboard */,
 				5AF2251A256374DC00D1EB98 /* LaunchScreen.storyboard */,
 				5AF225272563804700D1EB98 /* CurveView.swift */,
+				5AF225512565A33000D1EB98 /* BottomCurveView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */,
+				5AF225562565BD6400D1EB98 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,11 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,
+				5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

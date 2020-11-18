@@ -23,15 +23,17 @@ class WelcomeViewController: UIViewController {
         registerButton.backgroundColor = K.red
         // Login Button
         loginButton.titleLabel?.minimumScaleFactor = 0.7
-        loginButton.layer.cornerRadius = registerButton.frame.size.height/2
+        loginButton.layer.cornerRadius = loginButton.frame.size.height/2
         loginButton.layer.borderWidth = K.buttonBorderWidth
         loginButton.layer.borderColor = K.orange.cgColor
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        // Ensures buttons stay circular even if view is re-drawn and frame sizes are re-calculated
         registerButton.layer.cornerRadius = registerButton.frame.size.height/2
-        loginButton.layer.cornerRadius = registerButton.frame.size.height/2
+        loginButton.layer.cornerRadius = loginButton.frame.size.height/2
     }
 
 
