@@ -17,19 +17,8 @@ class LoginViewController: UIViewController {
         
         // Setup UI
         
-        // Email Text Field
-        let emailUnderline = CALayer()
-        emailUnderline.frame = CGRect(origin: CGPoint(x: 0, y: emailTextField.frame.height - 1), size: CGSize(width: emailTextField.frame.width, height:  1))
-        emailUnderline.backgroundColor = UIColor.lightGray.cgColor
-        emailTextField.borderStyle = .none
-        emailTextField.layer.addSublayer(emailUnderline)
         // Password Text Field
         passwordTextField.isSecureTextEntry = true
-        let passwordUnderline = CALayer()
-        passwordUnderline.frame = CGRect(origin: CGPoint(x: 0, y: passwordTextField.frame.height - 1), size: CGSize(width: passwordTextField.frame.width, height:  1))
-        passwordUnderline.backgroundColor = UIColor.lightGray.cgColor
-        passwordTextField.borderStyle = .none
-        passwordTextField.layer.addSublayer(passwordUnderline)
         // Login Button
         loginButton.titleLabel?.minimumScaleFactor = 0.7
         loginButton.layer.cornerRadius = loginButton.frame.size.height/2

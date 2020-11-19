@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-Cc-WaH">
-                                <rect key="frame" x="64" y="384" width="192" height="24"/>
+                                <rect key="frame" x="64" y="384" width="192" height="26.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Log In Button"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-XQ-noc">
-                                <rect key="frame" x="64" y="420" width="192" height="24"/>
+                                <rect key="frame" x="64" y="422.5" width="192" height="26.5"/>
                                 <accessibility key="accessibilityConfiguration" label="Log In Button"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
@@ -69,7 +69,7 @@
                         <constraints>
                             <constraint firstItem="60w-SD-s7L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="11Q-Fd-7Ea"/>
                             <constraint firstItem="dB4-XQ-noc" firstAttribute="height" secondItem="f4g-Cc-WaH" secondAttribute="height" id="1Bw-56-lC6"/>
-                            <constraint firstItem="f4g-Cc-WaH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="5Q7-FH-3Ll"/>
+                            <constraint firstItem="f4g-Cc-WaH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.055" id="5Q7-FH-3Ll"/>
                             <constraint firstItem="dB4-XQ-noc" firstAttribute="top" secondItem="f4g-Cc-WaH" secondAttribute="bottom" constant="12" id="5Qu-jY-dvn"/>
                             <constraint firstItem="60w-SD-s7L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IB4-ox-H8G"/>
                             <constraint firstItem="f4g-Cc-WaH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="LZu-RO-fXF"/>
@@ -109,25 +109,25 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
-                                <rect key="frame" x="16" y="7" width="224" height="97.5"/>
+                                <rect key="frame" x="16" y="38" width="256" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-TV-4qC">
-                                <rect key="frame" x="40" y="246" width="240" height="22"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-TV-4qC" customClass="UnderlineTextField" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="40" y="225" width="240" height="22"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwL-dN-HFQ">
-                                <rect key="frame" x="40" y="207" width="240" height="23"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwL-dN-HFQ" customClass="UnderlineTextField" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="40" y="186" width="240" height="23"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
-                                <rect key="frame" x="80" y="298.5" width="160" height="43"/>
+                                <rect key="frame" x="80" y="270.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="Orange"/>
@@ -139,7 +139,7 @@
                         <constraints>
                             <constraint firstItem="qvs-A7-TuI" firstAttribute="height" secondItem="QCA-L4-jcQ" secondAttribute="height" multiplier="0.25" id="1I3-jU-SSb"/>
                             <constraint firstItem="uaY-TV-4qC" firstAttribute="width" secondItem="QwL-dN-HFQ" secondAttribute="width" id="2vc-q2-rd2"/>
-                            <constraint firstItem="GVR-uv-9S0" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.7" id="4so-aG-opn"/>
+                            <constraint firstItem="GVR-uv-9S0" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.8" id="4so-aG-opn"/>
                             <constraint firstItem="Xcf-z4-c4h" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.5" id="7DH-aj-gdV"/>
                             <constraint firstItem="uaY-TV-4qC" firstAttribute="centerX" secondItem="QCA-L4-jcQ" secondAttribute="centerX" id="8Nx-v9-6JO"/>
                             <constraint firstItem="9Rj-jF-l64" firstAttribute="trailing" secondItem="qvs-A7-TuI" secondAttribute="trailing" id="9C9-LF-cLs"/>
@@ -147,12 +147,12 @@
                             <constraint firstItem="QwL-dN-HFQ" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.75" id="DPQ-E0-QFd"/>
                             <constraint firstAttribute="bottom" secondItem="qvs-A7-TuI" secondAttribute="bottom" id="FP8-71-AXi"/>
                             <constraint firstItem="QwL-dN-HFQ" firstAttribute="centerX" secondItem="QCA-L4-jcQ" secondAttribute="centerX" id="J7Z-qy-OpM"/>
-                            <constraint firstAttribute="centerYWithinMargins" secondItem="GVR-uv-9S0" secondAttribute="bottom" multiplier="2.2" id="KUJ-au-PxT"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="GVR-uv-9S0" secondAttribute="bottom" multiplier="1.7" id="KUJ-au-PxT"/>
                             <constraint firstItem="uaY-TV-4qC" firstAttribute="height" secondItem="QwL-dN-HFQ" secondAttribute="height" multiplier="0.949153" id="a07-cd-oVe"/>
                             <constraint firstItem="QwL-dN-HFQ" firstAttribute="height" secondItem="QCA-L4-jcQ" secondAttribute="height" multiplier="0.05" id="eSE-3B-89C"/>
                             <constraint firstItem="uaY-TV-4qC" firstAttribute="top" secondItem="QwL-dN-HFQ" secondAttribute="bottom" constant="16" id="hsi-ux-1WY"/>
-                            <constraint firstAttribute="centerY" secondItem="Xcf-z4-c4h" secondAttribute="top" multiplier="0.77" id="hvU-db-YKT"/>
-                            <constraint firstAttribute="centerYWithinMargins" secondItem="QwL-dN-HFQ" secondAttribute="bottom" id="ia1-S6-TC5"/>
+                            <constraint firstAttribute="centerY" secondItem="Xcf-z4-c4h" secondAttribute="top" multiplier="0.85" id="hvU-db-YKT"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="QwL-dN-HFQ" secondAttribute="bottom" multiplier="1.1" id="ia1-S6-TC5"/>
                             <constraint firstItem="Xcf-z4-c4h" firstAttribute="centerX" secondItem="QCA-L4-jcQ" secondAttribute="centerX" id="nb2-0b-cEF"/>
                             <constraint firstItem="GVR-uv-9S0" firstAttribute="leading" secondItem="9Rj-jF-l64" secondAttribute="centerX" multiplier="0.1" id="sXx-K9-SdF"/>
                             <constraint firstItem="qvs-A7-TuI" firstAttribute="leading" secondItem="9Rj-jF-l64" secondAttribute="leading" id="vLP-ga-xN6"/>
@@ -181,33 +181,33 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
-                                <rect key="frame" x="16" y="7" width="224" height="97.5"/>
+                                <rect key="frame" x="16" y="38" width="256" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayt-IZ-zw8" userLabel="Name Text Field">
-                                <rect key="frame" x="40" y="186" width="240" height="23"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayt-IZ-zw8" userLabel="Name Text Field" customClass="UnderlineTextField" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="40" y="168.5" width="240" height="23"/>
                                 <accessibility key="accessibilityConfiguration" label="Name Text Field"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-xW-x6D" userLabel="Email Text Field">
-                                <rect key="frame" x="40" y="225" width="240" height="22"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-xW-x6D" userLabel="Email Text Field" customClass="UnderlineTextField" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="40" y="207.5" width="240" height="22"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
-                                <rect key="frame" x="80" y="298.5" width="160" height="43"/>
+                                <rect key="frame" x="80" y="291" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" name="Orange"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETf-VP-WOu" userLabel="Password Text Field">
-                                <rect key="frame" x="40" y="263" width="240" height="23"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETf-VP-WOu" userLabel="Password Text Field" customClass="UnderlineTextField" customModule="What_s_Cookin_" customModuleProvider="target">
+                                <rect key="frame" x="40" y="245.5" width="240" height="23"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="new-password"/>
@@ -217,14 +217,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZUq-xW-x6D" firstAttribute="top" secondItem="ayt-IZ-zw8" secondAttribute="bottom" constant="16" id="4cW-K8-eBK"/>
-                            <constraint firstAttribute="centerYWithinMargins" secondItem="ayt-IZ-zw8" secondAttribute="bottom" multiplier="1.1" id="5En-pZ-kDy"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="ayt-IZ-zw8" secondAttribute="bottom" multiplier="1.2" id="5En-pZ-kDy"/>
                             <constraint firstItem="lsR-sO-aFF" firstAttribute="trailing" secondItem="T9l-pA-XOk" secondAttribute="trailing" id="AFg-0L-pgY"/>
-                            <constraint firstItem="Nss-qV-Pby" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.7" id="BRw-6o-W8r"/>
+                            <constraint firstItem="Nss-qV-Pby" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.8" id="BRw-6o-W8r"/>
                             <constraint firstItem="ayt-IZ-zw8" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.75" id="Ffw-aI-SJa"/>
                             <constraint firstItem="ETf-VP-WOu" firstAttribute="height" secondItem="ayt-IZ-zw8" secondAttribute="height" id="HUy-EN-GVp"/>
                             <constraint firstItem="ZUq-xW-x6D" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="JoY-tK-jBp"/>
-                            <constraint firstAttribute="centerY" secondItem="ACB-f3-oGb" secondAttribute="top" multiplier="0.77" id="Kjk-r6-l9L"/>
-                            <constraint firstAttribute="centerYWithinMargins" secondItem="Nss-qV-Pby" secondAttribute="bottom" multiplier="2.2" id="UwY-jp-75C"/>
+                            <constraint firstAttribute="centerY" secondItem="ACB-f3-oGb" secondAttribute="top" multiplier="0.79" id="Kjk-r6-l9L"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="Nss-qV-Pby" secondAttribute="bottom" multiplier="1.7" id="UwY-jp-75C"/>
                             <constraint firstAttribute="bottom" secondItem="T9l-pA-XOk" secondAttribute="bottom" id="Xot-La-ZWz"/>
                             <constraint firstItem="T9l-pA-XOk" firstAttribute="height" secondItem="GqF-yA-nBP" secondAttribute="height" multiplier="0.25" id="XwC-Ru-cUw"/>
                             <constraint firstItem="ayt-IZ-zw8" firstAttribute="height" secondItem="GqF-yA-nBP" secondAttribute="height" multiplier="0.05" id="Y8e-Xs-Z3W"/>

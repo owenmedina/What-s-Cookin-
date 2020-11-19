@@ -29,6 +29,7 @@
 		5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225592565C80400D1EB98 /* RegisterViewController.swift */; };
 		5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */; };
 		5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */; };
+		5AF2257C2566FE8D00D1EB98 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2257B2566FE8D00D1EB98 /* UnderlineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		5AF225592565C80400D1EB98 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorExtensions.swift; sourceTree = "<group>"; };
 		5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		5AF2257B2566FE8D00D1EB98 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				5AF2251A256374DC00D1EB98 /* LaunchScreen.storyboard */,
 				5AF225272563804700D1EB98 /* CurveView.swift */,
 				5AF225512565A33000D1EB98 /* BottomCurveView.swift */,
+				5AF2257B2566FE8D00D1EB98 /* UnderlineTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
 				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
+				5AF2257C2566FE8D00D1EB98 /* UnderlineTextField.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
 				5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
