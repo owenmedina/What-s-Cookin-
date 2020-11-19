@@ -27,6 +27,8 @@
 		5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225512565A33000D1EB98 /* BottomCurveView.swift */; };
 		5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225562565BD6400D1EB98 /* LoginViewController.swift */; };
 		5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF225592565C80400D1EB98 /* RegisterViewController.swift */; };
+		5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */; };
+		5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		5AF225512565A33000D1EB98 /* BottomCurveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurveView.swift; sourceTree = "<group>"; };
 		5AF225562565BD6400D1EB98 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5AF225592565C80400D1EB98 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorExtensions.swift; sourceTree = "<group>"; };
+		5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		5AF2250E256374DB00D1EB98 /* What's Cookin? */ = {
 			isa = PBXGroup;
 			children = (
+				5AF2256325661B7400D1EB98 /* Extensions */,
 				5AF225312564B42500D1EB98 /* Assets */,
 				5AF2252425637FE900D1EB98 /* Models */,
 				5AF2252525637FF100D1EB98 /* Views */,
@@ -147,6 +152,15 @@
 				5AF225422564B73600D1EB98 /* WorkSans-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5AF2256325661B7400D1EB98 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */,
+				5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */,
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
+				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
 				5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */,

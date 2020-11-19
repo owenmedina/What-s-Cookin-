@@ -35,6 +35,16 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = loginButton.frame.size.height/2
         loginButton.layer.borderWidth = K.buttonBorderWidth
         loginButton.layer.borderColor = K.orange.cgColor
+        // Register self for keyboard notifications
+        NotificationCenter.default.addObserver(self, selector: .keyboardWillShow, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: .keyboardWillHide, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Stop receiving keyboard notifications
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLayoutSubviews() {

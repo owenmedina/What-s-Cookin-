@@ -30,7 +30,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-Ev-zRo">
-                                <rect key="frame" x="20" y="63.5" width="192" height="116.5"/>
+                                <rect key="frame" x="20" y="52" width="192" height="128"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
-                                <rect key="frame" x="16" y="15.5" width="224" height="89"/>
+                                <rect key="frame" x="16" y="7" width="224" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -127,7 +127,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
-                                <rect key="frame" x="80" y="298.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="298.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="Orange"/>
@@ -181,7 +181,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
-                                <rect key="frame" x="16" y="15.5" width="224" height="89"/>
+                                <rect key="frame" x="16" y="7" width="224" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -200,7 +200,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
-                                <rect key="frame" x="80" y="298.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="298.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" name="Orange"/>
