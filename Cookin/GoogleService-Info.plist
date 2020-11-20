@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>918396777583-3sop9hhmeli1aipntt8r7jqchg8mefat.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.918396777583-3sop9hhmeli1aipntt8r7jqchg8mefat</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC31ybRAnGnntZfhcn3fV1HOY9TIqdxFt4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>918396777583</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tekh.Cookin</string>
+	<key>PROJECT_ID</key>
+	<string>what-s-cookin-a5e53</string>
+	<key>STORAGE_BUCKET</key>
+	<string>what-s-cookin-a5e53.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:918396777583:ios:5ec92c9f6844327a00c99a</string>
+	<key>DATABASE_URL</key>
+	<string>https://what-s-cookin-a5e53.firebaseio.com</string>
+</dict>
+</plist>
