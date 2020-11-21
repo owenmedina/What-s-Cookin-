@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
+		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
 		5A80ADD425675ED4003EEAE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A80ADD325675ED4003EEAE7 /* GoogleService-Info.plist */; };
+		5A80ADD62567627B003EEAE7 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */; };
+		5A80ADD8256771EE003EEAE7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80ADD7256771EE003EEAE7 /* Validator.swift */; };
 		5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF2250F256374DB00D1EB98 /* AppDelegate.swift */; };
 		5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF22511256374DB00D1EB98 /* SceneDelegate.swift */; };
 		5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */; };
@@ -50,7 +54,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A80ADD325675ED4003EEAE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		5A80ADD7256771EE003EEAE7 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5AF2250C256374DB00D1EB98 /* Cookin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF2250F256374DB00D1EB98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AF22511256374DB00D1EB98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +164,10 @@
 		5AF2252425637FE900D1EB98 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */,
+				5A80ADD7256771EE003EEAE7 /* Validator.swift */,
+				5A605977256876C500F88F90 /* FirestoreManager.swift */,
+				5A60599D25687A5100F88F90 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,11 +353,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */,
+				5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */,
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
 				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
+				5A80ADD8256771EE003EEAE7 /* Validator.swift in Sources */,
 				5AF2257C2566FE8D00D1EB98 /* UnderlineTextField.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
+				5A60599E25687A5100F88F90 /* User.swift in Sources */,
+				5A80ADD62567627B003EEAE7 /* FirebaseAuthManager.swift in Sources */,
 				5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,

@@ -11,4 +11,5 @@ import UIKit
 internal extension Selector {
     static let keyboardWillShow = #selector(UIViewController.keyboardWillShow(notification:))
     static let keyboardWillHide = #selector(UIViewController.keyboardWillHide(notification:))
+//    static let textFieldDidChange = #selector(RegisterViewController.textFieldDidChange(_:))
 }

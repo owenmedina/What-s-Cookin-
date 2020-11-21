@@ -8,4 +8,5 @@ target 'Cookin' do
   # Pods for Cookin
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 end

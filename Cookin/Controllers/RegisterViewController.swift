@@ -9,12 +9,27 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameValidationLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailValidationLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordValidationLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
+    var textFieldsWithLabels = [(textField: UITextField, label: UILabel)]()
+    var textFields = [UITextField]()
+    var validator = Validator()
+    var firebaseAuthManager = FirebaseAuthManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add text fields
+        textFieldsWithLabels.append((textField: nameTextField, label: nameValidationLabel))
+        textFieldsWithLabels.append((textField: emailTextField, label: emailValidationLabel))
+        textFieldsWithLabels.append((textField: passwordTextField, label: passwordValidationLabel))
+        textFields.append(nameTextField)
+        textFields.append(emailTextField)
+        textFields.append(passwordTextField)
         
         // Setup UI
         
@@ -28,6 +43,12 @@ class RegisterViewController: UIViewController {
         // Register self for keyboard notifications
         NotificationCenter.default.addObserver(self, selector: .keyboardWillShow, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: .keyboardWillHide, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        // Setup delegates
+        for textField in textFields {
+            textField.delegate = self
+        }
+        firebaseAuthManager.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,4 +65,71 @@ class RegisterViewController: UIViewController {
         registerButton.layer.cornerRadius = registerButton.frame.size.height/2
     }
 
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        var hasInvalidFields = false
+        let results = validator.validateTextFields(textFields)
+        for (result, textFieldAndLabel) in zip(results, textFieldsWithLabels) {
+            textFieldAndLabel.label.text = result.message
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                textFieldAndLabel.label.isHidden = result.valid
+            }
+            if !result.valid {
+                hasInvalidFields = true
+            }
+        }
+        if !hasInvalidFields {
+            firebaseAuthManager.registerUser(withEmail: emailTextField.text!, name: nameTextField.text!, password: passwordTextField.text!)
+        }
+    }
+}
+
+//MARK: - UITextFieldDelegate Methods
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let result = validator.validateTextField(textField)
+        switch textField.accessibilityIdentifier {
+        case K.Accessibility.nameTextFieldIdentifier:
+            nameValidationLabel.text = result.message
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.nameValidationLabel.isHidden = result.valid
+            }
+            if result.valid {
+                emailTextField.becomeFirstResponder()
+            }
+        case K.Accessibility.emailTextFieldIdentifier:
+            emailValidationLabel.text = result.message
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.emailValidationLabel.isHidden = result.valid
+            }
+            if result.valid {
+                passwordTextField.becomeFirstResponder()
+            }
+        case K.Accessibility.passwordTextFieldIdentifier:
+            passwordValidationLabel.text = result.message
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.passwordValidationLabel.isHidden = result.valid
+            }
+            if result.valid {
+                textField.resignFirstResponder()
+            }
+        default:
+            if result.valid {
+                textField.resignFirstResponder()
+            }
+        }
+        return true
+    }
+}
+
+//MARK: - FirebaseAuthManagerDelegate Methods
+extension RegisterViewController: FirebaseAuthManagerDelegate {
+    func didSignIn(_ firebaseAuthManager: FirebaseAuthManager) {
+        print("Successful sign in!")
+        performSegue(withIdentifier: K.registerToHome, sender: self)
+    }
+    
+    func didFailWithError(_ error: Error) {
+        // Present an alert with error
+        print("Error occurred on Register screen")
+    }
 }
