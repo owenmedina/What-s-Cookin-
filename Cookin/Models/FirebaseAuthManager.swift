@@ -50,8 +50,8 @@ struct FirebaseAuthManager {
                 delegate?.didFailWithError(existingError)
                 return
             }
+            delegate?.didSignIn(self)
         }
-        delegate?.didSignIn(self)
     }
 }
 

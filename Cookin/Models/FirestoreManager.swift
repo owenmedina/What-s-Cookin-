@@ -17,7 +17,7 @@ struct FirestoreManager {
             try db.collection(K.Firebase.Firestore.usersCollection).document(id).setData(from: user)
             return nil
         } catch let error {
-            print("Error writing city to Firestore: \(error)")
+            print("Error writing user to Firestore: \(error)")
             return error
         }
     }

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     var textFieldsWithLabels = [(textField: UITextField, label: UILabel)]()
     var textFields = [UITextField]()
     var validator = Validator()
+    var firebaseAuthManager = FirebaseAuthManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController {
         for textField in textFields {
             textField.delegate = self
         }
+        firebaseAuthManager.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,12 +62,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
+        var hasInvalidFields = false
         let results = validator.validateTextFields(textFields)
         for (result, textFieldAndLabel) in zip(results, textFieldsWithLabels) {
             textFieldAndLabel.label.text = result.message
             UIView.animate(withDuration: K.standardAnimationDuration) {
                 textFieldAndLabel.label.isHidden = result.valid
             }
+            if !result.valid {
+                hasInvalidFields = true
+            }
+        }
+        
+        if !hasInvalidFields {
+            firebaseAuthManager.loginUser(withEmail: emailTextField.text!, password: passwordTextField.text!)
         }
     }
     
