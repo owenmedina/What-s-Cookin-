@@ -65,6 +65,9 @@ class LoginViewController: UIViewController {
         var hasInvalidFields = false
         let results = validator.validateTextFields(textFields)
         for (result, textFieldAndLabel) in zip(results, textFieldsWithLabels) {
+            if textFieldAndLabel.textField.accessibilityIdentifier == K.Accessibility.passwordTextFieldIdentifier {
+                continue
+            }
             textFieldAndLabel.label.text = result.message
             UIView.animate(withDuration: K.standardAnimationDuration) {
                 textFieldAndLabel.label.isHidden = result.valid
@@ -118,9 +121,9 @@ class LoginViewController: UIViewController {
 //MARK: - UITextFieldDelegate Methods
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let result = validator.validateTextField(textField)
         switch textField.accessibilityIdentifier {
         case K.Accessibility.emailTextFieldIdentifier:
+            let result = validator.validateTextField(textField)
             emailValidationLabel.text = result.message
             UIView.animate(withDuration: K.standardAnimationDuration) {
                 self.emailValidationLabel.isHidden = result.valid
@@ -128,19 +131,32 @@ extension LoginViewController: UITextFieldDelegate {
             if result.valid {
                 passwordTextField.becomeFirstResponder()
             }
-        case K.Accessibility.passwordTextFieldIdentifier:
-            passwordValidationLabel.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
-                self.passwordValidationLabel.isHidden = result.valid
-            }
-            fallthrough
         default:
-            if result.valid {
-                textField.resignFirstResponder()
-            }
+            textField.resignFirstResponder()
         }
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // once the alert is shown and text field has started editing, hide the label
+        switch textField.accessibilityIdentifier {
+        case K.Accessibility.emailTextFieldIdentifier:
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.emailValidationLabel.isHidden = true
+            }
+        case K.Accessibility.passwordTextFieldIdentifier:
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.passwordValidationLabel.isHidden = true
+            }
+        default:
+            break
+        }
+            
+            
+        return true
+    }
+    
 }
 
 //MARK: - FirebaseAuthManagerDelegate Methods
@@ -151,6 +167,11 @@ extension LoginViewController: FirebaseAuthManagerDelegate {
     
     func didFailWithError(_ error: Error) {
         // Present an alert with error
+        passwordValidationLabel.text = K.Error.incorrectPassword
+        UIView.animate(withDuration: 0) {
+            self.passwordValidationLabel.isHidden = false
+        }
+        //passwordValidationLabel.text = K.incorrectPassword
         print("Error occurred on Login screen")
     }
 }

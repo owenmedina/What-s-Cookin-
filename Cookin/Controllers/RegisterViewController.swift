@@ -119,6 +119,30 @@ extension RegisterViewController: UITextFieldDelegate {
         }
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // once the alert is shown and text field has started editing, hide the label
+        switch textField.accessibilityIdentifier {
+        case K.Accessibility.nameTextFieldIdentifier:
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.nameValidationLabel.isHidden = true
+            }
+        case K.Accessibility.emailTextFieldIdentifier:
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.emailValidationLabel.isHidden = true
+            }
+        case K.Accessibility.passwordTextFieldIdentifier:
+            UIView.animate(withDuration: K.standardAnimationDuration) {
+                self.passwordValidationLabel.isHidden = true
+            }
+        default:
+            break
+        }
+            
+            
+        return true
+    }
 }
 
 //MARK: - FirebaseAuthManagerDelegate Methods

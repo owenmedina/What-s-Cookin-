@@ -10,7 +10,7 @@ import UIKit
 
 struct Validator {
     func validateRequiredField(_ textField: UITextField) -> (Bool, String?) {
-        let emptyWarning = "\(textField.accessibilityLabel ?? "Field") \(K.emptyTextField)"
+        let emptyWarning = "\(textField.accessibilityLabel ?? "Field") \(K.Error.emptyTextField)"
         guard let text = textField.text else {
             return (false, emptyWarning)
         }
@@ -23,17 +23,17 @@ struct Validator {
     }
     
     func validateEmail(_ textField: UITextField) -> (Bool, String?) {
-        return validate(textField, matching: K.emailRegex, with: K.invalidEmail)
+        return validate(textField, matching: K.emailRegex, with: K.Error.invalidEmail)
     }
     
     func validatePassword(_ textField: UITextField) -> (Bool, String?) {
-        return validate(textField, matching: K.passwordRegex, with: K.invalidPassword)
+        return validate(textField, matching: K.passwordRegex, with: K.Error.invalidPassword)
         
     }
     
     func validate(_ textField: UITextField, matching regex: String, with warning: String) -> (Bool, String?) {
         guard let text = textField.text else {
-            return (false, "\(textField.accessibilityLabel ?? "Field") \(K.emptyTextField)")
+            return (false, "\(textField.accessibilityLabel ?? "Field") \(K.Error.emptyTextField)")
         }
         let valid = NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: text)
         if valid {

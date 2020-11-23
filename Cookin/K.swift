@@ -26,6 +26,7 @@ struct K {
     
     // Animations
     static let standardAnimationDuration = 0.25
+    static let shortAnimationDuration = 0.10
     // Buttons
     static let buttonRadius = CGFloat(25)
     static let buttonBorderWidth = CGFloat(1)
@@ -34,9 +35,12 @@ struct K {
     static let yellow = UIColor(named: "Yellow")!
     static let orange = UIColor(named: "Orange")!
     // Error messages
-    static let emptyTextField = "must not be empty."
-    static let invalidPassword = "Password must be at least 8 characters long and contain 1 letter and 1 number."
-    static let invalidEmail = "Email must be a valid email."
+    struct Error {
+        static let emptyTextField = "must not be empty."
+        static let invalidPassword = "Password must be at least 8 characters long and contain 1 letter and 1 number."
+        static let invalidEmail = "Email must be a valid email."
+        static let incorrectPassword = "Password is incorrect."
+    }
     // Firebase
     struct Firebase {
         // Auth
