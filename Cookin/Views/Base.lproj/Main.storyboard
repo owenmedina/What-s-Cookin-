@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HindSiliguri-Regular.ttf">
+            <string>HindSiliguri-Regular</string>
+        </array>
+        <array key="Lora-Regular.ttf">
+            <string>Lora-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60w-SD-s7L" customClass="CurveView" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-Ev-zRo">
+                                <rect key="frame" x="20" y="63.5" width="192" height="116.5"/>
+                                <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create thousands of unforgettable memories with great cooking." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-NE-kbv">
+                                <rect key="frame" x="20" y="180" width="256" height="69.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-Cc-WaH">
+                                <rect key="frame" x="64" y="384" width="192" height="26.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Log In Button"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="t3b-7T-McG" kind="presentation" identifier="WelcomeToRegister" id="eJJ-u4-zRT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-XQ-noc">
+                                <rect key="frame" x="64" y="422.5" width="192" height="26.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Log In Button"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" name="Orange"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DxB-ic-vCF" kind="presentation" identifier="WelcomeToLogin" id="Wq4-za-fjY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="60w-SD-s7L" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="11Q-Fd-7Ea"/>
+                            <constraint firstItem="dB4-XQ-noc" firstAttribute="height" secondItem="f4g-Cc-WaH" secondAttribute="height" id="1Bw-56-lC6"/>
+                            <constraint firstItem="f4g-Cc-WaH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.055" id="5Q7-FH-3Ll"/>
+                            <constraint firstItem="dB4-XQ-noc" firstAttribute="top" secondItem="f4g-Cc-WaH" secondAttribute="bottom" constant="12" id="5Qu-jY-dvn"/>
+                            <constraint firstItem="60w-SD-s7L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IB4-ox-H8G"/>
+                            <constraint firstItem="f4g-Cc-WaH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="LZu-RO-fXF"/>
+                            <constraint firstItem="60w-SD-s7L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Naj-bg-dtj"/>
+                            <constraint firstItem="sqn-Ev-zRo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="REI-xn-qRs"/>
+                            <constraint firstItem="FFa-NE-kbv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tqh-Wg-Vrd"/>
+                            <constraint firstItem="sqn-Ev-zRo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.75" id="Yk0-oB-tza"/>
+                            <constraint firstItem="sqn-Ev-zRo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="aVo-D2-L1t"/>
+                            <constraint firstItem="60w-SD-s7L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bO6-93-CxD"/>
+                            <constraint firstItem="FFa-NE-kbv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="dqS-Fp-82i"/>
+                            <constraint firstItem="FFa-NE-kbv" firstAttribute="top" secondItem="sqn-Ev-zRo" secondAttribute="bottom" id="g57-zZ-z48"/>
+                            <constraint firstItem="f4g-Cc-WaH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="hiE-8D-dJ3"/>
+                            <constraint firstItem="dB4-XQ-noc" firstAttribute="width" secondItem="f4g-Cc-WaH" secondAttribute="width" id="px4-9Z-95N"/>
+                            <constraint firstItem="f4g-Cc-WaH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ruN-82-a69"/>
+                            <constraint firstItem="dB4-XQ-noc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sbs-jC-g9o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="dB4-XQ-noc" id="GHU-e9-gxU"/>
+                        <outlet property="registerButton" destination="f4g-Cc-WaH" id="xXE-uW-m8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="54"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="vu4-Fv-bQb">
+            <objects>
+                <viewController id="DxB-ic-vCF" customClass="LoginViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QCA-L4-jcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvs-A7-TuI" customClass="BottomCurveView" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="345" width="320" height="115"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
+                                <rect key="frame" x="16" y="46.5" width="256" height="89"/>
+                                <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-TV-4qC" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="40" y="230" width="240" height="22"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Password Text Field"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwL-dN-HFQ" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="40" y="186" width="240" height="23"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Email Text Field"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
+                                <rect key="frame" x="80" y="287.5" width="160" height="35"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" name="Orange"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="DxB-ic-vCF" eventType="touchUpInside" id="gg9-fn-ea7"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AB8-SI-ELh">
+                                <rect key="frame" x="40" y="209" width="240" height="14"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Say-eF-eeg">
+                                <rect key="frame" x="40" y="252" width="240" height="14"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Password Validation Error"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Rj-jF-l64"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qvs-A7-TuI" firstAttribute="height" secondItem="QCA-L4-jcQ" secondAttribute="height" multiplier="0.25" id="1I3-jU-SSb"/>
+                            <constraint firstItem="uaY-TV-4qC" firstAttribute="width" secondItem="QwL-dN-HFQ" secondAttribute="width" id="2vc-q2-rd2"/>
+                            <constraint firstItem="Say-eF-eeg" firstAttribute="top" secondItem="uaY-TV-4qC" secondAttribute="bottom" id="4FL-4t-tSJ"/>
+                            <constraint firstItem="GVR-uv-9S0" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.8" id="4so-aG-opn"/>
+                            <constraint firstItem="Xcf-z4-c4h" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.5" id="7DH-aj-gdV"/>
+                            <constraint firstItem="uaY-TV-4qC" firstAttribute="centerX" secondItem="QCA-L4-jcQ" secondAttribute="centerX" id="8Nx-v9-6JO"/>
+                            <constraint firstItem="9Rj-jF-l64" firstAttribute="trailing" secondItem="qvs-A7-TuI" secondAttribute="trailing" id="9C9-LF-cLs"/>
+                            <constraint firstItem="qvs-A7-TuI" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" id="B5y-cO-HCI"/>
+                            <constraint firstItem="QwL-dN-HFQ" firstAttribute="width" secondItem="QCA-L4-jcQ" secondAttribute="width" multiplier="0.75" id="DPQ-E0-QFd"/>
+                            <constraint firstAttribute="bottom" secondItem="qvs-A7-TuI" secondAttribute="bottom" id="FP8-71-AXi"/>
+                            <constraint firstItem="AB8-SI-ELh" firstAttribute="width" secondItem="QwL-dN-HFQ" secondAttribute="width" id="FQI-nV-JWo"/>
+                            <constraint firstItem="QwL-dN-HFQ" firstAttribute="centerX" secondItem="QCA-L4-jcQ" secondAttribute="centerX" id="J7Z-qy-OpM"/>
+                            <constraint firstItem="Say-eF-eeg" firstAttribute="width" secondItem="uaY-TV-4qC" secondAttribute="width" id="KIY-ni-Aky"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="GVR-uv-9S0" secondAttribute="bottom" multiplier="1.7" id="KUJ-au-PxT"/>
+                            <constraint firstItem="Say-eF-eeg" firstAttribute="leading" secondItem="uaY-TV-4qC" secondAttribute="leading" id="Xmf-2Y-Zfn"/>
+                            <constraint firstItem="uaY-TV-4qC" firstAttribute="height" secondItem="QwL-dN-HFQ" secondAttribute="height" multiplier="0.949153" id="a07-cd-oVe"/>
+                            <constraint firstItem="AB8-SI-ELh" firstAttribute="leading" secondItem="QwL-dN-HFQ" secondAttribute="leading" id="bSb-3U-inF"/>
+                            <constraint firstItem="QwL-dN-HFQ" firstAttribute="height" secondItem="QCA-L4-jcQ" secondAttribute="height" multiplier="0.05" id="eSE-3B-89C"/>
+                            <constraint firstItem="uaY-TV-4qC" firstAttribute="top" secondItem="QwL-dN-HFQ" secondAttribute="bottom" multiplier="1.1" id="hsi-ux-1WY"/>
+                            <constraint firstAttribute="centerY" secondItem="Xcf-z4-c4h" secondAttribute="top" multiplier="0.8" id="hvU-db-YKT"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="QwL-dN-HFQ" secondAttribute="bottom" multiplier="1.1" id="ia1-S6-TC5"/>
+                            <constraint firstItem="AB8-SI-ELh" firstAttribute="top" secondItem="QwL-dN-HFQ" secondAttribute="bottom" id="n9N-qd-UJG"/>
+                            <constraint firstItem="Xcf-z4-c4h" firstAttribute="centerX" secondItem="QCA-L4-jcQ" secondAttribute="centerX" id="nb2-0b-cEF"/>
+                            <constraint firstItem="GVR-uv-9S0" firstAttribute="leading" secondItem="9Rj-jF-l64" secondAttribute="centerX" multiplier="0.1" id="sXx-K9-SdF"/>
+                            <constraint firstItem="qvs-A7-TuI" firstAttribute="leading" secondItem="9Rj-jF-l64" secondAttribute="leading" id="vLP-ga-xN6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="QwL-dN-HFQ" id="sTj-s4-jHY"/>
+                        <outlet property="emailValidationLabel" destination="AB8-SI-ELh" id="gNs-Vx-bw3"/>
+                        <outlet property="loginButton" destination="Xcf-z4-c4h" id="QSd-py-G8l"/>
+                        <outlet property="passwordTextField" destination="uaY-TV-4qC" id="lOh-6a-b47"/>
+                        <outlet property="passwordValidationLabel" destination="Say-eF-eeg" id="Kjt-Qk-epv"/>
+                        <segue destination="rKN-Jq-fj2" kind="show" identifier="LoginToHome" id="JG2-JM-b7T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uR5-Jl-aq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560" y="-203"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sNH-yc-139">
+            <objects>
+                <viewController id="rKN-Jq-fj2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uUz-DF-kZO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-Be-e7Y">
+                                <rect key="frame" x="37" y="188" width="180" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sGV-GJ-qSJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b0N-0s-wB3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fE3-rT-qXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="70"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="5Cz-eI-pzJ">
+            <objects>
+                <viewController id="t3b-7T-McG" customClass="RegisterViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GqF-yA-nBP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9l-pA-XOk" customClass="BottomCurveView" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="345" width="320" height="115"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
+                                <rect key="frame" x="16" y="46.5" width="256" height="89"/>
+                                <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayt-IZ-zw8" userLabel="Name Text Field" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="40" y="168.5" width="240" height="23"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Name Text Field" label="Name"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-xW-x6D" userLabel="Email Text Field" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="40" y="211" width="240" height="21.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Email Text Field" label="Email"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
+                                <rect key="frame" x="80" y="306.5" width="160" height="35"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" name="Orange"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="t3b-7T-McG" eventType="touchUpInside" id="UME-Ow-dYJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETf-VP-WOu" userLabel="Password Text Field" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="40" y="256" width="240" height="23"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Password Text Field" label="Password"/>
+                                <color key="textColor" name="Orange"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7q-eO-irs">
+                                <rect key="frame" x="40" y="191.5" width="240" height="15.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Name Validation Error"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypm-MM-IQl">
+                                <rect key="frame" x="40" y="232.5" width="240" height="15.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOI-ZB-kYf">
+                                <rect key="frame" x="40" y="279" width="240" height="29.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Password Validation Error"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
+                                <color key="textColor" name="Red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lsR-sO-aFF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="top" secondItem="ayt-IZ-zw8" secondAttribute="bottom" multiplier="1.1" id="4cW-K8-eBK"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="ayt-IZ-zw8" secondAttribute="bottom" multiplier="1.2" id="5En-pZ-kDy"/>
+                            <constraint firstItem="lsR-sO-aFF" firstAttribute="trailing" secondItem="T9l-pA-XOk" secondAttribute="trailing" id="AFg-0L-pgY"/>
+                            <constraint firstItem="Nss-qV-Pby" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.8" id="BRw-6o-W8r"/>
+                            <constraint firstItem="BOI-ZB-kYf" firstAttribute="bottom" secondItem="ACB-f3-oGb" secondAttribute="top" constant="2" id="Evj-MG-jNY"/>
+                            <constraint firstItem="ayt-IZ-zw8" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.75" id="Ffw-aI-SJa"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="height" secondItem="ayt-IZ-zw8" secondAttribute="height" id="HUy-EN-GVp"/>
+                            <constraint firstItem="k7q-eO-irs" firstAttribute="leading" secondItem="ayt-IZ-zw8" secondAttribute="leading" id="IvO-rK-pmm"/>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="JoY-tK-jBp"/>
+                            <constraint firstItem="k7q-eO-irs" firstAttribute="width" secondItem="ayt-IZ-zw8" secondAttribute="width" id="KK0-Ap-rBU"/>
+                            <constraint firstAttribute="centerY" secondItem="ACB-f3-oGb" secondAttribute="top" multiplier="0.75" id="Kjk-r6-l9L"/>
+                            <constraint firstItem="ypm-MM-IQl" firstAttribute="leading" secondItem="ZUq-xW-x6D" secondAttribute="leading" id="Oti-4N-7F1"/>
+                            <constraint firstAttribute="centerYWithinMargins" secondItem="Nss-qV-Pby" secondAttribute="bottom" multiplier="1.7" id="UwY-jp-75C"/>
+                            <constraint firstAttribute="bottom" secondItem="T9l-pA-XOk" secondAttribute="bottom" id="Xot-La-ZWz"/>
+                            <constraint firstItem="T9l-pA-XOk" firstAttribute="height" secondItem="GqF-yA-nBP" secondAttribute="height" multiplier="0.25" id="XwC-Ru-cUw"/>
+                            <constraint firstItem="ayt-IZ-zw8" firstAttribute="height" secondItem="GqF-yA-nBP" secondAttribute="height" multiplier="0.05" id="Y8e-Xs-Z3W"/>
+                            <constraint firstItem="BOI-ZB-kYf" firstAttribute="leading" secondItem="ETf-VP-WOu" secondAttribute="leading" id="adc-tp-aPn"/>
+                            <constraint firstItem="Nss-qV-Pby" firstAttribute="leading" secondItem="lsR-sO-aFF" secondAttribute="centerX" multiplier="0.1" id="dHm-6d-7Ol"/>
+                            <constraint firstItem="k7q-eO-irs" firstAttribute="top" secondItem="ayt-IZ-zw8" secondAttribute="bottom" id="ei6-5S-QHS"/>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="width" secondItem="ayt-IZ-zw8" secondAttribute="width" id="fco-FE-5QA"/>
+                            <constraint firstItem="ACB-f3-oGb" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" multiplier="0.5" id="iKG-A7-ycF"/>
+                            <constraint firstItem="BOI-ZB-kYf" firstAttribute="top" secondItem="ETf-VP-WOu" secondAttribute="bottom" id="jOk-0l-KtS"/>
+                            <constraint firstItem="ACB-f3-oGb" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="jOr-Rf-BGK"/>
+                            <constraint firstItem="BOI-ZB-kYf" firstAttribute="width" secondItem="ETf-VP-WOu" secondAttribute="width" id="kSc-4i-u1k"/>
+                            <constraint firstItem="T9l-pA-XOk" firstAttribute="leading" secondItem="lsR-sO-aFF" secondAttribute="leading" id="l3x-Gb-iO5"/>
+                            <constraint firstItem="ypm-MM-IQl" firstAttribute="width" secondItem="ZUq-xW-x6D" secondAttribute="width" id="mKc-Uu-UZF"/>
+                            <constraint firstItem="T9l-pA-XOk" firstAttribute="width" secondItem="GqF-yA-nBP" secondAttribute="width" id="q3b-ao-SSA"/>
+                            <constraint firstItem="ypm-MM-IQl" firstAttribute="top" secondItem="ZUq-xW-x6D" secondAttribute="bottom" id="qTe-WN-dhD"/>
+                            <constraint firstItem="ayt-IZ-zw8" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="tL0-TB-kad"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="centerX" secondItem="GqF-yA-nBP" secondAttribute="centerX" id="tO8-yS-io2"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="width" secondItem="ayt-IZ-zw8" secondAttribute="width" id="tnW-rT-9ZW"/>
+                            <constraint firstItem="ZUq-xW-x6D" firstAttribute="height" secondItem="ayt-IZ-zw8" secondAttribute="height" multiplier="0.949153" id="xMi-1x-Ikj"/>
+                            <constraint firstItem="ETf-VP-WOu" firstAttribute="top" secondItem="ZUq-xW-x6D" secondAttribute="bottom" multiplier="1.1" id="ypa-Pn-wM4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ZUq-xW-x6D" id="FlK-Ke-tNB"/>
+                        <outlet property="emailValidationLabel" destination="ypm-MM-IQl" id="x3y-Gz-j7q"/>
+                        <outlet property="nameTextField" destination="ayt-IZ-zw8" id="SVs-Dq-elX"/>
+                        <outlet property="nameValidationLabel" destination="k7q-eO-irs" id="op2-W3-8eu"/>
+                        <outlet property="passwordTextField" destination="ETf-VP-WOu" id="N0B-i6-rwr"/>
+                        <outlet property="passwordValidationLabel" destination="BOI-ZB-kYf" id="eGE-QA-XV9"/>
+                        <outlet property="registerButton" destination="ACB-f3-oGb" id="zUf-ZC-VNm"/>
+                        <segue destination="rKN-Jq-fj2" kind="show" identifier="RegisterToHome" id="aPO-Xo-ycU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9G-tn-aJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="558.75" y="512.5"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aPO-Xo-ycU"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <namedColor name="Orange">
+            <color red="0.98400002717971802" green="0.5220000147819519" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Red">
+            <color red="0.97299998998641968" green="0.28200000524520874" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
