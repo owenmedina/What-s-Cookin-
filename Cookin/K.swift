@@ -23,7 +23,10 @@ struct K {
         static let passwordTextFieldLabel = "Password"
         static let nameTextFieldLabel = "Name"
     }
-    
+    struct Alert {
+        static let ok = "Ok"
+        static let error = "Error"
+    }
     // Animations
     static let standardAnimationDuration = 0.25
     static let shortAnimationDuration = 0.10
@@ -46,7 +49,18 @@ struct K {
         // Auth
         struct Auth {
             // Errors
-            static let noUID = "Could not find user ID."
+            struct Error {
+                static let noUID = "Could not find user ID."
+                static let emailAlreadyInUse = "Email is already in use with another account."
+                static let userNotFound = "No account found for that user. Please check and try again."
+                static let userDisabled = "Your account has been disabled. Please contact support."
+                static let invalidEmail = "Email must be a valid email."
+                static let networkError = "Network error. Please try again."
+                static let weakPassword =  "Password is too weak. Password must be 6 characters long or more."
+                static let wrongPassword = "Password is incorrect."
+                static let unknownError = "Unknown error occurred. Please try again later."
+                static let operationNotAllowed = "Email and password accounts are not enabled. Enable them in the Auth section of the Firebase console."
+            }
         }
         // Firestore
         struct Firestore {

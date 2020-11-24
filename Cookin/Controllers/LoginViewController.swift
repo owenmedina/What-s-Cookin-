@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -139,7 +140,7 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        // once the alert is shown and text field has started editing, hide the label
+        // after the validation label is shown and once editing has begun, hide the label
         switch textField.accessibilityIdentifier {
         case K.Accessibility.emailTextFieldIdentifier:
             UIView.animate(withDuration: K.standardAnimationDuration) {
@@ -165,13 +166,30 @@ extension LoginViewController: FirebaseAuthManagerDelegate {
         performSegue(withIdentifier: K.loginToHome, sender: self)
     }
     
-    func didFailWithError(_ error: Error) {
-        // Present an alert with error
-        passwordValidationLabel.text = K.Error.incorrectPassword
-        UIView.animate(withDuration: 0) {
-            self.passwordValidationLabel.isHidden = false
+    func didFailWithError(_ error: AuthErrorCode?) {
+        guard let authErrorCode = error else {
+            // Present alert using unknown error
+            infoAlert(message: K.Firebase.Auth.Error.unknownError, title: K.Alert.error)
+            return
         }
-        //passwordValidationLabel.text = K.incorrectPassword
-        print("Error occurred on Login screen")
+        switch authErrorCode {
+        case .invalidEmail:
+            emailValidationLabel.text = K.Firebase.Auth.Error.invalidEmail
+            UIView.animate(withDuration: 0) {
+                self.emailValidationLabel.isHidden = false
+            }
+            return
+        case .wrongPassword:
+            passwordValidationLabel.text = K.Firebase.Auth.Error.wrongPassword
+            UIView.animate(withDuration: 0) {
+                self.passwordValidationLabel.isHidden = false
+            }
+            return
+        default:
+            break
+        }
+        // Present an alert with error
+        infoAlert(message: authErrorCode.message)
+        print("Error occurred on Login screen: \(error)")
     }
 }

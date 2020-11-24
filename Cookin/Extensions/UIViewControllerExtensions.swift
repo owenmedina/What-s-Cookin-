@@ -33,4 +33,14 @@ internal extension UIViewController {
             self.view.frame.origin.y = 0
         }
     }
+    
+    func infoAlert(message: String, title: String = K.Alert.error) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: K.Alert.ok, style: .default, handler: { (action: UIAlertAction!) in
+            alert.dismiss(animated: true, completion: nil)
+           }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
 }
