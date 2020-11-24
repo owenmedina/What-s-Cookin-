@@ -25,7 +25,8 @@ struct K {
     }
     struct Alert {
         static let ok = "Ok"
-        static let error = "Error"
+        static let basicErrorTitle = "Error"
+        static let funnyErrorTitle = "Something smells fishy"
     }
     // Animations
     static let standardAnimationDuration = 0.25
@@ -77,4 +78,9 @@ struct K {
     static let registerToHome = "RegisterToHome"
     static let welcomeToRegister = "WelcomeToRegister"
     static let welcomeToLogin = "WelcomeToLogin"
+    // Storyboards
+    struct Storyboard {
+        static let alert = "Alert"
+        static let alertViewController = "AlertViewController"
+    }
 }

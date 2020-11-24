@@ -34,7 +34,7 @@ internal extension UIViewController {
         }
     }
     
-    func infoAlert(message: String, title: String = K.Alert.error) {
+    func infoAlert(message: String, title: String = K.Alert.basicErrorTitle) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: K.Alert.ok, style: .default, handler: { (action: UIAlertAction!) in

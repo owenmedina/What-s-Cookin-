@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     var textFields = [UITextField]()
     var validator = Validator()
     var firebaseAuthManager = FirebaseAuthManager()
+    var alertManager = AlertManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,7 +170,8 @@ extension LoginViewController: FirebaseAuthManagerDelegate {
     func didFailWithError(_ error: AuthErrorCode?) {
         guard let authErrorCode = error else {
             // Present alert using unknown error
-            infoAlert(message: K.Firebase.Auth.Error.unknownError, title: K.Alert.error)
+            let alert = alertManager.infoAlert(message: K.Firebase.Auth.Error.unknownError, image: nil, title: K.Alert.basicErrorTitle)
+            self.present(alert, animated: true, completion: nil)
             return
         }
         switch authErrorCode {
@@ -189,7 +191,9 @@ extension LoginViewController: FirebaseAuthManagerDelegate {
             break
         }
         // Present an alert with error
-        infoAlert(message: authErrorCode.message)
+        let alert = alertManager.infoAlert(message: K.Firebase.Auth.Error.unknownError, image: nil, title: K.Alert.basicErrorTitle)
+        self.present(alert, animated: true, completion: nil)
+//        infoAlert(message: authErrorCode.message)
         print("Error occurred on Login screen: \(error)")
     }
 }
