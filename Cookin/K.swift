@@ -23,9 +23,29 @@ struct K {
         static let passwordTextFieldLabel = "Password"
         static let nameTextFieldLabel = "Name"
     }
+    // Alert
     struct Alert {
         static let ok = "Ok"
         static let error = "Error"
+    }
+    // APIs
+    struct API {
+        struct Spoonacular {
+            static let complexSearchEndpoint = "https://api.spoonacular.com/recipes/complexSearch?instructionsRequired=true&limitLicense=true&number=1&sort=healthiness&addRecipeInformation=true&query="
+            static let addRecipeInformation = "addRecipeInformation"
+            static let addRecipeNutrition = "addRecipeNutrition"
+        }
+        
+        struct TheMealDB {
+            static let recipeByNameEndpoint = "https://www.themealdb.com/api/json/v1/1/search.php?s="
+            static let randomeRecipeEndpoint = "https://www.themealdb.com/api/json/v1/1/random.php"
+            static let recipeNameKey = "strMeal"
+            static let recipeInstructionsKey = "strInstructions"
+            static let imageURLKey = "strMealThumb"
+            static let ingredientBaseKey = "strIngredient"
+            static let ingredientMeasureBaseKey = "strMeasure"
+            static let stepsSeparator = "\r\n"
+        }
     }
     // Animations
     static let standardAnimationDuration = 0.25
@@ -43,6 +63,8 @@ struct K {
         static let invalidPassword = "Password must be at least 8 characters long and contain 1 letter and 1 number."
         static let invalidEmail = "Email must be a valid email."
         static let incorrectPassword = "Password is incorrect."
+        static let couldNotCreateURLFromString = "Invalid URL String:"
+        static let dataReturnedWasNil = "Data returned was nil"
     }
     // Firebase
     struct Firebase {
@@ -70,11 +92,17 @@ struct K {
     // Regular Expressions
     // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
     static let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
+    // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
     static let emailRegex = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?" + "@" + "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}" + "[A-Za-z]{2,8}"
     // Segues
     static let loginToHome = "LoginToHome"
     static let registerToHome = "RegisterToHome"
     static let welcomeToRegister = "WelcomeToRegister"
     static let welcomeToLogin = "WelcomeToLogin"
+    
+    // Shadows
+    static let standardShadowWidth: CGFloat = 3
+    static let standardShadowHeight: CGFloat = 3
+    static let standardShadowOpacity: Float = 0.4
+    static let standardShadowRadius: CGFloat = 4
 }

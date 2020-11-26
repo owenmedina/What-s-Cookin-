@@ -189,37 +189,48 @@
                         <outlet property="loginButton" destination="Xcf-z4-c4h" id="QSd-py-G8l"/>
                         <outlet property="passwordTextField" destination="uaY-TV-4qC" id="lOh-6a-b47"/>
                         <outlet property="passwordValidationLabel" destination="Say-eF-eeg" id="Kjt-Qk-epv"/>
-                        <segue destination="rKN-Jq-fj2" kind="show" identifier="LoginToHome" id="JG2-JM-b7T"/>
+                        <segue destination="IQk-Ll-aUj" kind="presentation" identifier="LoginToHome" id="JG2-JM-b7T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uR5-Jl-aq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="560" y="-203"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="sNH-yc-139">
             <objects>
-                <viewController id="rKN-Jq-fj2" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rKN-Jq-fj2" customClass="HomeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUz-DF-kZO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-Be-e7Y">
-                                <rect key="frame" x="37" y="188" width="180" height="173"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-zn-1yG" userLabel="Shadow View" customClass="CardView" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="24" y="102.5" width="272" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sGV-GJ-qSJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bc0-zn-1yG" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.25" id="2mx-WA-D3x"/>
+                            <constraint firstItem="bc0-zn-1yG" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.85" id="4dD-dw-Dqh"/>
+                            <constraint firstItem="bc0-zn-1yG" firstAttribute="centerX" secondItem="uUz-DF-kZO" secondAttribute="centerX" id="6eS-I5-upi"/>
+                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.2" id="uka-B9-iJ1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="b0N-0s-wB3"/>
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="b0N-0s-wB3"/>
+                    <connections>
+                        <outlet property="shadowView" destination="bc0-zn-1yG" id="4b1-HJ-ol1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fE3-rT-qXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530" y="70"/>
+            <point key="canvasLocation" x="3082.5" y="-378.75"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="5Cz-eI-pzJ">
@@ -338,16 +349,59 @@
                         <outlet property="passwordTextField" destination="ETf-VP-WOu" id="N0B-i6-rwr"/>
                         <outlet property="passwordValidationLabel" destination="BOI-ZB-kYf" id="eGE-QA-XV9"/>
                         <outlet property="registerButton" destination="ACB-f3-oGb" id="zUf-ZC-VNm"/>
-                        <segue destination="rKN-Jq-fj2" kind="show" identifier="RegisterToHome" id="aPO-Xo-ycU"/>
+                        <segue destination="IQk-Ll-aUj" kind="presentation" identifier="RegisterToHome" id="aPO-Xo-ycU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9G-tn-aJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558.75" y="512.5"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Wmr-ic-jkU">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="IQk-Ll-aUj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tFp-WO-s7g"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eSi-as-i20">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0Et-m3-lVT" kind="relationship" relationship="viewControllers" id="GKZ-jY-CpU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klf-U5-HPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="70"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Luv-nl-fuy">
+            <objects>
+                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="0Et-m3-lVT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="oBM-R4-YQa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" userInteractionEnabled="NO" contentMode="scaleToFill" largeTitles="YES" id="r0g-ex-oaz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="108.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="17"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="42"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rKN-Jq-fj2" kind="relationship" relationship="rootViewController" id="fRF-ei-Ig7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zt-FJ-dly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2291.25" y="-11.25"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aPO-Xo-ycU"/>
+        <segue reference="JG2-JM-b7T"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="Orange">

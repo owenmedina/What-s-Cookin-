@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
 		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
+		5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059B7256D920100F88F90 /* HomeViewController.swift */; };
+		5A6059BA256DBE3800F88F90 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059B9256DBE3800F88F90 /* CardView.swift */; };
+		5A6059CF256DEF2A00F88F90 /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059CE256DEF2A00F88F90 /* RecipeManager.swift */; };
+		5A6059ED256E09F000F88F90 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059EC256E09F000F88F90 /* Recipe.swift */; };
+		5A6059EF256E114500F88F90 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059EE256E114500F88F90 /* StringExtensions.swift */; };
+		5A6059F1256F349800F88F90 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059F0256F349800F88F90 /* RecipeData.swift */; };
 		5A80ADD425675ED4003EEAE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A80ADD325675ED4003EEAE7 /* GoogleService-Info.plist */; };
 		5A80ADD62567627B003EEAE7 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */; };
 		5A80ADD8256771EE003EEAE7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80ADD7256771EE003EEAE7 /* Validator.swift */; };
@@ -56,6 +62,12 @@
 /* Begin PBXFileReference section */
 		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5A6059B7256D920100F88F90 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5A6059B9256DBE3800F88F90 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5A6059CE256DEF2A00F88F90 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
+		5A6059EC256E09F000F88F90 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		5A6059EE256E114500F88F90 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		5A6059F0256F349800F88F90 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		5A80ADD325675ED4003EEAE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5A80ADD7256771EE003EEAE7 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -168,6 +180,9 @@
 				5A80ADD7256771EE003EEAE7 /* Validator.swift */,
 				5A605977256876C500F88F90 /* FirestoreManager.swift */,
 				5A60599D25687A5100F88F90 /* User.swift */,
+				5A6059CE256DEF2A00F88F90 /* RecipeManager.swift */,
+				5A6059EC256E09F000F88F90 /* Recipe.swift */,
+				5A6059F0256F349800F88F90 /* RecipeData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +195,7 @@
 				5AF225272563804700D1EB98 /* CurveView.swift */,
 				5AF225512565A33000D1EB98 /* BottomCurveView.swift */,
 				5AF2257B2566FE8D00D1EB98 /* UnderlineTextField.swift */,
+				5A6059B9256DBE3800F88F90 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +206,7 @@
 				5AF22513256374DB00D1EB98 /* WelcomeViewController.swift */,
 				5AF225562565BD6400D1EB98 /* LoginViewController.swift */,
 				5AF225592565C80400D1EB98 /* RegisterViewController.swift */,
+				5A6059B7256D920100F88F90 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +240,7 @@
 			children = (
 				5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */,
 				5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */,
+				5A6059EE256E114500F88F90 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,18 +373,24 @@
 				5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */,
 				5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */,
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
+				5A6059EF256E114500F88F90 /* StringExtensions.swift in Sources */,
 				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
 				5A80ADD8256771EE003EEAE7 /* Validator.swift in Sources */,
 				5AF2257C2566FE8D00D1EB98 /* UnderlineTextField.swift in Sources */,
 				5AF2252E2564601500D1EB98 /* K.swift in Sources */,
+				5A6059F1256F349800F88F90 /* RecipeData.swift in Sources */,
 				5A60599E25687A5100F88F90 /* User.swift in Sources */,
 				5A80ADD62567627B003EEAE7 /* FirebaseAuthManager.swift in Sources */,
 				5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */,
+				5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */,
+				5A6059CF256DEF2A00F88F90 /* RecipeManager.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,
+				5A6059BA256DBE3800F88F90 /* CardView.swift in Sources */,
 				5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */,
+				5A6059ED256E09F000F88F90 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
