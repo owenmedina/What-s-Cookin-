@@ -116,6 +116,10 @@ struct K {
     }
     
     // Views
+    struct HomeView {
+        static let featuredRecipeTitle = "Featured Recipe Title"
+        static let featuredRecipeImage = "Featured Recipe Image"
+    }
     struct View {
         static let standardCornerRadius = CGFloat(10)
     }
