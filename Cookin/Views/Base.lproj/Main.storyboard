@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HindSiliguri-Bold.ttf">
+            <string>HindSiliguri-Bold</string>
+        </array>
         <array key="HindSiliguri-Regular.ttf">
             <string>HindSiliguri-Regular</string>
         </array>
@@ -30,7 +33,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-Ev-zRo">
-                                <rect key="frame" x="20" y="63.5" width="192" height="116.5"/>
+                                <rect key="frame" x="20" y="52" width="192" height="128"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,7 +112,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
-                                <rect key="frame" x="16" y="46.5" width="256" height="89"/>
+                                <rect key="frame" x="16" y="38" width="256" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,7 +132,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
-                                <rect key="frame" x="80" y="287.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="287.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="Orange"/>
@@ -139,14 +142,14 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AB8-SI-ELh">
-                                <rect key="frame" x="40" y="209" width="240" height="14"/>
+                                <rect key="frame" x="40" y="209" width="240" height="19.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Say-eF-eeg">
-                                <rect key="frame" x="40" y="252" width="240" height="14"/>
+                                <rect key="frame" x="40" y="252" width="240" height="19.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Password Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
                                 <color key="textColor" name="Red"/>
@@ -204,9 +207,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-zn-1yG" userLabel="Shadow View" customClass="CardView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="24" y="102.5" width="272" height="120"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-zn-1yG" userLabel="Card View" customClass="CardView" customModule="Cookin" customModuleProvider="target">
+                                <rect key="frame" x="24" y="95.5" width="272" height="144"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQ5-iL-goy">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="144"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-vF-74w">
+                                        <rect key="frame" x="7" y="7" width="136" height="34"/>
+                                        <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="KQ5-iL-goy" firstAttribute="leading" secondItem="bc0-zn-1yG" secondAttribute="leading" id="21B-ZK-mXg"/>
+                                    <constraint firstItem="KQ5-iL-goy" firstAttribute="top" secondItem="bc0-zn-1yG" secondAttribute="top" id="C00-15-YUE"/>
+                                    <constraint firstItem="1sK-vF-74w" firstAttribute="top" secondItem="bc0-zn-1yG" secondAttribute="centerY" multiplier="0.1" id="FIK-OW-7xa"/>
+                                    <constraint firstAttribute="bottom" secondItem="KQ5-iL-goy" secondAttribute="bottom" id="LrW-z8-fOS"/>
+                                    <constraint firstItem="1sK-vF-74w" firstAttribute="width" secondItem="KQ5-iL-goy" secondAttribute="width" multiplier="0.5" id="Wjp-l4-L4F"/>
+                                    <constraint firstAttribute="trailing" secondItem="KQ5-iL-goy" secondAttribute="trailing" id="eJ5-wC-8hu"/>
+                                    <constraint firstItem="1sK-vF-74w" firstAttribute="leading" secondItem="bc0-zn-1yG" secondAttribute="centerX" multiplier="0.05" id="js5-ca-5c1"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -217,15 +240,17 @@
                         <viewLayoutGuide key="safeArea" id="sGV-GJ-qSJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bc0-zn-1yG" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.25" id="2mx-WA-D3x"/>
+                            <constraint firstItem="bc0-zn-1yG" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.3" id="2mx-WA-D3x"/>
                             <constraint firstItem="bc0-zn-1yG" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.85" id="4dD-dw-Dqh"/>
                             <constraint firstItem="bc0-zn-1yG" firstAttribute="centerX" secondItem="uUz-DF-kZO" secondAttribute="centerX" id="6eS-I5-upi"/>
-                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.2" id="uka-B9-iJ1"/>
+                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.1" id="uka-B9-iJ1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="b0N-0s-wB3"/>
                     <connections>
-                        <outlet property="shadowView" destination="bc0-zn-1yG" id="4b1-HJ-ol1"/>
+                        <outlet property="cardView" destination="bc0-zn-1yG" id="38w-1p-HdO"/>
+                        <outlet property="featuredImageView" destination="KQ5-iL-goy" id="Fef-O7-iVx"/>
+                        <outlet property="titleLabel" destination="1sK-vF-74w" id="1Cc-LB-RlK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fE3-rT-qXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -245,7 +270,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
-                                <rect key="frame" x="16" y="46.5" width="256" height="89"/>
+                                <rect key="frame" x="16" y="38" width="256" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -265,7 +290,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
-                                <rect key="frame" x="80" y="306.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="306.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" name="Orange"/>
@@ -282,14 +307,14 @@
                                 <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7q-eO-irs">
-                                <rect key="frame" x="40" y="191.5" width="240" height="15.5"/>
+                                <rect key="frame" x="40" y="191.5" width="240" height="21.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Name Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypm-MM-IQl">
-                                <rect key="frame" x="40" y="232.5" width="240" height="15.5"/>
+                                <rect key="frame" x="40" y="232.5" width="240" height="21.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
@@ -363,6 +388,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tFp-WO-s7g"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eSi-as-i20">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -381,13 +407,13 @@
                     <tabBarItem key="tabBarItem" title="Item" id="oBM-R4-YQa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" userInteractionEnabled="NO" contentMode="scaleToFill" largeTitles="YES" id="r0g-ex-oaz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="108.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="17"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="42"/>
+                            <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="35"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol RecipeManagerDelegate {
     func didFailWithError(_ error: Error)
@@ -78,7 +79,13 @@ struct RecipeManager {
             let decodedData = try decoder.decode(RecipeData.self, from: data)
             var recipes = [Recipe]()
             for mealData in decodedData.meals {
-                let imageURL = URL(string: mealData.imageURL)
+                var image: UIImage? = nil
+                if let imageURL = URL(string: mealData.imageURL) {
+                    if let data = try? Data(contentsOf: imageURL) {
+                        image = UIImage(data: data)
+                    }
+                }
+                
                 let sourceURL = URL(string: mealData.sourceURL ?? "")
                 let steps = parseSteps(mealData.instructions)
                 let ingredientNamesUnfiltered = [mealData.ingredient1, mealData.ingredient2, mealData.ingredient3, mealData.ingredient4, mealData.ingredient5, mealData.ingredient6, mealData.ingredient7, mealData.ingredient8, mealData.ingredient9, mealData.ingredient10, mealData.ingredient11, mealData.ingredient12, mealData.ingredient13, mealData.ingredient14, mealData.ingredient15, mealData.ingredient16, mealData.ingredient17, mealData.ingredient18, mealData.ingredient19, mealData.ingredient20]
@@ -92,7 +99,7 @@ struct RecipeManager {
                 }
                 let cuisine = Cuisine(rawValue: mealData.origin.lowercased()) ?? .unknown
                 
-                let recipe = Recipe(title: mealData.name, imageURL: imageURL, sourceURL: sourceURL, steps: steps, ingredients: ingredients, cuisine: cuisine)
+                let recipe = Recipe(title: mealData.name, image: image, sourceURL: sourceURL, steps: steps, ingredients: ingredients, cuisine: cuisine)
                 
                 recipes.append(recipe)
             }

@@ -105,4 +105,18 @@ struct K {
     static let standardShadowHeight: CGFloat = 3
     static let standardShadowOpacity: Float = 0.4
     static let standardShadowRadius: CGFloat = 4
+    
+    // Transparency
+    struct Transparency {
+        static let clear = CGFloat(0)
+        static let semiTransparent = CGFloat(0.2)
+        static let midTransparent = CGFloat(0.6)
+        static let semiOpaque = CGFloat(0.8)
+        static let opaque = CGFloat(1)
+    }
+    
+    // Views
+    struct View {
+        static let standardCornerRadius = CGFloat(10)
+    }
 }

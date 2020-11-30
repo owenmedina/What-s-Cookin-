@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 // TheMealDB API
 struct Recipe {
     var title: String
-    var imageURL: URL?
+    var image: UIImage?
     var sourceURL: URL?
     var steps: [String]
     var ingredients: [Ingredient]

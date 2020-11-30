@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C7C612570377900903491 /* UIImageViewExtensions.swift */; };
 		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
 		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
 		5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059B7256D920100F88F90 /* HomeViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A5C7C612570377900903491 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A6059B7256D920100F88F90 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				5AF2256425661B8300D1EB98 /* SelectorExtensions.swift */,
 				5AF2256925661E9D00D1EB98 /* UIViewControllerExtensions.swift */,
 				5A6059EE256E114500F88F90 /* StringExtensions.swift */,
+				5A5C7C612570377900903491 /* UIImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,
 				5A6059BA256DBE3800F88F90 /* CardView.swift in Sources */,
 				5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */,
+				5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */,
 				5A6059ED256E09F000F88F90 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
