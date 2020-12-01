@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var featuredImageView: UIImageView!
     @IBOutlet weak var cardView: CardView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    @IBOutlet weak var categoriesCollectionViewFlowLayout: UICollectionViewFlowLayout!
     fileprivate var recipeManager = RecipeManager()
     fileprivate var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
     
@@ -19,6 +21,9 @@ class HomeViewController: UIViewController {
         
         // Setup delegates
         recipeManager.delegate = self
+        categoriesCollectionView.delegate = self
+        
+        categoriesCollectionView.dataSource = self
         
         // Load up data
         recipeManager.fetchRandomRecipe()
@@ -52,8 +57,8 @@ extension HomeViewController: RecipeManagerDelegate {
         print("\(recipe.title) \(recipe.sourceURL) \(recipe.steps[0]) \(recipe.ingredients[0].name) \(recipe.ingredients[0].measure) \(recipe.cuisine.rawValue)")
         DispatchQueue.main.async {
             // Update UI
-            let text = [K.HomeView.featuredRecipeTitle: recipe.title]
-            let images = [K.HomeView.featuredRecipeImage: recipe.image]
+            let text = [K.HomeViewController.featuredRecipeTitle: recipe.title]
+            let images = [K.HomeViewController.featuredRecipeImage: recipe.image]
             self.updateViewsWithContent(text: text, images: images)
         }
         
@@ -84,10 +89,28 @@ extension HomeViewController {
             
             // Bring back labels (with proper content)
             self.titleLabel.isHidden = false
-            self.titleLabel.text = text[K.HomeView.featuredRecipeTitle] as? String
+            self.titleLabel.text = text[K.HomeViewController.featuredRecipeTitle] as? String
             
             // Bring in images
-            self.featuredImageView.image = images[K.HomeView.featuredRecipeImage] as? UIImage
+            self.featuredImageView.image = images[K.HomeViewController.featuredRecipeImage] as? UIImage
         }
+    }
+}
+
+//MARK: - Collection View Methods
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Categories.allCases.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeCollectionViewCell.identifier, for: indexPath) as! RecipeCollectionViewCell
+        cell.titleLabel.text = Categories.allCases[indexPath.row].rawValue.uppercased()
+        cell.backgroundColor = .lightGray
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.size.width * 0.4, height: collectionView.bounds.size.width * 0.4)
     }
 }

@@ -52,6 +52,25 @@ enum Cuisine: String {
     case vietnamese
 }
 
+enum Categories: String {
+    case beef
+    case breakfast
+    case chicken
+    case dessert
+    case goat
+    case lamb
+    case miscellaneous
+    case pasta
+    case pork
+    case seafood
+    case side
+    case starter
+    case vegan
+    case vegetarian
+    
+    static let allCases: [Categories] = [.beef, .breakfast, .chicken, .dessert, .goat, .lamb, .miscellaneous, .pasta, .pork, .seafood, .side, .starter, .vegan, .vegetarian]
+}
+
 // Spoonacular API
 //struct Recipe {
 //    var title: String

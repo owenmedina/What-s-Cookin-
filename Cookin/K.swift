@@ -45,6 +45,8 @@ struct K {
             static let ingredientBaseKey = "strIngredient"
             static let ingredientMeasureBaseKey = "strMeasure"
             static let stepsSeparator = "\r\n"
+            static let numberOfCuisines = 24 // Excluding Unknown
+            static let numberOfCategories = 13 // Excluding Miscellaneous
         }
     }
     // Animations
@@ -116,10 +118,16 @@ struct K {
     }
     
     // Views
-    struct HomeView {
+    struct HomeViewController {
         static let featuredRecipeTitle = "Featured Recipe Title"
         static let featuredRecipeImage = "Featured Recipe Image"
+        static let numberOfPlaceholderCells = 4
     }
+    
+    struct RecipeCollectionViewCell {
+        static let identifier = "Recipe Collection View Cell"
+    }
+    
     struct View {
         static let standardCornerRadius = CGFloat(10)
     }
