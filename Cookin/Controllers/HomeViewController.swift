@@ -130,20 +130,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.backgroundColor = .white
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: K.RecipeCollectionView.Header.identifier, for: indexPath)
-        
+
         return header
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height * 0.25)
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height * 0.2)
     }
-    
+
     //MARK: - Collection View Delegate Flow Layout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width * 0.45, height: collectionView.bounds.size.width * 0.45)
+        return CGSize(width: (collectionView.bounds.size.width * 0.45).rounded(), height: (collectionView.bounds.size.width * 0.45).rounded())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
