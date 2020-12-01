@@ -52,6 +52,16 @@ struct K {
     // Animations
     static let standardAnimationDuration = 0.25
     static let shortAnimationDuration = 0.10
+    // Assets
+    struct Assets {
+        struct Fonts {
+            struct Lora {
+                static let regular = "Lora-Regular"
+                static let bold = "Lora-Bold"
+                static let medium = "Lora-Medium"
+            }
+        }
+    }
     // Buttons
     static let buttonRadius = CGFloat(25)
     static let buttonBorderWidth = CGFloat(1)
@@ -92,10 +102,16 @@ struct K {
         }
     }
     // Regular Expressions
-    // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
+        // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
     static let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-    // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
+        // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
     static let emailRegex = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?" + "@" + "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}" + "[A-Za-z]{2,8}"
+    // Screens
+    struct Screens {
+        struct Home {
+            static let title = "Home"
+        }
+    }
     // Segues
     static let loginToHome = "LoginToHome"
     static let registerToHome = "RegisterToHome"
@@ -118,17 +134,32 @@ struct K {
     }
     
     // Views
+    struct CollectionView {
+        static let standardLineSpacing = CGFloat(8)
+        static let standardInterimSpacing = CGFloat(8)
+        static let standardLeftEdgeInset = CGFloat(8)
+        static let standardRightEdgeInset = CGFloat(8)
+        static let standardTopEdgeInset = CGFloat(4)
+        static let standardBottomEdgeInset = CGFloat(4)
+    }
+    
     struct HomeViewController {
         static let featuredRecipeTitle = "Featured Recipe Title"
         static let featuredRecipeImage = "Featured Recipe Image"
         static let numberOfPlaceholderCells = 4
     }
     
-    struct RecipeCollectionViewCell {
-        static let identifier = "Recipe Collection View Cell"
+    struct RecipeCollectionView {
+        struct Cell {
+            static let identifier = "Recipe Collection View Cell"
+        }
+        struct Header {
+            static let identifier = "Recipe Collection View Header"
+        }
+        
     }
     
-    struct View {
+    struct ShadowRoundedView {
         static let standardCornerRadius = CGFloat(10)
     }
 }

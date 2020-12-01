@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Must check Opaque, Clears Graphics Context and Autoresize Subviews in Attribute Inspector (uncheck everything else on the view)
 protocol ShadowedRoundedView {
     var cornerRadius: CGFloat { get set }
     var shadowColor: UIColor { get set }
