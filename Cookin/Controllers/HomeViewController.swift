@@ -14,6 +14,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var categoriesCollectionViewFlowLayout: UICollectionViewFlowLayout!
     fileprivate var recipeManager = RecipeManager()
+    fileprivate var unsplashManager = UnsplashManager()
+    
+    // TODO: Find final solution (temporary code)
+    fileprivate var images = [String: UIImage]()
+    fileprivate var indexPaths = [String: IndexPath]()
+    
     fileprivate var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
     
     override func viewDidLoad() {
@@ -23,18 +29,19 @@ class HomeViewController: UIViewController {
         recipeManager.delegate = self
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
+        unsplashManager.delegate = self
         
         // Load up data
         recipeManager.fetchRandomRecipe()
         
         // Setup UI
         // Navigation Bar
-            // Setting the background image to an empty image will erase the border
-            // When using a custom shadow image, a custom background image must all be provided
+        // Setting the background image to an empty image will erase the border
+        // When using a custom shadow image, a custom background image must all be provided
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-            // Add a left-aligned title
+        // Add a left-aligned title
         let navigationBarLabel = UILabel()
         navigationBarLabel.text = K.Screens.Home.title
         navigationBarLabel.font = UIFont(name: K.Assets.Fonts.Lora.regular, size: 21)
@@ -51,6 +58,7 @@ class HomeViewController: UIViewController {
         // Categories Collection View
         categoriesCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: K.CollectionView.standardTopEdgeInset, left: K.CollectionView.standardLeftEdgeInset, bottom: K.CollectionView.standardBottomEdgeInset, right: K.CollectionView.standardRightEdgeInset)
         categoriesCollectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
+        categoriesCollectionViewFlowLayout.estimatedItemSize = .zero
         // Setup Skeleton UI
         activateSkeletonView()
     }
@@ -58,7 +66,9 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        featuredImageView.addPartialSemiTransparentOverlay()
+        //self.categoriesCollectionViewFlowLayout.invalidateLayout()
+        categoriesCollectionView.reloadData()
+        featuredImageView.addPartialSemiTransparentOverlay(usingBoundsOf: featuredImageView.superview)
     }
     
 }
@@ -78,8 +88,9 @@ extension HomeViewController: RecipeManagerDelegate {
         DispatchQueue.main.async {
             // Update UI
             let text = [K.HomeViewController.featuredRecipeTitle: recipe.title]
-            let images = [K.HomeViewController.featuredRecipeImage: recipe.image]
-            self.updateViewsWithContent(text: text, images: images)
+            self.images[K.HomeViewController.featuredRecipeImage] = recipe.image
+            self.updateViewsWithTextContent(text)
+            self.updateViewsWithImageContent()
         }
         
     }
@@ -102,7 +113,7 @@ extension HomeViewController {
         titleLabel.isHidden = true
     }
     
-    fileprivate func updateViewsWithContent(text: [String: String?], images: [String: UIImage?]) {
+    fileprivate func updateViewsWithTextContent(_ text: [String: String?]) {
         DispatchQueue.main.async {
             // Unblur Navigation Bar Title
             self.blurView.effect = nil
@@ -110,10 +121,12 @@ extension HomeViewController {
             // Bring back labels (with proper content)
             self.titleLabel.isHidden = false
             self.titleLabel.text = text[K.HomeViewController.featuredRecipeTitle] as? String
-            
-            // Bring in images
-            self.featuredImageView.image = images[K.HomeViewController.featuredRecipeImage] as? UIImage
         }
+    }
+    
+    fileprivate func updateViewsWithImageContent() {
+        // Bring in images
+        self.featuredImageView.image = images[K.HomeViewController.featuredRecipeImage]
     }
 }
 
@@ -126,24 +139,44 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeCollectionView.Cell.identifier, for: indexPath) as! RecipeCollectionViewCell
-        cell.titleLabel.text = Categories.allCases[indexPath.row].rawValue.uppercased()
-        cell.backgroundColor = .white
+        let cellTitle = Categories.allCases[indexPath.row].rawValue.uppercased()
+        cell.titleLabel.text = cellTitle
+        cell.image.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+        // If reused cell already has an overlay do not add another overlay
+        if cell.image.layer.sublayers?.first == nil {
+            cell.image.addPartialSemiTransparentOverlay(usingBoundsOf: cell)
+        }
+        
+        var keyword = cellTitle
+        if Categories.allCases[indexPath.row] == .miscellaneous {
+            keyword = K.API.Unsplash.miscellaneousKeyword.capitalized
+        } else if Categories.allCases[indexPath.row] == .starter {
+            keyword = K.API.Unsplash.starterKeyword.capitalized
+        }
+        
+        if indexPaths[keyword] == nil {
+            unsplashManager.findImage(for: keyword)
+            indexPaths[keyword] = indexPath
+        }
+        
+        cell.image.image = images[keyword]
+
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: K.RecipeCollectionView.Header.identifier, for: indexPath)
-
+        
         return header
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height * 0.2)
     }
-
+    
     //MARK: - Collection View Delegate Flow Layout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.size.width * 0.45).rounded(), height: (collectionView.bounds.size.width * 0.45).rounded())
+        return CGSize(width: (collectionView.frame.size.width * 0.45).rounded(), height: (collectionView.frame.size.width * 0.45).rounded())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -153,4 +186,27 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return K.CollectionView.standardInterimSpacing
     }
+    
+    
+}
+
+//MARK: - UnplashManagerDelegate Methods
+extension HomeViewController: UnsplashManagerDelegate {
+    func didFailFetchingPhoto(withError error: Error) {
+        print("Failed fetching photo: \(error)")
+    }
+    
+    func didFindPhoto(_ manager: UnsplashManager, photo: Photo) {
+        print("Found photo!")
+        
+        // TODO: Find final solution (temporary code)
+        images[photo.keyword] = photo.photo
+        if let indexPath = indexPaths[photo.keyword] {
+            DispatchQueue.main.async {
+                self.categoriesCollectionView.reloadItems(at: [indexPath])
+            }
+        }
+        
+    }
+    
 }

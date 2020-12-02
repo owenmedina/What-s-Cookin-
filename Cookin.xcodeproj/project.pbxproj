@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5A0E6D102575E7460046ECAA /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D0F2575E7460046ECAA /* RecipeCollectionViewCell.swift */; };
+		5A0E6D18257731EE0046ECAA /* Unsplash-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A0E6D17257731EE0046ECAA /* Unsplash-Info.plist */; };
+		5A0E6D1A257733A30046ECAA /* UnsplashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D19257733A30046ECAA /* UnsplashManager.swift */; };
+		5A0E6D1C257742F40046ECAA /* UnsplashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D1B257742F40046ECAA /* UnsplashData.swift */; };
+		5A0E6D1E257820840046ECAA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D1D257820840046ECAA /* Photo.swift */; };
 		5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C7C612570377900903491 /* UIImageViewExtensions.swift */; };
 		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
 		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
@@ -63,6 +67,10 @@
 
 /* Begin PBXFileReference section */
 		5A0E6D0F2575E7460046ECAA /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5A0E6D17257731EE0046ECAA /* Unsplash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unsplash-Info.plist"; sourceTree = "<group>"; };
+		5A0E6D19257733A30046ECAA /* UnsplashManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashManager.swift; sourceTree = "<group>"; };
+		5A0E6D1B257742F40046ECAA /* UnsplashData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashData.swift; sourceTree = "<group>"; };
+		5A0E6D1D257820840046ECAA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5A5C7C612570377900903491 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 		5AF22503256374DB00D1EB98 = {
 			isa = PBXGroup;
 			children = (
+				5A0E6D17257731EE0046ECAA /* Unsplash-Info.plist */,
 				5AF2250E256374DB00D1EB98 /* What's Cookin? */,
 				5AF2250D256374DB00D1EB98 /* Products */,
 				02D86CCB71FF59F4F6090744 /* Pods */,
@@ -185,8 +194,11 @@
 				5A605977256876C500F88F90 /* FirestoreManager.swift */,
 				5A60599D25687A5100F88F90 /* User.swift */,
 				5A6059CE256DEF2A00F88F90 /* RecipeManager.swift */,
+				5A0E6D19257733A30046ECAA /* UnsplashManager.swift */,
 				5A6059EC256E09F000F88F90 /* Recipe.swift */,
 				5A6059F0256F349800F88F90 /* RecipeData.swift */,
+				5A0E6D1B257742F40046ECAA /* UnsplashData.swift */,
+				5A0E6D1D257820840046ECAA /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +325,7 @@
 			files = (
 				5A80ADD425675ED4003EEAE7 /* GoogleService-Info.plist in Resources */,
 				5AF2251C256374DC00D1EB98 /* LaunchScreen.storyboard in Resources */,
+				5A0E6D18257731EE0046ECAA /* Unsplash-Info.plist in Resources */,
 				5AF225342564B49100D1EB98 /* Lora-Regular.ttf in Resources */,
 				5AF22519256374DC00D1EB98 /* Assets.xcassets in Resources */,
 				5AF225472564B73700D1EB98 /* WorkSans-Medium.ttf in Resources */,
@@ -377,10 +390,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */,
+				5A0E6D1A257733A30046ECAA /* UnsplashManager.swift in Sources */,
 				5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */,
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
 				5A6059EF256E114500F88F90 /* StringExtensions.swift in Sources */,
 				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
+				5A0E6D1E257820840046ECAA /* Photo.swift in Sources */,
+				5A0E6D1C257742F40046ECAA /* UnsplashData.swift in Sources */,
 				5AF225282563804700D1EB98 /* CurveView.swift in Sources */,
 				5A80ADD8256771EE003EEAE7 /* Validator.swift in Sources */,
 				5AF2257C2566FE8D00D1EB98 /* UnderlineTextField.swift in Sources */,

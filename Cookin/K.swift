@@ -48,6 +48,32 @@ struct K {
             static let numberOfCuisines = 24 // Excluding Unknown
             static let numberOfCategories = 13 // Excluding Miscellaneous
         }
+        
+        struct Unsplash {
+            struct Error {
+                static let couldNotCreateURLForPhotoSearch = "Could not create URL for fetching photo."
+                static let couldNotCreateURLForCreatingImage = "Could not create URL for creating image."
+                static let couldNotAccessData = "Could not access data."
+                static let couldNotConvertDataToUIImage = "Could not convert data to UIImage."
+                static let couldNotGetDataFromImageURL = "Could not get data from image URL."
+                static let couldNotCreateImageFromData = "Could not create image from data."
+                static let noResultsFound = "No results found."
+            }
+            struct Plist {
+                static let fileName = "Unsplash-Info"
+                static let apiKey = "API_KEY"
+            }
+            static let searchPhotoByKeywordEndpoint = "https://api.unsplash.com/search/photos?"
+            static let randomPhotoEndpoint = "https://api.unsplash.com/photos/random?"
+            static let numberOfPagesParameter = "page"
+            static let numberOfPhotosPerPageParameter = "per_page"
+            static let keywordParameter = "query"
+            static let orientationParameter = "orientation"
+            static let apiKeyParameter = "client_id"
+            static let starterKeyword = "appetizer"
+            static let miscellaneousKeyword = "exotic"
+            static let dishKeyword = "dish"
+        }
     }
     // Animations
     static let standardAnimationDuration = 0.25
@@ -137,8 +163,8 @@ struct K {
     struct CollectionView {
         static let standardLineSpacing = CGFloat(8)
         static let standardInterimSpacing = CGFloat(8)
-        static let standardLeftEdgeInset = CGFloat(8)
-        static let standardRightEdgeInset = CGFloat(8)
+        static let standardLeftEdgeInset = CGFloat(10)
+        static let standardRightEdgeInset = CGFloat(10)
         static let standardTopEdgeInset = CGFloat(4)
         static let standardBottomEdgeInset = CGFloat(4)
     }

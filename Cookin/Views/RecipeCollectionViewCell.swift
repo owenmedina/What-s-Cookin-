@@ -9,7 +9,8 @@ import UIKit
 
 class RecipeCollectionViewCell: UICollectionViewCell, ShadowedRoundedView {
     @IBOutlet weak var titleLabel: UILabel!
-
+    @IBOutlet weak var image: UIImageView!
+    
     @IBInspectable var cornerRadius: CGFloat = K.ShadowRoundedView.standardCornerRadius {
         didSet {
             self.setNeedsLayout()
