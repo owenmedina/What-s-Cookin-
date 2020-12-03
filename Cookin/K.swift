@@ -145,7 +145,7 @@ struct K {
         static let welcomeToRegister = "WelcomeToRegister"
         static let welcomeToLogin = "WelcomeToLogin"
         static let homeToRecipeDetail = "HomeToRecipeDetail"
-        static let homeToCategories = "HomeToCategories"
+        static let homeToCategory = "HomeToCategory"
     }
     // Shadows
     static let standardShadowWidth: CGFloat = 3

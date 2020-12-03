@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesViewController: UIViewController {
+class CategoryViewController: UIViewController {
     var categoryName: String?
     
     override func viewDidLoad() {

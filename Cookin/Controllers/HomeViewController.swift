@@ -10,7 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var featuredImageView: UIImageView!
     @IBOutlet weak var cardView: CardView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var navigationBarTitleLabel: UILabel!
+    @IBOutlet weak var featuredRecipeTitleLabel: UILabel!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var categoriesCollectionViewFlowLayout: UICollectionViewFlowLayout!
     fileprivate var recipeManager = RecipeManager()
@@ -44,17 +45,17 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
         // Add a left-aligned title
-        let navigationBarLabel = UILabel()
-        navigationBarLabel.text = K.Screens.Home.title
-        navigationBarLabel.font = UIFont(name: K.Assets.Fonts.Lora.regular, size: 21)
-        navigationBarLabel.textAlignment = .left
-
-        navigationBarLabel.translatesAutoresizingMaskIntoConstraints = false
-        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerX, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerX, multiplier: 1, constant: 0))
-        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .width, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .width, multiplier: 1, constant: 0))
-        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerY, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerY, multiplier: 1, constant: 0))
-        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .height, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .height, multiplier: 1, constant: 0))
-        self.navigationItem.titleView = navigationBarLabel
+//        let navigationBarLabel = UILabel()
+//        navigationBarLabel.text = K.Screens.Home.title
+//        navigationBarLabel.font = UIFont(name: K.Assets.Fonts.Lora.regular, size: 21)
+//        navigationBarLabel.textAlignment = .left
+//
+//        navigationBarLabel.translatesAutoresizingMaskIntoConstraints = false
+//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerX, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerX, multiplier: 1, constant: 0))
+//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .width, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .width, multiplier: 1, constant: 0))
+//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerY, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerY, multiplier: 1, constant: 0))
+//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .height, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .height, multiplier: 1, constant: 0))
+//        self.navigationItem.titleView = navigationBarLabel
         // Featured Image View
         featuredImageView.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
         // Categories Collection View
@@ -82,8 +83,8 @@ class HomeViewController: UIViewController {
             let destination = segue.destination as! RecipeViewController
             destination.recipe = featuredRecipe
             
-        } else if segue.identifier == K.Segue.homeToCategories {
-            let destination = segue.destination as! CategoriesViewController
+        } else if segue.identifier == K.Segue.homeToCategory {
+            let destination = segue.destination as! CategoryViewController
             destination.categoryName = selectedCategory
         }
     }
@@ -127,7 +128,7 @@ extension HomeViewController {
             self.navigationController?.navigationBar.addSubview(blurView)
         }
         // Hide labels on the Card Views
-        titleLabel.isHidden = true
+        featuredRecipeTitleLabel.isHidden = true
     }
     
     fileprivate func updateViewsWithTextContent(_ text: [String: String?]) {
@@ -137,8 +138,8 @@ extension HomeViewController {
             self.blurView.removeFromSuperview()
             
             // Bring back labels (with proper content)
-            self.titleLabel.isHidden = false
-            self.titleLabel.text = text[K.HomeViewController.featuredRecipeTitle] as? String
+            self.featuredRecipeTitleLabel.isHidden = false
+            self.featuredRecipeTitleLabel.text = text[K.HomeViewController.featuredRecipeTitle] as? String
         }
     }
     
@@ -157,7 +158,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeCollectionView.Cell.identifier, for: indexPath) as! RecipeCollectionViewCell
-        let cellTitle = Categories.allCases[indexPath.row].rawValue.uppercased()
+        let cellTitle = Categories.allCases[indexPath.row].rawValue.capitalized
         cell.titleLabel.text = cellTitle
         cell.image.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
         // If reused cell already has an overlay do not add another overlay
@@ -209,7 +210,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         selectedCategory = Categories.allCases[indexPath.item].rawValue.capitalized
-        performSegue(withIdentifier: K.Segue.homeToCategories, sender: self)
+        performSegue(withIdentifier: K.Segue.homeToCategory, sender: self)
     }
     
 }
