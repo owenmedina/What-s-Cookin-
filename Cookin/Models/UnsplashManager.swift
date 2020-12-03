@@ -28,38 +28,6 @@ struct UnsplashManager {
       }
     }
     
-//    func performRequest(withURLString urlString: String) {
-//        let urlString = "\(K.API.Unsplash.searchPhotoByKeywordEndpoint)\(K.API.Unsplash.keywordParameter)=\(keyword)&\(K.API.Unsplash.numberOfPagesParameter)=\(numberOfPages)&\(K.API.Unsplash.numberOfPhotosPerPageParameter)=\(photosPerPage)&\(K.API.Unsplash.orientationParameter)=\(orientation.rawValue)&\(K.API.Unsplash.apiKeyParameter)=\(apiKey)"
-//        
-//        guard let url = URL(string: urlString) else {
-//            delegate?.didFailFetchingPhoto(withError: UnsplashError(K.API.Unsplash.Error.couldNotCreateURLForPhotoSearch))
-//            return
-//        }
-//        
-//        let session = URLSession(configuration: .default)
-//        
-//        let task = session.dataTask(with: url) { (data, response, error) in
-//            if error != nil {
-//                delegate?.didFailFetchingPhoto(withError: error!)
-//                return
-//            }
-//            
-//            guard let data = data else {
-//                delegate?.didFailFetchingPhoto(withError: UnsplashError(K.API.Unsplash.Error.couldNotAccessData))
-//                return
-//            }
-//            
-//            if let photo = parseToPhoto(data) {
-//                return
-//            }
-////            // Print raw data (testing)
-////            let dataString = String(data: data, encoding: .utf8) // utf-8 is just standard for encoding text in websites
-////            print("data: \(dataString)")
-//        }
-//        
-//        task.resume()
-//    }
-    
     func findImage(for keyword: String, numberOfPages: Int = 1, photosPerPage: Int = 1, orientation: Orientation = .squarish) {
         let keywords = "\(keyword) \(K.API.Unsplash.dishKeyword)"
         var urlString = "\(K.API.Unsplash.searchPhotoByKeywordEndpoint)\(K.API.Unsplash.keywordParameter)=\(keywords)&\(K.API.Unsplash.numberOfPagesParameter)=\(numberOfPages)&\(K.API.Unsplash.numberOfPhotosPerPageParameter)=\(photosPerPage)&\(K.API.Unsplash.orientationParameter)=\(orientation.rawValue)&\(K.API.Unsplash.apiKeyParameter)=\(apiKey)"

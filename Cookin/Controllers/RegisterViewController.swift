@@ -150,7 +150,7 @@ extension RegisterViewController: UITextFieldDelegate {
 extension RegisterViewController: FirebaseAuthManagerDelegate {
     func didSignIn(_ firebaseAuthManager: FirebaseAuthManager) {
         print("Successful sign in!")
-        performSegue(withIdentifier: K.registerToHome, sender: self)
+        performSegue(withIdentifier: K.Segue.registerToHome, sender: self)
     }
     
     func didFailWithError(_ error: AuthErrorCode?) {

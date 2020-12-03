@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-Ev-zRo">
-                                <rect key="frame" x="20" y="63.5" width="192" height="116.5"/>
+                                <rect key="frame" x="20" y="52" width="192" height="128"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
-                                <rect key="frame" x="16" y="46.5" width="256" height="89"/>
+                                <rect key="frame" x="16" y="38" width="256" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,7 +139,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
-                                <rect key="frame" x="80" y="287.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="287.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="Orange"/>
@@ -149,14 +149,14 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AB8-SI-ELh">
-                                <rect key="frame" x="40" y="209" width="240" height="14"/>
+                                <rect key="frame" x="40" y="209" width="240" height="19.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Say-eF-eeg">
-                                <rect key="frame" x="40" y="252" width="240" height="14"/>
+                                <rect key="frame" x="40" y="252" width="240" height="19.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Password Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
                                 <color key="textColor" name="Red"/>
@@ -228,6 +228,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="KQ5-iL-goy" firstAttribute="leading" secondItem="bc0-zn-1yG" secondAttribute="leading" id="21B-ZK-mXg"/>
                                     <constraint firstItem="KQ5-iL-goy" firstAttribute="top" secondItem="bc0-zn-1yG" secondAttribute="top" id="C00-15-YUE"/>
@@ -242,6 +243,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="w8c-Ug-Tuf" appends="YES" id="qc9-qk-JIF"/>
+                                </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-cM-MgC">
                                 <rect key="frame" x="10.5" y="215" width="299" height="216"/>
@@ -262,6 +266,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-8T-muz">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-ki-FXd">
                                                     <rect key="frame" x="6.5" y="6.5" width="76" height="24.5"/>
@@ -319,18 +324,53 @@
                             <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.2" id="uka-B9-iJ1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="b0N-0s-wB3"/>
+                    <navigationItem key="navigationItem" id="b0N-0s-wB3"/>
                     <connections>
                         <outlet property="cardView" destination="bc0-zn-1yG" id="38w-1p-HdO"/>
                         <outlet property="categoriesCollectionView" destination="EYr-cM-MgC" id="0Ag-TD-zgp"/>
                         <outlet property="categoriesCollectionViewFlowLayout" destination="Oco-hM-vg9" id="I3u-Hx-PLl"/>
                         <outlet property="featuredImageView" destination="KQ5-iL-goy" id="Fef-O7-iVx"/>
                         <outlet property="titleLabel" destination="1sK-vF-74w" id="1Cc-LB-RlK"/>
+                        <segue destination="OPe-3J-wpG" kind="show" identifier="HomeToRecipeDetail" id="U42-Vs-EBA"/>
+                        <segue destination="oGt-Ag-Ag3" kind="show" identifier="HomeToCategories" id="kcX-It-Kf3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fE3-rT-qXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="w8c-Ug-Tuf" userLabel="Featured Recipe Gesture Recognizer">
+                    <connections>
+                        <action selector="featuredRecipeTapped:" destination="rKN-Jq-fj2" id="ktX-AE-b9Q"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3082.5" y="-378.75"/>
+            <point key="canvasLocation" x="3073" y="-605"/>
+        </scene>
+        <!--Recipe View Controller-->
+        <scene sceneID="cba-zy-G9T">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="OPe-3J-wpG" customClass="RecipeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PGQ-2H-Zjj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDQ-TC-pKx">
+                                <rect key="frame" x="71" y="174" width="178" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Axv-O1-mPI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MJ0-Ed-kMf"/>
+                    <connections>
+                        <outlet property="label" destination="HDQ-TC-pKx" id="Vos-lo-cTI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BO9-ei-L7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3984" y="-994"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="5Cz-eI-pzJ">
@@ -345,7 +385,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
-                                <rect key="frame" x="16" y="46.5" width="256" height="89"/>
+                                <rect key="frame" x="16" y="38" width="256" height="97.5"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -365,7 +405,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
-                                <rect key="frame" x="80" y="306.5" width="160" height="35"/>
+                                <rect key="frame" x="80" y="306.5" width="160" height="43"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" name="Orange"/>
@@ -382,14 +422,14 @@
                                 <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7q-eO-irs">
-                                <rect key="frame" x="40" y="191.5" width="240" height="15.5"/>
+                                <rect key="frame" x="40" y="191.5" width="240" height="21.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Name Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypm-MM-IQl">
-                                <rect key="frame" x="40" y="232.5" width="240" height="15.5"/>
+                                <rect key="frame" x="40" y="232.5" width="240" height="21.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
@@ -478,14 +518,15 @@
         <!--Home-->
         <scene sceneID="Luv-nl-fuy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zt-FJ-dly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="0Et-m3-lVT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="oBM-R4-YQa"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" userInteractionEnabled="NO" contentMode="scaleToFill" id="r0g-ex-oaz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r0g-ex-oaz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="19"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="35"/>
@@ -496,13 +537,28 @@
                         <segue destination="rKN-Jq-fj2" kind="relationship" relationship="rootViewController" id="fRF-ei-Ig7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7zt-FJ-dly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2291.25" y="-11.25"/>
+            <point key="canvasLocation" x="2286" y="-605"/>
+        </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="Ozb-PQ-sFX">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="oGt-Ag-Ag3" customClass="CategoriesViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nXb-mh-vSY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="z7U-JP-Vv4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0HY-WG-wjm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s33-94-teG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3983" y="-260"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JG2-JM-b7T"/>
+        <segue reference="aPO-Xo-ycU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="Orange">

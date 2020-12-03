@@ -22,13 +22,4 @@ extension UIImageView {
         }
         
     }
-    
-//    open override func layoutSubviews() {
-//        super.layoutSubviews()
-//        
-//        if let partialSemiTransparentOverlay = self.layer.sublayers?.first, let superview = self.superview {
-//            partialSemiTransparentOverlay.frame = superview.bounds
-//        }
-//        
-//    }
 }

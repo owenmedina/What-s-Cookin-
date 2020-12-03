@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var categoriesCollectionViewFlowLayout: UICollectionViewFlowLayout!
     fileprivate var recipeManager = RecipeManager()
     fileprivate var unsplashManager = UnsplashManager()
+    fileprivate var featuredRecipe = Recipe(title: "", steps: [""], ingredients: [Ingredient(name: "", measure: "")], cuisine: .unknown)
+    fileprivate var selectedCategory = ""
     
     // TODO: Find final solution (temporary code)
     fileprivate var images = [String: UIImage]()
@@ -46,7 +48,7 @@ class HomeViewController: UIViewController {
         navigationBarLabel.text = K.Screens.Home.title
         navigationBarLabel.font = UIFont(name: K.Assets.Fonts.Lora.regular, size: 21)
         navigationBarLabel.textAlignment = .left
-        
+
         navigationBarLabel.translatesAutoresizingMaskIntoConstraints = false
         navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerX, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerX, multiplier: 1, constant: 0))
         navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .width, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .width, multiplier: 1, constant: 0))
@@ -71,6 +73,20 @@ class HomeViewController: UIViewController {
         featuredImageView.addPartialSemiTransparentOverlay(usingBoundsOf: featuredImageView.superview)
     }
     
+    @IBAction func featuredRecipeTapped(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: K.Segue.homeToRecipeDetail, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segue.homeToRecipeDetail {
+            let destination = segue.destination as! RecipeViewController
+            destination.recipe = featuredRecipe
+            
+        } else if segue.identifier == K.Segue.homeToCategories {
+            let destination = segue.destination as! CategoriesViewController
+            destination.categoryName = selectedCategory
+        }
+    }
 }
 
 //MARK: - RecipeManagerDelegate Methods
@@ -85,6 +101,7 @@ extension HomeViewController: RecipeManagerDelegate {
     func didFetchRandomRecipe(_ manager: RecipeManager, recipe: Recipe) {
         print("didFetchRandomRecipe in HomeViewController")
         print("\(recipe.title) \(recipe.sourceURL) \(recipe.steps[0]) \(recipe.ingredients[0].name) \(recipe.ingredients[0].measure) \(recipe.cuisine.rawValue)")
+        featuredRecipe = recipe
         DispatchQueue.main.async {
             // Update UI
             let text = [K.HomeViewController.featuredRecipeTitle: recipe.title]
@@ -117,6 +134,7 @@ extension HomeViewController {
         DispatchQueue.main.async {
             // Unblur Navigation Bar Title
             self.blurView.effect = nil
+            self.blurView.removeFromSuperview()
             
             // Bring back labels (with proper content)
             self.titleLabel.isHidden = false
@@ -187,6 +205,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return K.CollectionView.standardInterimSpacing
     }
     
+    //MARK: - Collection View Delegate Methods
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        selectedCategory = Categories.allCases[indexPath.item].rawValue.capitalized
+        performSegue(withIdentifier: K.Segue.homeToCategories, sender: self)
+    }
     
 }
 

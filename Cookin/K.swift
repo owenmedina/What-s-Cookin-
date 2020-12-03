@@ -139,11 +139,14 @@ struct K {
         }
     }
     // Segues
-    static let loginToHome = "LoginToHome"
-    static let registerToHome = "RegisterToHome"
-    static let welcomeToRegister = "WelcomeToRegister"
-    static let welcomeToLogin = "WelcomeToLogin"
-    
+    struct Segue {
+        static let loginToHome = "LoginToHome"
+        static let registerToHome = "RegisterToHome"
+        static let welcomeToRegister = "WelcomeToRegister"
+        static let welcomeToLogin = "WelcomeToLogin"
+        static let homeToRecipeDetail = "HomeToRecipeDetail"
+        static let homeToCategories = "HomeToCategories"
+    }
     // Shadows
     static let standardShadowWidth: CGFloat = 3
     static let standardShadowHeight: CGFloat = 3

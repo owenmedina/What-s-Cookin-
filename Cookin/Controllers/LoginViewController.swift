@@ -163,7 +163,7 @@ extension LoginViewController: UITextFieldDelegate {
 //MARK: - FirebaseAuthManagerDelegate Methods
 extension LoginViewController: FirebaseAuthManagerDelegate {
     func didSignIn(_ firebaseAuthManager: FirebaseAuthManager) {
-        performSegue(withIdentifier: K.loginToHome, sender: self)
+        performSegue(withIdentifier: K.Segue.loginToHome, sender: self)
     }
     
     func didFailWithError(_ error: AuthErrorCode?) {
