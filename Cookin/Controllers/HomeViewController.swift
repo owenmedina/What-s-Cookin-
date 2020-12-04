@@ -174,7 +174,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if indexPaths[keyword] == nil {
-            unsplashManager.findImage(for: keyword)
+            //unsplashManager.findImage(for: keyword)
             indexPaths[keyword] = indexPath
         }
         

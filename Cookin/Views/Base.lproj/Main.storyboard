@@ -218,16 +218,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-zn-1yG" userLabel="Card View" customClass="CardView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="24" y="62.5" width="272" height="144"/>
+                                <rect key="frame" x="24" y="72" width="272" height="144"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQ5-iL-goy">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="144"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-vF-74w">
-                                        <rect key="frame" x="7" y="7" width="136" height="49"/>
-                                        <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Recipe Title" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-vF-74w">
+                                        <rect key="frame" x="7" y="7" width="126.5" height="56"/>
+                                        <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="42"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="42"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -237,7 +243,8 @@
                                     <constraint firstItem="KQ5-iL-goy" firstAttribute="top" secondItem="bc0-zn-1yG" secondAttribute="top" id="C00-15-YUE"/>
                                     <constraint firstItem="1sK-vF-74w" firstAttribute="top" secondItem="bc0-zn-1yG" secondAttribute="centerY" multiplier="0.1" id="FIK-OW-7xa"/>
                                     <constraint firstAttribute="bottom" secondItem="KQ5-iL-goy" secondAttribute="bottom" id="LrW-z8-fOS"/>
-                                    <constraint firstItem="1sK-vF-74w" firstAttribute="width" secondItem="KQ5-iL-goy" secondAttribute="width" multiplier="0.5" id="Wjp-l4-L4F"/>
+                                    <constraint firstItem="1sK-vF-74w" firstAttribute="height" relation="lessThanOrEqual" secondItem="bc0-zn-1yG" secondAttribute="height" multiplier="0.65" id="WRc-lT-dIC"/>
+                                    <constraint firstItem="1sK-vF-74w" firstAttribute="width" relation="lessThanOrEqual" secondItem="KQ5-iL-goy" secondAttribute="width" multiplier="0.7" id="Wjp-l4-L4F"/>
                                     <constraint firstAttribute="trailing" secondItem="KQ5-iL-goy" secondAttribute="trailing" id="eJ5-wC-8hu"/>
                                     <constraint firstItem="1sK-vF-74w" firstAttribute="leading" secondItem="bc0-zn-1yG" secondAttribute="centerX" multiplier="0.05" id="js5-ca-5c1"/>
                                 </constraints>
@@ -251,7 +258,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-cM-MgC">
-                                <rect key="frame" x="10.5" y="215" width="299" height="216"/>
+                                <rect key="frame" x="10.5" y="239" width="299" height="192"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oco-hM-vg9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -261,21 +268,27 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Recipe Collection View Cell" id="QZk-DV-HjD" customClass="RecipeCollectionViewCell" customModule="Cookin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="128" height="128"/>
+                                        <rect key="frame" x="58" y="50" width="183.5" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EFu-xr-riE">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="183.5" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-8T-muz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="183.5" height="128"/>
                                                     <gestureRecognizers/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-ki-FXd">
-                                                    <rect key="frame" x="6.5" y="6.5" width="79" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="HindSiliguri-Medium" family="Hind Siliguri" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-ki-FXd">
+                                                    <rect key="frame" x="9" y="6.5" width="95.5" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HindSiliguri-Medium" family="Hind Siliguri" pointSize="43"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" name="HindSiliguri-Medium" family="Hind Siliguri" pointSize="18"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="HindSiliguri-Medium" family="Hind Siliguri" pointSize="43"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -283,6 +296,7 @@
                                                 <constraint firstItem="JOd-ki-FXd" firstAttribute="top" secondItem="EFu-xr-riE" secondAttribute="centerY" multiplier="0.1" id="Det-Zg-BMs"/>
                                                 <constraint firstItem="mtE-8T-muz" firstAttribute="top" secondItem="EFu-xr-riE" secondAttribute="top" id="EZM-cz-bTJ"/>
                                                 <constraint firstItem="JOd-ki-FXd" firstAttribute="leading" secondItem="EFu-xr-riE" secondAttribute="centerX" multiplier="0.1" id="H8e-kp-HRA"/>
+                                                <constraint firstAttribute="trailing" secondItem="JOd-ki-FXd" secondAttribute="trailing" multiplier="1.75" constant="1" id="Vl4-td-jVb"/>
                                                 <constraint firstAttribute="trailing" secondItem="mtE-8T-muz" secondAttribute="trailing" id="gBN-mm-Ayf"/>
                                                 <constraint firstAttribute="bottom" secondItem="mtE-8T-muz" secondAttribute="bottom" id="m8A-PP-Cee"/>
                                             </constraints>
@@ -298,25 +312,37 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ji3-AQ-j6B">
-                                            <rect key="frame" x="14" y="5" width="239" height="40"/>
-                                            <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="22"/>
+                                            <rect key="frame" x="14" y="5" width="149.5" height="40"/>
+                                            <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="58"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="25"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="58"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="Ji3-AQ-j6B" firstAttribute="centerY" secondItem="OU8-Un-onN" secondAttribute="centerY" id="5dX-9B-7JP"/>
                                         <constraint firstItem="Ji3-AQ-j6B" firstAttribute="height" secondItem="OU8-Un-onN" secondAttribute="height" multiplier="0.8" id="7Yy-fr-Nos"/>
-                                        <constraint firstItem="Ji3-AQ-j6B" firstAttribute="width" secondItem="OU8-Un-onN" secondAttribute="width" multiplier="0.8" id="GBz-yk-Bjx"/>
+                                        <constraint firstItem="Ji3-AQ-j6B" firstAttribute="width" secondItem="OU8-Un-onN" secondAttribute="width" multiplier="0.5" id="GBz-yk-Bjx"/>
                                         <constraint firstItem="Ji3-AQ-j6B" firstAttribute="leading" secondItem="OU8-Un-onN" secondAttribute="leading" constant="14" id="JKq-w3-pyv"/>
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's cookin, Astrid?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y16-w3-Wgh">
-                                <rect key="frame" x="16" y="22" width="304" height="33"/>
-                                <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's cookin, Astrid?" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y16-w3-Wgh">
+                                <rect key="frame" x="10" y="22" width="288" height="52.5"/>
+                                <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="60"/>
                                 <color key="textColor" name="Orange"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="45"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="60"/>
+                                </variation>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sGV-GJ-qSJ"/>
@@ -325,14 +351,19 @@
                             <constraint firstItem="bc0-zn-1yG" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.3" id="2mx-WA-D3x"/>
                             <constraint firstItem="bc0-zn-1yG" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.85" id="4dD-dw-Dqh"/>
                             <constraint firstItem="bc0-zn-1yG" firstAttribute="centerX" secondItem="uUz-DF-kZO" secondAttribute="centerX" id="6eS-I5-upi"/>
-                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="trailing" secondItem="Y16-w3-Wgh" secondAttribute="trailing" id="80I-wV-sfN"/>
+                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.9" id="Nr2-GQ-rF5"/>
                             <constraint firstItem="EYr-cM-MgC" firstAttribute="centerX" secondItem="uUz-DF-kZO" secondAttribute="centerX" id="TEF-GE-YPL"/>
-                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="top" secondItem="sGV-GJ-qSJ" secondAttribute="top" multiplier="0.5" id="X4Y-0D-4Yo"/>
+                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="top" secondItem="sGV-GJ-qSJ" secondAttribute="top" multiplier="0.5" id="X4Y-0D-4Yo">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                            </constraint>
                             <constraint firstItem="sGV-GJ-qSJ" firstAttribute="bottom" secondItem="EYr-cM-MgC" secondAttribute="bottom" id="d4w-EY-Bf5"/>
-                            <constraint firstItem="EYr-cM-MgC" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.45" id="gJI-sj-od5"/>
+                            <constraint firstItem="EYr-cM-MgC" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.4" id="gJI-sj-od5"/>
                             <constraint firstItem="EYr-cM-MgC" firstAttribute="width" secondItem="KQ5-iL-goy" secondAttribute="width" multiplier="1.1" id="kWZ-nB-cwE"/>
-                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.15" id="uka-B9-iJ1"/>
-                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="leading" secondItem="sGV-GJ-qSJ" secondAttribute="leading" constant="16" id="wse-tr-jlo"/>
+                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.1" id="uka-B9-iJ1"/>
+                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="leading" secondItem="sGV-GJ-qSJ" secondAttribute="leading" constant="16" id="wse-tr-jlo">
+                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b0N-0s-wB3"/>
