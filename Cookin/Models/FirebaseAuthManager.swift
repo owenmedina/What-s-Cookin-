@@ -9,13 +9,22 @@ import Foundation
 import FirebaseAuth
 
 protocol FirebaseAuthManagerDelegate {
-    func didSignIn(_ firebaseAuthManager: FirebaseAuthManager)
-    func didFailWithError(_ error: AuthErrorCode?)
+    func didFailWithFirebaseAuthError(_ error: AuthErrorCode?)
+}
+
+protocol FirebaseAuthManagerRegisterDelegate {
+    func didRegister(_ firebaseAuthManager: FirebaseAuthManager, user: User)
+}
+
+protocol FirebaseAuthManagerLogInDelegate {
+    func didLogIn(_ firebaseAuthManager: FirebaseAuthManager, userID: String)
 }
 
 struct FirebaseAuthManager {
     let firestoreManager = FirestoreManager()
     var delegate: FirebaseAuthManagerDelegate?
+    var registerDelegate: FirebaseAuthManagerRegisterDelegate?
+    var loginDelegate: FirebaseAuthManagerLogInDelegate?
     var currentUser: FirebaseAuth.User? {
         get {
             return Auth.auth().currentUser
@@ -24,27 +33,21 @@ struct FirebaseAuthManager {
     func registerUser(withEmail email: String, name: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let existingError = error {
-                delegate?.didFailWithError(handleError(existingError))
+                delegate?.didFailWithFirebaseAuthError(handleError(existingError))
                 return
             }
-            // Store user information in users collection
-            let user = User(name: name) // add user info
-            let error = firestoreManager.addNewUser(user, withID: authResult!.user.uid)
-            if let existingError = error {
-                delegate?.didFailWithError(handleError(existingError))
-                return
-            }
-            delegate?.didSignIn(self)
+            let user = User(id: authResult!.user.uid, name: name)
+            registerDelegate?.didRegister(self, user: user)
         }
     }
     
     func loginUser(withEmail email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let existingError = error {
-                delegate?.didFailWithError(handleError(existingError))
+                delegate?.didFailWithFirebaseAuthError(handleError(existingError))
                 return
             }
-            delegate?.didSignIn(self)
+            loginDelegate?.didLogIn(self, userID: authResult!.user.uid)
         }
     }
     

@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     var textFields = [UITextField]()
     var validator = Validator()
     var firebaseAuthManager = FirebaseAuthManager()
+    var firestoreManager = FirestoreManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,8 @@ class LoginViewController: UIViewController {
             textField.delegate = self
         }
         firebaseAuthManager.delegate = self
+        firebaseAuthManager.loginDelegate = self
+        firestoreManager.loginDelegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -162,11 +165,7 @@ extension LoginViewController: UITextFieldDelegate {
 
 //MARK: - FirebaseAuthManagerDelegate Methods
 extension LoginViewController: FirebaseAuthManagerDelegate {
-    func didSignIn(_ firebaseAuthManager: FirebaseAuthManager) {
-        performSegue(withIdentifier: K.loginToHome, sender: self)
-    }
-    
-    func didFailWithError(_ error: AuthErrorCode?) {
+    func didFailWithFirebaseAuthError(_ error: AuthErrorCode?) {
         guard let authErrorCode = error else {
             // Present alert using unknown error
             infoAlert(message: K.Firebase.Auth.Error.unknownError, title: K.Alert.error)
@@ -193,3 +192,33 @@ extension LoginViewController: FirebaseAuthManagerDelegate {
         print("Error occurred on Login screen: \(error)")
     }
 }
+
+extension LoginViewController: FirebaseAuthManagerLogInDelegate {
+    func didLogIn(_ firebaseAuthManager: FirebaseAuthManager, userID: String) {
+        // Get user information from users collection
+        firestoreManager.getUser(withID: userID)
+    }
+}
+
+extension LoginViewController: FirestoreManagerLogInDelegate {
+    func didFailToGetUser(withError error: Error) {
+        if error is FirestoreError {
+            let firestoreError = error as! FirestoreError
+            infoAlert(message: firestoreError.message)
+        } else {
+            infoAlert(message: firestoreManager.handleError(error).message)
+        }
+    }
+    
+    func didGetUser(_ manager: FirestoreManager, user: User) {
+        print("Successful sign in!")
+        performSegue(withIdentifier: K.loginToHome, sender: self)
+    }
+}
+
+
+
+
+
+
+
