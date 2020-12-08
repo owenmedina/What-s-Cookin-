@@ -25,6 +25,9 @@ class HomeViewController: UIViewController {
     
     fileprivate var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
     
+    fileprivate var collectionViewItemSize = CGSize(width: 0, height: 0)
+    fileprivate var collectionViewMinimumLineSpacing = K.CollectionView.standardLineSpacing
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,9 +72,46 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        //self.categoriesCollectionViewFlowLayout.invalidateLayout()
+        // Setup the Collection View Item size based on the size class
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            // increase item size to decrease interim spacing and increase item size
+            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.47).rounded(), height: (categoriesCollectionView.frame.size.width * 0.47).rounded())
+            // increase line spacing
+            collectionViewMinimumLineSpacing = K.CollectionView.largeLineSpacing
+        } else {
+            // decrease collection item size
+            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.45).rounded(), height: (categoriesCollectionView.frame.size.width * 0.45).rounded())
+            // decrease line spacing
+            collectionViewMinimumLineSpacing = K.CollectionView.standardLineSpacing
+        }
+        
+        categoriesCollectionViewFlowLayout.invalidateLayout()
         categoriesCollectionView.reloadData()
         featuredImageView.addPartialSemiTransparentOverlay(usingBoundsOf: featuredImageView.superview)
+        categoriesCollectionView.setNeedsLayout()
+        categoriesCollectionView.layoutIfNeeded()
+        print("viewDidLayoutSubviews: width \(categoriesCollectionView.frame.size.width) height \(categoriesCollectionView.frame.size.height)")
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        print("traitCollectionDidChange: width \(categoriesCollectionView.frame.size.width) height \(categoriesCollectionView.frame.size.height)")
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            collectionViewItemSize.width = (categoriesCollectionView.frame.size.width * 0.47).rounded()
+            collectionViewItemSize.height = (categoriesCollectionView.frame.size.width * 0.47).rounded()
+            // increase line spacing
+            collectionViewMinimumLineSpacing = K.CollectionView.largeLineSpacing
+        } else {
+            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.45).rounded(), height: (categoriesCollectionView.frame.size.width * 0.45).rounded())
+            // decrease line spacing
+            collectionViewMinimumLineSpacing = K.CollectionView.standardLineSpacing
+        }
+        
+        DispatchQueue.main.async {
+            self.categoriesCollectionViewFlowLayout.invalidateLayout()
+            self.categoriesCollectionView.reloadData()
+            self.categoriesCollectionView.setNeedsLayout()
+            self.categoriesCollectionView.layoutIfNeeded()
+        }
     }
     
     @IBAction func featuredRecipeTapped(_ sender: UITapGestureRecognizer) {
@@ -157,6 +197,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("cellForItemAt")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeCollectionView.Cell.identifier, for: indexPath) as! RecipeCollectionViewCell
         let cellTitle = Categories.allCases[indexPath.row].rawValue.capitalized
         cell.titleLabel.text = cellTitle
@@ -174,7 +215,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if indexPaths[keyword] == nil {
-            //unsplashManager.findImage(for: keyword)
+            unsplashManager.findImage(for: keyword)
             indexPaths[keyword] = indexPath
         }
         
@@ -190,16 +231,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height * 0.2)
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height * 0.25)
     }
     
     //MARK: - Collection View Delegate Flow Layout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width * 0.45).rounded(), height: (collectionView.frame.size.width * 0.45).rounded())
+        print("size for item at")
+        return collectionViewItemSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return K.CollectionView.standardLineSpacing
+        return collectionViewMinimumLineSpacing
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

@@ -165,6 +165,7 @@ struct K {
     // Views
     struct CollectionView {
         static let standardLineSpacing = CGFloat(8)
+        static let largeLineSpacing = CGFloat(24)
         static let standardInterimSpacing = CGFloat(8)
         static let standardLeftEdgeInset = CGFloat(10)
         static let standardRightEdgeInset = CGFloat(10)
