@@ -38,7 +38,7 @@ class BottomCurveView: UIView {
         // Close path to join to original point
         path.close()
         // Set the background color of the view
-        K.red.set()
+        K.Assets.Colors.red.set()
         path.fill()
     }
     

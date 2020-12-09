@@ -80,6 +80,11 @@ struct K {
     static let shortAnimationDuration = 0.10
     // Assets
     struct Assets {
+        struct Colors {
+            static let red = UIColor(named: "Red")!
+            static let yellow = UIColor(named: "Yellow")!
+            static let orange = UIColor(named: "Orange")!
+        }
         struct Fonts {
             struct Lora {
                 static let regular = "Lora-Regular"
@@ -91,10 +96,6 @@ struct K {
     // Buttons
     static let buttonRadius = CGFloat(25)
     static let buttonBorderWidth = CGFloat(1)
-    // Colors
-    static let red = UIColor(named: "Red")!
-    static let yellow = UIColor(named: "Yellow")!
-    static let orange = UIColor(named: "Orange")!
     // Error messages
     struct Error {
         static let emptyTextField = "must not be empty."
@@ -171,6 +172,8 @@ struct K {
         static let standardRightEdgeInset = CGFloat(10)
         static let standardTopEdgeInset = CGFloat(4)
         static let standardBottomEdgeInset = CGFloat(4)
+        static let standardNumberOfCellsPerRow = 2
+        static let largeNumberOfCellsPerRow = 3
     }
     
     struct HomeViewController {
@@ -190,6 +193,7 @@ struct K {
     }
     
     struct ShadowRoundedView {
-        static let standardCornerRadius = CGFloat(10)
+        static let standardCornerRadius = CGFloat(15)
+        static let largeCornerRadius = CGFloat(20)
     }
 }

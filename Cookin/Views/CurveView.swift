@@ -31,7 +31,7 @@ class CurveView: UIView {
         // Close path join to origin
         path.close()
         // Set the background color of the view
-        K.red.set()
+        K.Assets.Colors.red.set()
         path.fill()
         
         // Create second curve which should take up the area that starts from the 1/4 of the screen and is 1/3 of the width
@@ -49,7 +49,7 @@ class CurveView: UIView {
         // close curve
         path2.addCurve(to: endPoint1, controlPoint1: controlPoint11, controlPoint2: controlPoint12)
         // Set the background color of the view
-        K.yellow.set()
+        K.Assets.Colors.yellow.set()
         path2.fill()
         
         // Create third curve which should take up the right 1/2 of the curve view
@@ -66,7 +66,7 @@ class CurveView: UIView {
         path3.addCurve(to: endPoint6, controlPoint1: controlPoint61, controlPoint2: controlPoint62)
         path3.addLine(to:CGPoint(x: viewSize.width, y: 0))
         path3.close()
-        K.orange.set()
+        K.Assets.Colors.orange.set()
         path3.fill()
         // Test to see the curve
 //                UIColor.black.setStroke()

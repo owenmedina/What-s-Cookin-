@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         loginButton.titleLabel?.minimumScaleFactor = 0.7
         loginButton.layer.cornerRadius = loginButton.frame.size.height/2
         loginButton.layer.borderWidth = K.buttonBorderWidth
-        loginButton.layer.borderColor = K.orange.cgColor
+        loginButton.layer.borderColor = K.Assets.Colors.orange.cgColor
         // Register self for keyboard notifications
         NotificationCenter.default.addObserver(self, selector: .keyboardWillShow, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: .keyboardWillHide, name: UIResponder.keyboardWillHideNotification, object: nil)

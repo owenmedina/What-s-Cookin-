@@ -25,8 +25,11 @@ class HomeViewController: UIViewController {
     
     fileprivate var blurView = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
     
-    fileprivate var collectionViewItemSize = CGSize(width: 0, height: 0)
+//    fileprivate var collectionViewItemSize = CGSize(width: 0, height: 0)
     fileprivate var collectionViewMinimumLineSpacing = K.CollectionView.standardLineSpacing
+    fileprivate var isIpadSizeClass: Bool {
+        return traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,20 +50,13 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
-        // Add a left-aligned title
-//        let navigationBarLabel = UILabel()
-//        navigationBarLabel.text = K.Screens.Home.title
-//        navigationBarLabel.font = UIFont(name: K.Assets.Fonts.Lora.regular, size: 21)
-//        navigationBarLabel.textAlignment = .left
-//
-//        navigationBarLabel.translatesAutoresizingMaskIntoConstraints = false
-//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerX, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerX, multiplier: 1, constant: 0))
-//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .width, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .width, multiplier: 1, constant: 0))
-//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .centerY, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .centerY, multiplier: 1, constant: 0))
-//        navigationBarLabel.superview?.addConstraint(NSLayoutConstraint(item: navigationBarLabel, attribute: .height, relatedBy: .equal, toItem: self.navigationItem.titleView?.superview, attribute: .height, multiplier: 1, constant: 0))
-//        self.navigationItem.titleView = navigationBarLabel
         // Featured Image View
-        featuredImageView.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+        if isIpadSizeClass {
+            featuredImageView.layer.cornerRadius = K.ShadowRoundedView.largeCornerRadius
+        } else {
+            featuredImageView.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+        }
+        
         // Categories Collection View
         categoriesCollectionViewFlowLayout.sectionInset = UIEdgeInsets(top: K.CollectionView.standardTopEdgeInset, left: K.CollectionView.standardLeftEdgeInset, bottom: K.CollectionView.standardBottomEdgeInset, right: K.CollectionView.standardRightEdgeInset)
         categoriesCollectionViewFlowLayout.sectionHeadersPinToVisibleBounds = true
@@ -73,14 +69,14 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         // Setup the Collection View Item size based on the size class
-        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+        if isIpadSizeClass {
             // increase item size to decrease interim spacing and increase item size
-            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.47).rounded(), height: (categoriesCollectionView.frame.size.width * 0.47).rounded())
+//            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.47).rounded(), height: (categoriesCollectionView.frame.size.width * 0.47).rounded())
             // increase line spacing
             collectionViewMinimumLineSpacing = K.CollectionView.largeLineSpacing
         } else {
             // decrease collection item size
-            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.45).rounded(), height: (categoriesCollectionView.frame.size.width * 0.45).rounded())
+//            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.45).rounded(), height: (categoriesCollectionView.frame.size.width * 0.45).rounded())
             // decrease line spacing
             collectionViewMinimumLineSpacing = K.CollectionView.standardLineSpacing
         }
@@ -95,13 +91,13 @@ class HomeViewController: UIViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         print("traitCollectionDidChange: width \(categoriesCollectionView.frame.size.width) height \(categoriesCollectionView.frame.size.height)")
-        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            collectionViewItemSize.width = (categoriesCollectionView.frame.size.width * 0.47).rounded()
-            collectionViewItemSize.height = (categoriesCollectionView.frame.size.width * 0.47).rounded()
+        if isIpadSizeClass {
+//            collectionViewItemSize.width = (categoriesCollectionView.frame.size.width * 0.47).rounded()
+//            collectionViewItemSize.height = (categoriesCollectionView.frame.size.width * 0.47).rounded()
             // increase line spacing
             collectionViewMinimumLineSpacing = K.CollectionView.largeLineSpacing
         } else {
-            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.45).rounded(), height: (categoriesCollectionView.frame.size.width * 0.45).rounded())
+//            collectionViewItemSize = CGSize(width: (categoriesCollectionView.frame.size.width * 0.45).rounded(), height: (categoriesCollectionView.frame.size.width * 0.45).rounded())
             // decrease line spacing
             collectionViewMinimumLineSpacing = K.CollectionView.standardLineSpacing
         }
@@ -201,7 +197,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeCollectionView.Cell.identifier, for: indexPath) as! RecipeCollectionViewCell
         let cellTitle = Categories.allCases[indexPath.row].rawValue.capitalized
         cell.titleLabel.text = cellTitle
-        cell.image.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+        if isIpadSizeClass {
+            cell.image.layer.cornerRadius = K.ShadowRoundedView.largeCornerRadius
+        } else {
+            cell.image.layer.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+        }
         // If reused cell already has an overlay do not add another overlay
         if cell.image.layer.sublayers?.first == nil {
             cell.image.addPartialSemiTransparentOverlay(usingBoundsOf: cell)
@@ -215,7 +215,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if indexPaths[keyword] == nil {
-            unsplashManager.findImage(for: keyword)
+            //unsplashManager.findImage(for: keyword)
             indexPaths[keyword] = indexPath
         }
         
@@ -237,7 +237,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     //MARK: - Collection View Delegate Flow Layout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         print("size for item at")
-        return collectionViewItemSize
+        let collectionViewWidth = CGFloat(collectionView.frame.size.width)
+        var numberOfCells = K.CollectionView.standardNumberOfCellsPerRow
+        var margin = collectionViewWidth * 0.05
+        if isIpadSizeClass {
+            numberOfCells = K.CollectionView.largeNumberOfCellsPerRow
+            margin = collectionViewWidth * 0.025
+        }
+        let size = CGFloat((collectionViewWidth/CGFloat(numberOfCells)) - margin)
+        print("Number of Cells: \(numberOfCells)")
+        return CGSize(width: size, height: size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

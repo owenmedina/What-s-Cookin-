@@ -20,12 +20,12 @@ class WelcomeViewController: UIViewController {
         // Register Button
         registerButton.titleLabel?.minimumScaleFactor = 0.7 
         registerButton.layer.cornerRadius = registerButton.frame.size.height/2
-        registerButton.backgroundColor = K.red
+        registerButton.backgroundColor = K.Assets.Colors.red
         // Login Button
         loginButton.titleLabel?.minimumScaleFactor = 0.7
         loginButton.layer.cornerRadius = loginButton.frame.size.height/2
         loginButton.layer.borderWidth = K.buttonBorderWidth
-        loginButton.layer.borderColor = K.orange.cgColor
+        loginButton.layer.borderColor = K.Assets.Colors.orange.cgColor
     }
     
     override func viewDidLayoutSubviews() {

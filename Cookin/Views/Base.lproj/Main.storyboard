@@ -218,13 +218,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-zn-1yG" userLabel="Card View" customClass="CardView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="77" y="156" width="870" height="500"/>
+                                <rect key="frame" x="57" y="136" width="910" height="543.5"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQ5-iL-goy">
-                                        <rect key="frame" x="0.0" y="0.0" width="870" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="910" height="543.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Recipe Title" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-vF-74w">
-                                        <rect key="frame" x="21.5" y="25" width="399.5" height="49"/>
+                                        <rect key="frame" x="22.5" y="27.5" width="466" height="57.5"/>
                                         <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="42"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -232,7 +232,7 @@
                                             <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="24"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="42"/>
+                                            <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="49"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -250,7 +250,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -258,7 +258,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-cM-MgC">
-                                <rect key="frame" x="33.5" y="754.5" width="957" height="546.5"/>
+                                <rect key="frame" x="46" y="699" width="932" height="602"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oco-hM-vg9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -308,15 +308,15 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Recipe Collection View Header" id="OU8-Un-onN">
-                                    <rect key="frame" x="0.0" y="0.0" width="957" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="932" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ji3-AQ-j6B">
-                                            <rect key="frame" x="14" y="5" width="478.5" height="40"/>
+                                            <rect key="frame" x="14" y="5" width="466" height="40"/>
                                             <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="58"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
-                                                <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="32"/>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
                                                 <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="58"/>
@@ -332,8 +332,8 @@
                                     </constraints>
                                 </collectionReusableView>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's cookin, Astrid?" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y16-w3-Wgh">
-                                <rect key="frame" x="16" y="45" width="921.5" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Cookin, Astrid?" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y16-w3-Wgh">
+                                <rect key="frame" x="16" y="40" width="870.5" height="70"/>
                                 <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="60"/>
                                 <color key="textColor" name="Orange"/>
                                 <nil key="highlightedColor"/>
@@ -348,22 +348,26 @@
                         <viewLayoutGuide key="safeArea" id="sGV-GJ-qSJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bc0-zn-1yG" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.3" id="2mx-WA-D3x">
-                                <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                            <constraint firstItem="bc0-zn-1yG" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.28" id="2mx-WA-D3x">
+                                <variation key="heightClass=regular-widthClass=regular" constant="161"/>
                             </constraint>
-                            <constraint firstItem="bc0-zn-1yG" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.85" id="4dD-dw-Dqh"/>
+                            <constraint firstItem="bc0-zn-1yG" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.85" id="4dD-dw-Dqh">
+                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            </constraint>
                             <constraint firstItem="bc0-zn-1yG" firstAttribute="centerX" secondItem="uUz-DF-kZO" secondAttribute="centerX" id="6eS-I5-upi"/>
-                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.9" id="Nr2-GQ-rF5"/>
+                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.85" id="Nr2-GQ-rF5"/>
                             <constraint firstItem="EYr-cM-MgC" firstAttribute="centerX" secondItem="uUz-DF-kZO" secondAttribute="centerX" id="TEF-GE-YPL"/>
-                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="top" secondItem="sGV-GJ-qSJ" secondAttribute="top" multiplier="0.5" id="X4Y-0D-4Yo">
+                            <constraint firstItem="Y16-w3-Wgh" firstAttribute="top" secondItem="sGV-GJ-qSJ" secondAttribute="top" multiplier="0.4" id="X4Y-0D-4Yo">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstItem="sGV-GJ-qSJ" firstAttribute="bottom" secondItem="EYr-cM-MgC" secondAttribute="bottom" id="d4w-EY-Bf5"/>
-                            <constraint firstItem="EYr-cM-MgC" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.4" id="gJI-sj-od5"/>
-                            <constraint firstItem="EYr-cM-MgC" firstAttribute="width" secondItem="KQ5-iL-goy" secondAttribute="width" multiplier="1.1" id="kWZ-nB-cwE"/>
-                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.03" id="uka-B9-iJ1">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            <constraint firstItem="EYr-cM-MgC" firstAttribute="height" secondItem="uUz-DF-kZO" secondAttribute="height" multiplier="0.47" id="gJI-sj-od5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-40"/>
+                            </constraint>
+                            <constraint firstItem="EYr-cM-MgC" firstAttribute="width" secondItem="uUz-DF-kZO" secondAttribute="width" multiplier="0.91" id="kWZ-nB-cwE"/>
+                            <constraint firstItem="sGV-GJ-qSJ" firstAttribute="centerY" secondItem="bc0-zn-1yG" secondAttribute="bottom" multiplier="1.2" id="uka-B9-iJ1">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-140"/>
                             </constraint>
                             <constraint firstItem="Y16-w3-Wgh" firstAttribute="leading" secondItem="sGV-GJ-qSJ" secondAttribute="leading" constant="16" id="wse-tr-jlo">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
@@ -570,6 +574,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="Orange"/>
                     </tabBar>
                     <connections>
                         <segue destination="0Et-m3-lVT" kind="relationship" relationship="viewControllers" id="GKZ-jY-CpU"/>
@@ -584,7 +589,13 @@
         <scene sceneID="Luv-nl-fuy">
             <objects>
                 <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="0Et-m3-lVT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home-unselected" selectedImage="home-selected" id="oBM-R4-YQa"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-unselected" selectedImage="home-selected" id="oBM-R4-YQa">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="Orange"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r0g-ex-oaz">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
