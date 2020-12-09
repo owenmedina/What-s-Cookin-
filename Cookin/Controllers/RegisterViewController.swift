@@ -20,6 +20,7 @@ class RegisterViewController: UIViewController {
     var textFields = [UITextField]()
     var validator = Validator()
     var firebaseAuthManager = FirebaseAuthManager()
+    var firestoreManager = FirestoreManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,8 @@ class RegisterViewController: UIViewController {
             textField.delegate = self
         }
         firebaseAuthManager.delegate = self
+        firebaseAuthManager.registerDelegate = self
+        firestoreManager.registerDelegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -148,12 +151,7 @@ extension RegisterViewController: UITextFieldDelegate {
 
 //MARK: - FirebaseAuthManagerDelegate Methods
 extension RegisterViewController: FirebaseAuthManagerDelegate {
-    func didSignIn(_ firebaseAuthManager: FirebaseAuthManager) {
-        print("Successful sign in!")
-        performSegue(withIdentifier: K.Segue.registerToHome, sender: self)
-    }
-    
-    func didFailWithError(_ error: AuthErrorCode?) {
+    func didFailWithFirebaseAuthError(_ error: AuthErrorCode?) {
         guard let authErrorCode = error else {
             // Present alert using unknown error
             infoAlert(message: K.Firebase.Auth.Error.unknownError)
@@ -178,5 +176,28 @@ extension RegisterViewController: FirebaseAuthManagerDelegate {
         // Present an alert with error
         infoAlert(message: authErrorCode.message)
         print("Error occurred on Register screen: \(error)")
+    }
+}
+
+extension RegisterViewController: FirebaseAuthManagerRegisterDelegate {
+    func didRegister(_ firebaseAuthManager: FirebaseAuthManager, user: User) {
+        // Store user information in users collection
+        firestoreManager.addNewUser(user, withID: user.id)
+    }
+}
+
+extension RegisterViewController: FirestoreManagerRegisterDelegate {
+    func didFailToAddNewUser(withError error: Error) {
+        if error is FirestoreError {
+            let firestoreError = error as! FirestoreError
+            infoAlert(message: firestoreError.message)
+        } else {
+            infoAlert(message: firestoreManager.handleError(error).message)
+        }
+    }
+    
+    func didAddNewUser(_ manager: FirestoreManager, user: User) {
+        print("Successful register! Hello \(user.name)")
+        performSegue(withIdentifier: K.registerToHome, sender: self)
     }
 }

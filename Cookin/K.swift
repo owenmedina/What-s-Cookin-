@@ -125,7 +125,26 @@ struct K {
         }
         // Firestore
         struct Firestore {
-            static let usersCollection = "users"
+            struct Collections {
+                struct Users {
+                    static let collectionName = "users"
+                    static let idField = "id"
+                    static let nameField = "name"
+                }
+            }
+            struct Error {
+                static let couldNotAddNewUser = "Trouble adding new user to Cookin' database. Please try again."
+                static let couldNotGetUser = "Trouble retrieving user information from Cookin' database. Please try again."
+                static let userDoesNotExist = "User or user's data does not exist. Please try a different user."
+                static let unableToPerformOperation = "Unable to perform operation. Please contact support regading this issue."
+                static let couldNotPerformOperation = "Could not complete operation. Please try again later."
+                static let unknownError = "Unknown error occurred. Please try again and contact support if problem persists."
+                static let alreadyExists = "Could not complete operation. Data to be saved already exists on database. "
+                static let notFound = "Data could not be found. Please contact support if problem persists."
+                static let resourceExhausted = "Operation could not be completed. Either app or user has reached operation limits. Please try again later and contact support if problem persists."
+                static let unauthenticated = "Must be signed in to perform operation. Please sign in then try again."
+                static let unimplemented = "Application does not currently support this feature. Contact support regarding your interest in it."
+            }
         }
     }
     // Regular Expressions
