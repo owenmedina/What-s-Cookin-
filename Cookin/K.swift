@@ -201,6 +201,10 @@ struct K {
         static let numberOfPlaceholderCells = 4
     }
     
+    struct ImageView {
+        static let standardCornerRadius = CGFloat(15)
+    }
+    
     struct RecipeCollectionView {
         struct Cell {
             static let identifier = "Recipe Collection View Cell"

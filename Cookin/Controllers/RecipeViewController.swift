@@ -8,15 +8,17 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var recipeImageView: UIImageView!
     var recipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        label.text = recipe?.cuisine.rawValue.uppercased()
-        self.navigationItem.title = recipe?.title
+        // Setup UI
+            // Recipe Image
+        recipeImageView.image = recipe?.image
+        recipeImageView.layer.cornerRadius = K.ImageView.standardCornerRadius
+        recipeImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
     
