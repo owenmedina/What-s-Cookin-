@@ -198,6 +198,6 @@ extension RegisterViewController: FirestoreManagerRegisterDelegate {
     
     func didAddNewUser(_ manager: FirestoreManager, user: User) {
         print("Successful register! Hello \(user.name)")
-        performSegue(withIdentifier: K.registerToHome, sender: self)
+        performSegue(withIdentifier: K.Segue.registerToHome, sender: self)
     }
 }

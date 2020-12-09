@@ -212,7 +212,7 @@ extension LoginViewController: FirestoreManagerLogInDelegate {
     
     func didGetUser(_ manager: FirestoreManager, user: User) {
         print("Successful sign in!")
-        performSegue(withIdentifier: K.loginToHome, sender: self)
+        performSegue(withIdentifier: K.Segue.loginToHome, sender: self)
     }
 }
 
