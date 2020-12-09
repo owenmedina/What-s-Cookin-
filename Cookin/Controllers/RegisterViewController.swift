@@ -41,7 +41,7 @@ class RegisterViewController: UIViewController {
         registerButton.titleLabel?.minimumScaleFactor = 0.7
         registerButton.layer.cornerRadius = registerButton.frame.size.height/2
         registerButton.layer.borderWidth = K.buttonBorderWidth
-        registerButton.layer.borderColor = K.orange.cgColor
+        registerButton.layer.borderColor = K.Assets.Colors.orange.cgColor
         // Register self for keyboard notifications
         NotificationCenter.default.addObserver(self, selector: .keyboardWillShow, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: .keyboardWillHide, name: UIResponder.keyboardWillHideNotification, object: nil)
