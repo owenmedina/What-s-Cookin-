@@ -435,11 +435,14 @@
                                         <rect key="frame" x="0.0" y="311.33333333333331" width="390" height="532.66666666666674"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGN-uE-kBa">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="520.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="530.33333333333337"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fRG-az-BTm">
-                                                        <rect key="frame" x="9.6666666666666572" y="30" width="370.66666666666674" height="130.33333333333334"/>
+                                                        <rect key="frame" x="9.6666666666666572" y="30" width="370.66666666666674" height="135"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="135" id="eCt-2e-uEr"/>
+                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingredient Cell" id="3k0-RV-yhX" customClass="IngredientsTableViewCell" customModule="Cookin" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="370.66666666666674" height="44"/>
@@ -468,27 +471,31 @@
                                                         </prototypes>
                                                     </tableView>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-sf-Q1g">
-                                                        <rect key="frame" x="9.6666666666666572" y="180.33333333333337" width="370.66666666666674" height="130"/>
+                                                        <rect key="frame" x="9.6666666666666572" y="185" width="370.66666666666674" height="135"/>
                                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="135" id="zVs-Xy-PVZ"/>
+                                                        </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Step Cell" id="2GX-Yh-9em" customClass="StepsTableViewCell" customModule="Cookin" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="28" width="370.66666666666674" height="43.666667938232422"/>
+                                                                <rect key="frame" x="0.0" y="28" width="370.66666666666674" height="36"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2GX-Yh-9em" id="zIz-mn-duk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="370.66666666666674" height="43.666667938232422"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="370.66666666666674" height="36"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibu-zN-CpD">
-                                                                            <rect key="frame" x="10" y="8.0000000000000018" width="333.66666666666669" height="27.666666666666671"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibu-zN-CpD">
+                                                                            <rect key="frame" x="8" y="4" width="354.66666666666669" height="28"/>
                                                                             <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="ibu-zN-CpD" firstAttribute="leading" secondItem="zIz-mn-duk" secondAttribute="leading" constant="10" id="Jwx-20-iih"/>
-                                                                        <constraint firstItem="ibu-zN-CpD" firstAttribute="width" secondItem="zIz-mn-duk" secondAttribute="width" multiplier="0.9" id="Mlz-3s-ygZ"/>
-                                                                        <constraint firstItem="ibu-zN-CpD" firstAttribute="centerY" secondItem="zIz-mn-duk" secondAttribute="centerY" id="jyl-Sx-WaX"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="ibu-zN-CpD" secondAttribute="bottom" constant="4" id="6jj-Xo-ouM"/>
+                                                                        <constraint firstItem="ibu-zN-CpD" firstAttribute="top" secondItem="zIz-mn-duk" secondAttribute="top" constant="4" id="FVZ-pL-ubn"/>
+                                                                        <constraint firstItem="ibu-zN-CpD" firstAttribute="leading" secondItem="zIz-mn-duk" secondAttribute="leading" constant="8" id="bd8-YV-5er"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="ibu-zN-CpD" secondAttribute="trailing" constant="8" id="tMg-mE-Kdw"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <connections>
@@ -507,10 +514,8 @@
                                                     <constraint firstItem="fRG-az-BTm" firstAttribute="width" secondItem="sGN-uE-kBa" secondAttribute="width" multiplier="0.95" id="JBn-S7-Cf9"/>
                                                     <constraint firstItem="aMs-sf-Q1g" firstAttribute="centerX" secondItem="sGN-uE-kBa" secondAttribute="centerX" id="SsL-D6-drm"/>
                                                     <constraint firstItem="fRG-az-BTm" firstAttribute="centerX" secondItem="sGN-uE-kBa" secondAttribute="centerX" id="XfW-Vh-yXp"/>
-                                                    <constraint firstItem="fRG-az-BTm" firstAttribute="height" secondItem="sGN-uE-kBa" secondAttribute="height" multiplier="0.25" id="Ypm-kT-qES"/>
                                                     <constraint firstItem="aMs-sf-Q1g" firstAttribute="centerX" secondItem="sGN-uE-kBa" secondAttribute="centerX" id="ZPD-Ux-Dqm"/>
                                                     <constraint firstItem="fRG-az-BTm" firstAttribute="centerX" secondItem="sGN-uE-kBa" secondAttribute="centerX" id="wtI-VA-1nq"/>
-                                                    <constraint firstItem="aMs-sf-Q1g" firstAttribute="height" secondItem="sGN-uE-kBa" secondAttribute="height" multiplier="0.25" id="xmS-MJ-XY0"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -554,11 +559,11 @@
                     <size key="freeformSize" width="390" height="844"/>
                     <connections>
                         <outlet property="ingredientsTableView" destination="fRG-az-BTm" id="3hc-9z-l6I"/>
-                        <outlet property="ingredientsTableViewHeight" destination="Ypm-kT-qES" id="jGV-gl-fno"/>
+                        <outlet property="ingredientsTableViewHeight" destination="eCt-2e-uEr" id="rPA-Xj-xDf"/>
                         <outlet property="recipeImageView" destination="U1f-2a-iCs" id="8j4-Qb-wUC"/>
                         <outlet property="recipeTitleLabel" destination="e6b-d1-0Dz" id="haA-QL-zvT"/>
                         <outlet property="stepsTableView" destination="aMs-sf-Q1g" id="dVi-sW-Xf2"/>
-                        <outlet property="stepsTableViewHeight" destination="xmS-MJ-XY0" id="HZo-w0-uk3"/>
+                        <outlet property="stepsTableViewHeight" destination="zVs-Xy-PVZ" id="YCW-JY-OOs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BO9-ei-L7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

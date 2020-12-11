@@ -148,9 +148,9 @@ struct K {
         }
     }
     // Regular Expressions
-        // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
+    // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
     static let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
+    // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
     static let emailRegex = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?" + "@" + "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}" + "[A-Za-z]{2,8}"
     // Screens
     struct Screens {
@@ -220,10 +220,16 @@ struct K {
         static let largeCornerRadius = CGFloat(20)
     }
     
-    struct TableView {
+    struct IngredientsTableView {
+        static let averageRowHeight = CGFloat(44)
+        
         struct IngredientsTableViewCell {
             static let identifier = "Ingredient Cell"
         }
+    }
+    
+    struct StepsTableView {
+        static let averageRowHeight = CGFloat(44)
         
         struct StepsTableViewCell {
             static let identifier = "Step Cell"

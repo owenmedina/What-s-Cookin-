@@ -32,7 +32,19 @@ class RecipeViewController: UIViewController {
         recipeImageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             // Recipe Title Label
         recipeTitleLabel.text = recipe?.title
+            // Steps Table View
+        stepsTableView.rowHeight = UITableView.automaticDimension
+        stepsTableView.estimatedRowHeight = K.StepsTableView.averageRowHeight
 //        stepsTableViewHeight.constant = stepsTableView.contentSize.height
+        print(recipe?.sourceURL)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Setup Table Views heights
+        ingredientsTableViewHeight.constant = ingredientsTableView.contentSize.height
+        stepsTableViewHeight.constant = stepsTableView.contentSize.height
     }
     
     
@@ -47,8 +59,10 @@ extension RecipeViewController: UITableViewDelegate {
 extension RecipeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ingredientsTableView {
+            print("Ingredients: \(recipe?.ingredients.count ?? 0)")
             return recipe?.ingredients.count ?? 0
         } else {
+            print("Steps: \(recipe?.steps.count ?? 0)")
             return recipe?.steps.count ?? 0
         }
         
@@ -57,13 +71,16 @@ extension RecipeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         ingredientsTableViewHeight.constant = tableView.contentSize.height
         if tableView == ingredientsTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.TableView.IngredientsTableViewCell.identifier) as! IngredientsTableViewCell
-            let ingredient = recipe?.ingredients[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.IngredientsTableView.IngredientsTableViewCell.identifier) as! IngredientsTableViewCell
             cell.backgroundColor = .systemGray6
-            cell.label.text = "\(ingredient?.measure) \(ingredient?.name)"
+            if let ingredient = recipe?.ingredients[indexPath.row] {
+                cell.label.text = "\(ingredient.measure) \(ingredient.name)"
+                return cell
+            }
             return cell
+            
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.TableView.StepsTableViewCell.identifier) as! StepsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.StepsTableView.StepsTableViewCell.identifier) as! StepsTableViewCell
             cell.backgroundColor = .systemGray6
             cell.label.text = recipe?.steps[indexPath.row]
             return cell
