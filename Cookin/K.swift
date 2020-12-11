@@ -219,4 +219,14 @@ struct K {
         static let standardCornerRadius = CGFloat(15)
         static let largeCornerRadius = CGFloat(20)
     }
+    
+    struct TableView {
+        struct IngredientsTableViewCell {
+            static let identifier = "Ingredient Cell"
+        }
+        
+        struct StepsTableViewCell {
+            static let identifier = "Step Cell"
+        }
+    }
 }
