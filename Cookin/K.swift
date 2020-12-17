@@ -91,6 +91,12 @@ struct K {
                 static let bold = "Lora-Bold"
                 static let medium = "Lora-Medium"
             }
+            
+            struct HindSiliguri {
+                static let regular = "HindSiliguri-Regular"
+                static let bold = "HindSiliguri-Bold"
+                static let medium = "HindSiliguri-Medium"
+            }
         }
     }
     // Buttons
@@ -104,6 +110,7 @@ struct K {
         static let incorrectPassword = "Password is incorrect."
         static let couldNotCreateURLFromString = "Invalid URL String:"
         static let dataReturnedWasNil = "Data returned was nil"
+        static let cannotBindViewFrameToSuperviewFrame = "View does not have a superview to bind its frame to. Call addSubview(view: UIView) before calling bindFrameToSuperviewBounds() to fix this."
     }
     // Firebase
     struct Firebase {
@@ -147,6 +154,8 @@ struct K {
             }
         }
     }
+    // Misc.
+    static let standardSpaceBetweenViews = 20
     // Regular Expressions
     // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
     static let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
@@ -205,6 +214,11 @@ struct K {
         static let standardCornerRadius = CGFloat(15)
     }
     
+    struct MenuBar {
+        static let defaultNumberOfMenuItems = 1
+        static let menuBarItemCellIdentifier = "Menu Bar Item Cell"
+    }
+    
     struct RecipeCollectionView {
         struct Cell {
             static let identifier = "Recipe Collection View Cell"
@@ -213,6 +227,11 @@ struct K {
             static let identifier = "Recipe Collection View Header"
         }
         
+    }
+    
+    struct RecipeViewController {
+        static let numberOfMenuItems = 2
+        static let menuItemTitles = ["Steps", "Ingredients"]
     }
     
     struct ShadowRoundedView {
