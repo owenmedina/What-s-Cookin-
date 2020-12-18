@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol MenuBarDelegate {
+    func menuItemDidGetSelected(withIndex index: Int)
+}
+
 class MenuBar: UIView {
     var numberOfMenuItems: Int?
     var menuItemTitles: [String]?
+    var delegate: MenuBarDelegate?
     private var horizontalBarXConstraint: NSLayoutConstraint?
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -48,11 +53,9 @@ class MenuBar: UIView {
         horizontalBar.heightAnchor.constraint(equalToConstant: K.MenuBar.horizontalBarHeight).isActive = true
     }
     
-    fileprivate func moveHorizontalBar(to x: CGFloat) {
+    func moveHorizontalBar(to x: CGFloat) {
         // Change the value of the constraint. Do not add a new one.
         horizontalBarXConstraint?.constant = x
-        // Animate for sliding effect from item to item
-        UIView.animate(withDuration: K.Animation.mediumDuration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: { self.layoutIfNeeded() }, completion: nil)
     }
 }
 
@@ -60,7 +63,7 @@ class MenuBar: UIView {
 extension MenuBar: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let newXPosition = CGFloat(indexPath.item) * (CGFloat(collectionView.frame.width)/CGFloat(numberOfMenuItems ?? K.MenuBar.defaultNumberOfMenuItems))
-        moveHorizontalBar(to: newXPosition)
+        delegate?.menuItemDidGetSelected(withIndex: indexPath.item)
     }
 }
 

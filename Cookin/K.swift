@@ -236,6 +236,8 @@ struct K {
     struct RecipeViewController {
         static let numberOfMenuItems = 2
         static let menuItemTitles = ["Steps", "Ingredients"]
+        static let stepsPageCellIdentifier = "Steps Page Cell"
+        static let ingredientsPageCellIdentifier = "Ingredients Page Cell"
     }
     
     struct ShadowRoundedView {

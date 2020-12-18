@@ -425,37 +425,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ZN-NF-Irq">
-                                <rect key="frame" x="0.0" y="363" width="390" height="481"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will this label still be seen?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qob-Ch-lIM">
-                                        <rect key="frame" x="93.666666666666671" y="230" width="202.66666666666663" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstItem="Qob-Ch-lIM" firstAttribute="height" secondItem="2ZN-NF-Irq" secondAttribute="height" multiplier="0.043659" id="4Ss-ru-A0h"/>
-                                    <constraint firstItem="Qob-Ch-lIM" firstAttribute="width" secondItem="2ZN-NF-Irq" secondAttribute="width" multiplier="0.519658" id="J74-hl-vqI"/>
-                                    <constraint firstItem="Qob-Ch-lIM" firstAttribute="centerX" secondItem="2ZN-NF-Irq" secondAttribute="centerX" id="Nft-Cd-swT"/>
-                                    <constraint firstItem="Qob-Ch-lIM" firstAttribute="centerY" secondItem="2ZN-NF-Irq" secondAttribute="centerY" id="y3R-Lb-1ad"/>
-                                </constraints>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tD-1n-Rzc">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="253.33333333333334"/>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Ih-yi-BwN">
+                                <rect key="frame" x="0.0" y="363" width="390" height="481"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w6Z-Qj-Rqf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hhw-sX-GQY">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DDy-n7-cc4">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cvn-4X-fJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2ZN-NF-Irq" firstAttribute="height" secondItem="VYE-SJ-Qar" secondAttribute="height" multiplier="0.57" id="0hZ-Af-6QH"/>
                             <constraint firstItem="8tD-1n-Rzc" firstAttribute="top" secondItem="VYE-SJ-Qar" secondAttribute="top" id="2vy-De-5pP"/>
-                            <constraint firstAttribute="bottom" secondItem="2ZN-NF-Irq" secondAttribute="bottom" id="4q9-mN-08U"/>
+                            <constraint firstItem="2Ih-yi-BwN" firstAttribute="height" secondItem="VYE-SJ-Qar" secondAttribute="height" multiplier="0.57" id="3o4-u2-2FS"/>
                             <constraint firstItem="8tD-1n-Rzc" firstAttribute="leading" secondItem="cvn-4X-fJe" secondAttribute="leading" id="7A7-SY-mvd"/>
-                            <constraint firstItem="2ZN-NF-Irq" firstAttribute="trailing" secondItem="cvn-4X-fJe" secondAttribute="trailing" id="C9h-gf-dmN"/>
-                            <constraint firstItem="2ZN-NF-Irq" firstAttribute="leading" secondItem="cvn-4X-fJe" secondAttribute="leading" id="LXf-OW-e88"/>
+                            <constraint firstAttribute="bottom" secondItem="2Ih-yi-BwN" secondAttribute="bottom" id="DNs-IV-K93"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ih-yi-BwN" secondAttribute="trailing" id="Epd-Tl-pTE"/>
+                            <constraint firstItem="2Ih-yi-BwN" firstAttribute="leading" secondItem="VYE-SJ-Qar" secondAttribute="leading" id="Tle-xF-J1r"/>
                             <constraint firstItem="Yfx-hD-rXX" firstAttribute="top" secondItem="8tD-1n-Rzc" secondAttribute="bottom" constant="4" id="ZOB-u1-QHe"/>
                             <constraint firstItem="Yfx-hD-rXX" firstAttribute="width" secondItem="VYE-SJ-Qar" secondAttribute="width" multiplier="0.8" id="Zd6-TE-9XR"/>
                             <constraint firstItem="Yfx-hD-rXX" firstAttribute="centerX" secondItem="VYE-SJ-Qar" secondAttribute="centerX" id="bG0-fJ-bvC"/>
@@ -467,6 +469,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bodyCollectionView" destination="2Ih-yi-BwN" id="eXR-cf-IuW"/>
                         <outlet property="recipeImageView" destination="8tD-1n-Rzc" id="Nql-vH-tzr"/>
                         <outlet property="recipeTitleLabel" destination="Yfx-hD-rXX" id="jLC-V4-7hc"/>
                     </connections>
@@ -685,9 +688,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

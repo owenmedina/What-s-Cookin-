@@ -10,6 +10,7 @@ import UIKit
 class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
+    @IBOutlet weak var bodyCollectionView: UICollectionView!
     let menuBar: MenuBar = {
         let mb = MenuBar()
         mb.numberOfMenuItems = K.RecipeViewController.numberOfMenuItems
@@ -25,12 +26,6 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup Delegates
-//        ingredientsTableView.delegate = self
-//        ingredientsTableView.dataSource = self
-//        stepsTableView.delegate = self
-//        stepsTableView.dataSource = self
-        
         // Setup UI
             // Recipe Image
         recipeImageView.image = recipe?.image
@@ -40,9 +35,20 @@ class RecipeViewController: UIViewController {
         recipeTitleLabel.text = recipe?.title
             // Menu Bar
         setupMenuBar()
+            // Main Body (Collection View)
+        setupBodyCollectionView()
             // Steps Table View
 //        stepsTableView.rowHeight = UITableView.automaticDimension
 //        stepsTableView.estimatedRowHeight = K.StepsTableView.averageRowHeight
+        
+        // Setup Delegates
+//        ingredientsTableView.delegate = self
+//        ingredientsTableView.dataSource = self
+//        stepsTableView.delegate = self
+//        stepsTableView.dataSource = self
+        bodyCollectionView.delegate = self
+        bodyCollectionView.dataSource = self
+        menuBar.delegate = self
         
         print(recipe?.sourceURL)
     }
@@ -74,6 +80,67 @@ class RecipeViewController: UIViewController {
     
     private func setInitialMenuBarItem() {
         menuBar.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: [])
+    }
+    
+    private func setupBodyCollectionView() {
+        // Set scroll direction to horizontal so it is parallel to the direction of the horizontal bar of the menu bar
+        // Also close gap between cells so pages are flush with one another
+        if let flowLayout = bodyCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+            flowLayout.minimumLineSpacing = 0
+        }
+        
+        // Allow pages (cells) to snap into place when swiping through the different pages
+        bodyCollectionView.isPagingEnabled = true
+        
+        bodyCollectionView.backgroundColor = .white
+        
+        bodyCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: K.RecipeViewController.stepsPageCellIdentifier)
+    }
+}
+
+//MARK: - UICollectionView Delegate Methods
+extension RecipeViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        menuBar.moveHorizontalBar(to: scrollView.contentOffset.x/CGFloat(K.RecipeViewController.numberOfMenuItems))
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let menuItemSize = scrollView.frame.width
+        let targetMenuItem = targetContentOffset.pointee.x / menuItemSize
+        menuBar.collectionView.selectItem(at: IndexPath(item: Int(targetMenuItem), section: 0), animated: true, scrollPosition: [])
+    }
+}
+
+//MARK: - UICollectionView Data Source Methods
+extension RecipeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return K.RecipeViewController.numberOfMenuItems
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.stepsPageCellIdentifier, for: indexPath)
+        cell.backgroundColor = indexPath.item == 0 ? .blue : .red
+        return cell
+    }
+    
+    
+}
+
+//MARK: - UICollectionView Delegate Flow Layout Methods
+extension RecipeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Make each cell encompass the entire space allocated for the main body
+            // I.e. each cell is a page
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+}
+
+//MARK: - Menu Bar Delegate Methods
+extension RecipeViewController: MenuBarDelegate {
+    func menuItemDidGetSelected(withIndex index: Int) {
+        let rect = bodyCollectionView.layoutAttributesForItem(at: IndexPath(row: index, section: 0))?.frame
+        bodyCollectionView.scrollRectToVisible(rect!, animated: true)
     }
 }
 
