@@ -76,8 +76,11 @@ struct K {
         }
     }
     // Animations
-    static let standardAnimationDuration = 0.25
-    static let shortAnimationDuration = 0.10
+    struct Animation {
+        static let standardDuration = 0.25
+        static let shortDuration = 0.10
+        static let mediumDuration = 0.50
+    }
     // Assets
     struct Assets {
         struct Colors {
@@ -217,6 +220,7 @@ struct K {
     struct MenuBar {
         static let defaultNumberOfMenuItems = 1
         static let menuBarItemCellIdentifier = "Menu Bar Item Cell"
+        static let horizontalBarHeight = CGFloat(4)
     }
     
     struct RecipeCollectionView {

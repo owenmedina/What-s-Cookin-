@@ -74,7 +74,7 @@ class RegisterViewController: UIViewController {
         let results = validator.validateTextFields(textFields)
         for (result, textFieldAndLabel) in zip(results, textFieldsWithLabels) {
             textFieldAndLabel.label.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 textFieldAndLabel.label.isHidden = result.valid
             }
             if !result.valid {
@@ -94,7 +94,7 @@ extension RegisterViewController: UITextFieldDelegate {
         switch textField.accessibilityIdentifier {
         case K.Accessibility.nameTextFieldIdentifier:
             nameValidationLabel.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.nameValidationLabel.isHidden = result.valid
             }
             if result.valid {
@@ -102,7 +102,7 @@ extension RegisterViewController: UITextFieldDelegate {
             }
         case K.Accessibility.emailTextFieldIdentifier:
             emailValidationLabel.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.emailValidationLabel.isHidden = result.valid
             }
             if result.valid {
@@ -110,7 +110,7 @@ extension RegisterViewController: UITextFieldDelegate {
             }
         case K.Accessibility.passwordTextFieldIdentifier:
             passwordValidationLabel.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.passwordValidationLabel.isHidden = result.valid
             }
             if result.valid {
@@ -129,15 +129,15 @@ extension RegisterViewController: UITextFieldDelegate {
         // after the validation label is shown and once editing has begun, hide the label
         switch textField.accessibilityIdentifier {
         case K.Accessibility.nameTextFieldIdentifier:
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.nameValidationLabel.isHidden = true
             }
         case K.Accessibility.emailTextFieldIdentifier:
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.emailValidationLabel.isHidden = true
             }
         case K.Accessibility.passwordTextFieldIdentifier:
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.passwordValidationLabel.isHidden = true
             }
         default:
