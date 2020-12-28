@@ -72,7 +72,7 @@ class RecipeViewController: UIViewController {
 //        view.addConstraint(NSLayoutConstraint(item: menuBar, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 0.3, constant: 1))
 //        view.addConstraint(NSLayoutConstraint(item: menuBar, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 1))
         menuBar.translatesAutoresizingMaskIntoConstraints = false
-        menuBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05, constant: 1).isActive = true
+        menuBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: K.MenuBar.heightMultiplierFromSuperView, constant: 1).isActive = true
         menuBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         menuBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         menuBar.topAnchor.constraint(equalTo: recipeTitleLabel.bottomAnchor, constant: 0).isActive = true
@@ -95,7 +95,8 @@ class RecipeViewController: UIViewController {
         
         bodyCollectionView.backgroundColor = .white
         
-        bodyCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: K.RecipeViewController.stepsPageCellIdentifier)
+        bodyCollectionView.register(StepsViewCell.self, forCellWithReuseIdentifier: K.RecipeViewController.stepsViewCellIdentifier)
+        bodyCollectionView.register(IngredientsViewCell.self, forCellWithReuseIdentifier: K.RecipeViewController.ingredientsViewCellIdentifier)
     }
 }
 
@@ -119,9 +120,15 @@ extension RecipeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.stepsPageCellIdentifier, for: indexPath)
-        cell.backgroundColor = indexPath.item == 0 ? .blue : .red
-        return cell
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.stepsViewCellIdentifier, for: indexPath) as! StepsViewCell
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.ingredientsViewCellIdentifier, for: indexPath) as! IngredientsViewCell
+            cell.ingredients = recipe?.ingredients
+            return cell
+        }
+        
     }
     
     
@@ -132,7 +139,8 @@ extension RecipeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Make each cell encompass the entire space allocated for the main body
             // I.e. each cell is a page
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        let menuBarHeight = view.frame.size.height * K.MenuBar.heightMultiplierFromSuperView
+        return CGSize(width: view.frame.width, height: view.frame.height - menuBarHeight)
     }
 }
 

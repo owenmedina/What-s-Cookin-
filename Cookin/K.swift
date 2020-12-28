@@ -221,6 +221,7 @@ struct K {
         static let defaultNumberOfMenuItems = 1
         static let menuBarItemCellIdentifier = "Menu Bar Item Cell"
         static let horizontalBarHeight = CGFloat(4)
+        static let heightMultiplierFromSuperView = CGFloat(0.05)
     }
     
     struct RecipeCollectionView {
@@ -236,8 +237,8 @@ struct K {
     struct RecipeViewController {
         static let numberOfMenuItems = 2
         static let menuItemTitles = ["Steps", "Ingredients"]
-        static let stepsPageCellIdentifier = "Steps Page Cell"
-        static let ingredientsPageCellIdentifier = "Ingredients Page Cell"
+        static let ingredientsViewCellIdentifier = "Ingredients View Cell"
+        static let stepsViewCellIdentifier = "Steps View Cell"
     }
     
     struct ShadowRoundedView {
@@ -249,7 +250,8 @@ struct K {
         static let averageRowHeight = CGFloat(44)
         
         struct IngredientsTableViewCell {
-            static let identifier = "Ingredient Cell"
+            static let identifier = "Ingredients Table View Cell"
+            static let nibName = "IngredientsTableViewCell"
         }
     }
     

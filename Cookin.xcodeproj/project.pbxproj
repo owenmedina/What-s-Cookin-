@@ -14,11 +14,15 @@
 		5A0E6D1E257820840046ECAA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D1D257820840046ECAA /* Photo.swift */; };
 		5A0E6D20257845BC0046ECAA /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D1F257845BC0046ECAA /* RecipeViewController.swift */; };
 		5A0E6D4525786DBB0046ECAA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D4425786DBB0046ECAA /* CategoryViewController.swift */; };
-		5A0E6D492582C5DC0046ECAA /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D482582C5DB0046ECAA /* IngredientsTableViewCell.swift */; };
-		5A0E6D4B2582C5FF0046ECAA /* StepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E6D4A2582C5FF0046ECAA /* StepsTableViewCell.swift */; };
 		5A1DF29B258BFF6E000035DF /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF29A258BFF6E000035DF /* MenuBar.swift */; };
 		5A1DF29D258C0822000035DF /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF29C258C0822000035DF /* UIViewExtensions.swift */; };
 		5A1DF29F258C11BA000035DF /* MenuBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF29E258C11BA000035DF /* MenuBarItemCell.swift */; };
+		5A1DF2A1259A6382000035DF /* IngredientsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2A0259A6381000035DF /* IngredientsViewCell.swift */; };
+		5A1DF2A7259A68D1000035DF /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2A6259A68D1000035DF /* CheckBox.swift */; };
+		5A1DF2AA259A6D71000035DF /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2A8259A6D71000035DF /* IngredientsTableViewCell.swift */; };
+		5A1DF2AB259A6D71000035DF /* IngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1DF2A9259A6D71000035DF /* IngredientsTableViewCell.xib */; };
+		5A1DF2AD259A6EDC000035DF /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2AC259A6EDC000035DF /* UILabelExtensions.swift */; };
+		5A1DF2AF259A7760000035DF /* StepsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2AE259A7760000035DF /* StepsViewCell.swift */; };
 		5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C7C612570377900903491 /* UIImageViewExtensions.swift */; };
 		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
 		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
@@ -80,11 +84,15 @@
 		5A0E6D1D257820840046ECAA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5A0E6D1F257845BC0046ECAA /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		5A0E6D4425786DBB0046ECAA /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		5A0E6D482582C5DB0046ECAA /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
-		5A0E6D4A2582C5FF0046ECAA /* StepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableViewCell.swift; sourceTree = "<group>"; };
 		5A1DF29A258BFF6E000035DF /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		5A1DF29C258C0822000035DF /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5A1DF29E258C11BA000035DF /* MenuBarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarItemCell.swift; sourceTree = "<group>"; };
+		5A1DF2A0259A6381000035DF /* IngredientsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewCell.swift; sourceTree = "<group>"; };
+		5A1DF2A6259A68D1000035DF /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		5A1DF2A8259A6D71000035DF /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		5A1DF2A9259A6D71000035DF /* IngredientsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTableViewCell.xib; sourceTree = "<group>"; };
+		5A1DF2AC259A6EDC000035DF /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		5A1DF2AE259A7760000035DF /* StepsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewCell.swift; sourceTree = "<group>"; };
 		5A5C7C612570377900903491 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -227,10 +235,13 @@
 				5AF2257B2566FE8D00D1EB98 /* UnderlineTextField.swift */,
 				5A6059B9256DBE3800F88F90 /* CardView.swift */,
 				5A0E6D0F2575E7460046ECAA /* RecipeCollectionViewCell.swift */,
-				5A0E6D482582C5DB0046ECAA /* IngredientsTableViewCell.swift */,
-				5A0E6D4A2582C5FF0046ECAA /* StepsTableViewCell.swift */,
 				5A1DF29A258BFF6E000035DF /* MenuBar.swift */,
 				5A1DF29E258C11BA000035DF /* MenuBarItemCell.swift */,
+				5A1DF2A0259A6381000035DF /* IngredientsViewCell.swift */,
+				5A1DF2A6259A68D1000035DF /* CheckBox.swift */,
+				5A1DF2A8259A6D71000035DF /* IngredientsTableViewCell.swift */,
+				5A1DF2A9259A6D71000035DF /* IngredientsTableViewCell.xib */,
+				5A1DF2AE259A7760000035DF /* StepsViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +291,7 @@
 				5A6059EE256E114500F88F90 /* StringExtensions.swift */,
 				5A5C7C612570377900903491 /* UIImageViewExtensions.swift */,
 				5A1DF29C258C0822000035DF /* UIViewExtensions.swift */,
+				5A1DF2AC259A6EDC000035DF /* UILabelExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +361,7 @@
 				5A0E6D18257731EE0046ECAA /* Unsplash-Info.plist in Resources */,
 				5AF225342564B49100D1EB98 /* Lora-Regular.ttf in Resources */,
 				5AF22519256374DC00D1EB98 /* Assets.xcassets in Resources */,
+				5A1DF2AB259A6D71000035DF /* IngredientsTableViewCell.xib in Resources */,
 				5AF225472564B73700D1EB98 /* WorkSans-Medium.ttf in Resources */,
 				5AF2253E2564B72500D1EB98 /* HindSiliguri-Medium.ttf in Resources */,
 				5AF225382564B49B00D1EB98 /* Lora-Bold.ttf in Resources */,
@@ -411,11 +424,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF2256525661B8300D1EB98 /* SelectorExtensions.swift in Sources */,
-				5A0E6D492582C5DC0046ECAA /* IngredientsTableViewCell.swift in Sources */,
 				5A0E6D1A257733A30046ECAA /* UnsplashManager.swift in Sources */,
 				5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */,
+				5A1DF2A1259A6382000035DF /* IngredientsViewCell.swift in Sources */,
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
-				5A0E6D4B2582C5FF0046ECAA /* StepsTableViewCell.swift in Sources */,
 				5A6059EF256E114500F88F90 /* StringExtensions.swift in Sources */,
 				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
 				5A0E6D1E257820840046ECAA /* Photo.swift in Sources */,
@@ -431,8 +443,10 @@
 				5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */,
 				5A6059CF256DEF2A00F88F90 /* RecipeManager.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
+				5A1DF2AF259A7760000035DF /* StepsViewCell.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,
 				5A1DF29F258C11BA000035DF /* MenuBarItemCell.swift in Sources */,
+				5A1DF2A7259A68D1000035DF /* CheckBox.swift in Sources */,
 				5A0E6D102575E7460046ECAA /* RecipeCollectionViewCell.swift in Sources */,
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,
 				5A6059BA256DBE3800F88F90 /* CardView.swift in Sources */,
@@ -442,6 +456,8 @@
 				5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */,
 				5A6059ED256E09F000F88F90 /* Recipe.swift in Sources */,
 				5A0E6D4525786DBB0046ECAA /* CategoryViewController.swift in Sources */,
+				5A1DF2AD259A6EDC000035DF /* UILabelExtensions.swift in Sources */,
+				5A1DF2AA259A6D71000035DF /* IngredientsTableViewCell.swift in Sources */,
 				5A0E6D20257845BC0046ECAA /* RecipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,7 +3,8 @@
 //  Cookin
 //
 //  Created by Owen Medina on 12/17/20.
-//
+//  Represents the menu bar below the recipe image and above the rest of the content in a Recipe View
+//  Allows the user to navigate to different sections of the Recipe View
 
 import UIKit
 
@@ -21,7 +22,6 @@ class MenuBar: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.delegate = self
         cv.dataSource = self
-        //cv.backgroundColor = .blue
         return cv
     }()
     
