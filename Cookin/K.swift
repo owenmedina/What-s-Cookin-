@@ -259,7 +259,8 @@ struct K {
         static let averageRowHeight = CGFloat(44)
         
         struct StepsTableViewCell {
-            static let identifier = "Step Cell"
+            static let identifier = "Steps Table View Cell"
+            static let nibName = "StepsTableViewCell"
         }
     }
 }

@@ -122,6 +122,7 @@ extension RecipeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.stepsViewCellIdentifier, for: indexPath) as! StepsViewCell
+            cell.steps = recipe?.steps
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.ingredientsViewCellIdentifier, for: indexPath) as! IngredientsViewCell

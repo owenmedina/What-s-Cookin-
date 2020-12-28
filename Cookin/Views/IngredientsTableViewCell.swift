@@ -9,6 +9,7 @@ import UIKit
 
 class IngredientsTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientLabel: UILabel!
+    @IBOutlet weak var ingredientCheckBox: CheckBox!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -23,7 +23,6 @@ class CheckBox: UIButton {
     
     override func awakeFromNib() {
         self.addTarget(self, action: Selector.checkBoxTapped, for: UIControl.Event.touchUpInside)
-        self.isChecked = false
     }
     
     // Objective-C Methods

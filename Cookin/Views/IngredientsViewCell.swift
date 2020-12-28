@@ -1,10 +1,9 @@
 //
-//  RecipeViewCell.swift
+//  IngredientsViewCell.swift
 //  Cookin
 //
 //  Created by Owen Medina on 12/28/20.
-//  Represents a section in the Recipe View
-//  Swipe to different sections using the Menu Bar on the Recipe View
+//  Represents a Ingredients section in the Recipe View
 
 import UIKit
 
@@ -13,6 +12,7 @@ class IngredientsViewCell: UICollectionViewCell {
     
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero)
+        tv.separatorStyle = .none
         tv.delegate = self
         tv.dataSource = self
         return tv
@@ -23,7 +23,11 @@ class IngredientsViewCell: UICollectionViewCell {
         
         // Add Table View
         addSubview(tableView)
-        tableView.bindFrameToSuperviewBounds()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        tableView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.6).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         tableView.register(UINib(nibName: K.IngredientsTableView.IngredientsTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: K.IngredientsTableView.IngredientsTableViewCell.identifier)
     }
     
@@ -46,7 +50,7 @@ extension IngredientsViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.IngredientsTableView.IngredientsTableViewCell.identifier, for: indexPath) as! IngredientsTableViewCell
         cell.ingredientLabel.text = "\(ingredients?[indexPath.item].measure ?? "") \(ingredients?[indexPath.item].name ?? "")"
-        
+        cell.ingredientCheckBox.isChecked = ingredients?[indexPath.item].checked ?? false
         return cell
     }
 }

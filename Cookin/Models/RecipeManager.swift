@@ -87,7 +87,7 @@ struct RecipeManager {
                 }
                 
                 let sourceURL = URL(string: mealData.sourceURL ?? "")
-                let steps = parseSteps(mealData.instructions)
+                let steps = parseSteps(mealData.instructions).filter { !$0.isEmpty }
                 let ingredientNamesUnfiltered = [mealData.ingredient1, mealData.ingredient2, mealData.ingredient3, mealData.ingredient4, mealData.ingredient5, mealData.ingredient6, mealData.ingredient7, mealData.ingredient8, mealData.ingredient9, mealData.ingredient10, mealData.ingredient11, mealData.ingredient12, mealData.ingredient13, mealData.ingredient14, mealData.ingredient15, mealData.ingredient16, mealData.ingredient17, mealData.ingredient18, mealData.ingredient19, mealData.ingredient20]
                 var ingredientNames = ingredientNamesUnfiltered.compactMap { $0 }
                 ingredientNames = ingredientNames.filter { !$0.isEmpty }

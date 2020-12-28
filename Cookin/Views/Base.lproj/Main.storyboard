@@ -419,7 +419,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-hD-rXX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-hD-rXX">
                                 <rect key="frame" x="39" y="257.33333333333331" width="312" height="34"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -429,7 +429,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="253.33333333333334"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Ih-yi-BwN">
-                                <rect key="frame" x="0.0" y="363" width="390" height="481"/>
+                                <rect key="frame" x="0.0" y="329" width="390" height="481"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w6Z-Qj-Rqf">
                                     <size key="itemSize" width="128" height="128"/>
@@ -455,7 +455,7 @@
                             <constraint firstItem="8tD-1n-Rzc" firstAttribute="top" secondItem="VYE-SJ-Qar" secondAttribute="top" id="2vy-De-5pP"/>
                             <constraint firstItem="2Ih-yi-BwN" firstAttribute="height" secondItem="VYE-SJ-Qar" secondAttribute="height" multiplier="0.57" id="3o4-u2-2FS"/>
                             <constraint firstItem="8tD-1n-Rzc" firstAttribute="leading" secondItem="cvn-4X-fJe" secondAttribute="leading" id="7A7-SY-mvd"/>
-                            <constraint firstAttribute="bottom" secondItem="2Ih-yi-BwN" secondAttribute="bottom" id="DNs-IV-K93"/>
+                            <constraint firstItem="cvn-4X-fJe" firstAttribute="bottom" secondItem="2Ih-yi-BwN" secondAttribute="bottom" id="DNs-IV-K93"/>
                             <constraint firstAttribute="trailing" secondItem="2Ih-yi-BwN" secondAttribute="trailing" id="Epd-Tl-pTE"/>
                             <constraint firstItem="2Ih-yi-BwN" firstAttribute="leading" secondItem="VYE-SJ-Qar" secondAttribute="leading" id="Tle-xF-J1r"/>
                             <constraint firstItem="Yfx-hD-rXX" firstAttribute="top" secondItem="8tD-1n-Rzc" secondAttribute="bottom" constant="4" id="ZOB-u1-QHe"/>

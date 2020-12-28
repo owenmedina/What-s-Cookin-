@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bs2-Tj-Sbf">
-                        <rect key="frame" x="54" y="6.5" width="76" height="31"/>
+                        <rect key="frame" x="54" y="6.5" width="240" height="31"/>
                         <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,12 +40,14 @@
                     <constraint firstItem="Bs2-Tj-Sbf" firstAttribute="leading" secondItem="Jld-fH-tfL" secondAttribute="trailing" constant="8" id="CBH-fg-csm"/>
                     <constraint firstItem="Jld-fH-tfL" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" id="OQG-tf-iMc"/>
                     <constraint firstItem="Bs2-Tj-Sbf" firstAttribute="leading" secondItem="Jld-fH-tfL" secondAttribute="trailing" constant="8" id="S7h-eP-KO7"/>
+                    <constraint firstItem="Bs2-Tj-Sbf" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.75" id="TrV-68-v4G"/>
                     <constraint firstItem="Bs2-Tj-Sbf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Xdu-8V-3lg"/>
                     <constraint firstItem="Bs2-Tj-Sbf" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.7" id="eog-B9-sBT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="ingredientCheckBox" destination="Jld-fH-tfL" id="k67-r9-tQG"/>
                 <outlet property="ingredientLabel" destination="Bs2-Tj-Sbf" id="O6k-OR-IG3"/>
             </connections>
             <point key="canvasLocation" x="28" y="52"/>

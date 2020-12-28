@@ -21,6 +21,7 @@ struct Recipe {
 struct Ingredient {
     var name: String
     var measure: String
+    var checked: Bool = false
 //    var quantity: Double?
 //    var quantityDescriptor: String
 }
