@@ -30,6 +30,7 @@ struct FirebaseAuthManager {
             return Auth.auth().currentUser
         }
     }
+    
     func registerUser(withEmail email: String, name: String, password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let existingError = error {
