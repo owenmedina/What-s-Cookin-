@@ -10,30 +10,32 @@ import UIKit
 class AccountViewController: UIViewController {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
-    var user: User?
+    @IBOutlet weak var recipesCreatedCardView: CardView!
+    @IBOutlet weak var recipesAuthoredCardView: CardView!
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup current user
+        currentUser = (tabBarController as! CookinTabBarController).currentUser
 
         // Setup UI
             // User Image View
-        userImageView.layer.borderWidth = 1.0
-        userImageView.layer.masksToBounds = false
-        userImageView.layer.borderColor = UIColor.black.cgColor
-        userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
-        userImageView.clipsToBounds = true
+        userImageView.addCircularBorder(borderWidth: 5.0, borderColor: K.Assets.Colors.orange.cgColor)
             // User Name Label
-        userNameLabel.text = user?.name
+        userNameLabel.text = currentUser?.name
+            // Recipes Created Card View
+        recipesCreatedCardView.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+            // Recipes Authored Card View
+        recipesAuthoredCardView.cornerRadius = K.ShadowRoundedView.standardCornerRadius
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        userImageView.layer.borderWidth = 1.0
-        userImageView.layer.masksToBounds = false
-        userImageView.layer.borderColor = UIColor.black.cgColor
-        userImageView.layer.cornerRadius = userImageView.frame.size.width / 2
-        userImageView.clipsToBounds = true
+        // Ensure the User Image View remainds circular
+        userImageView.addCircularBorder(borderWidth: 5.0, borderColor: K.Assets.Colors.orange.cgColor)
     }
     
 

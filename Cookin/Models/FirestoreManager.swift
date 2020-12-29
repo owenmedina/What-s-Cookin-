@@ -24,6 +24,7 @@ struct FirestoreManager {
     let db = Firestore.firestore()
     var registerDelegate: FirestoreManagerRegisterDelegate?
     var loginDelegate: FirestoreManagerLogInDelegate?
+    
     func addNewUser(_ user: User, withID id: String) {
         do {
             try db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id).setData(from: user)

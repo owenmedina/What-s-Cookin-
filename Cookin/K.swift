@@ -102,6 +102,11 @@ struct K {
             }
         }
     }
+    // Borders
+    struct Border {
+        static let standardBorderWidth = CGFloat(1.0)
+        static let standardBorderColor = UIColor.black.cgColor
+    }
     // Buttons
     static let buttonRadius = CGFloat(25)
     static let buttonBorderWidth = CGFloat(1)
@@ -211,6 +216,7 @@ struct K {
         static let featuredRecipeTitle = "Featured Recipe Title"
         static let featuredRecipeImage = "Featured Recipe Image"
         static let numberOfPlaceholderCells = 4
+        static let greetingIntroduction = "What's Cookin'"
     }
     
     struct ImageView {

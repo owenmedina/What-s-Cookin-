@@ -8,12 +8,14 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var featuredImageView: UIImageView!
     @IBOutlet weak var cardView: CardView!
     @IBOutlet weak var navigationBarTitleLabel: UILabel!
     @IBOutlet weak var featuredRecipeTitleLabel: UILabel!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var categoriesCollectionViewFlowLayout: UICollectionViewFlowLayout!
+    fileprivate var currentUser: User?
     fileprivate var recipeManager = RecipeManager()
     fileprivate var unsplashManager = UnsplashManager()
     fileprivate var featuredRecipe = Recipe(title: "", steps: [""], ingredients: [Ingredient(name: "", measure: "")], cuisine: .unknown)
@@ -34,6 +36,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup current user
+        currentUser = (tabBarController as! CookinTabBarController).currentUser
+        
         // Setup delegates
         recipeManager.delegate = self
         categoriesCollectionView.delegate = self
@@ -44,6 +49,13 @@ class HomeViewController: UIViewController {
         recipeManager.fetchRandomRecipe()
         
         // Setup UI
+        // Greeting Label
+        if let name = currentUser?.name {
+            greetingLabel.text = "\(K.HomeViewController.greetingIntroduction), \(name)?"
+        } else {
+            greetingLabel.text = "\(K.HomeViewController.greetingIntroduction)?"
+        }
+        
         // Navigation Bar
         // Setting the background image to an empty image will erase the border
         // When using a custom shadow image, a custom background image must all be provided

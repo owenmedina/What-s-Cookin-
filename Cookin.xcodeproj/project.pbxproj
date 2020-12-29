@@ -27,6 +27,7 @@
 		5A1DF2B3259A8541000035DF /* StepsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1DF2B1259A8541000035DF /* StepsTableViewCell.xib */; };
 		5A1DF2B5259AC437000035DF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2B4259AC436000035DF /* ArrayExtensions.swift */; };
 		5A1DF2B7259AD719000035DF /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2B6259AD719000035DF /* AccountViewController.swift */; };
+		5A5524FF259BD68C00FC44F0 /* CookinTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5524FE259BD68C00FC44F0 /* CookinTabBarController.swift */; };
 		5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C7C612570377900903491 /* UIImageViewExtensions.swift */; };
 		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
 		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
@@ -101,6 +102,7 @@
 		5A1DF2B1259A8541000035DF /* StepsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepsTableViewCell.xib; sourceTree = "<group>"; };
 		5A1DF2B4259AC436000035DF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		5A1DF2B6259AD719000035DF /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		5A5524FE259BD68C00FC44F0 /* CookinTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookinTabBarController.swift; sourceTree = "<group>"; };
 		5A5C7C612570377900903491 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				5A0E6D1F257845BC0046ECAA /* RecipeViewController.swift */,
 				5A0E6D4425786DBB0046ECAA /* CategoryViewController.swift */,
 				5A1DF2B6259AD719000035DF /* AccountViewController.swift */,
+				5A5524FE259BD68C00FC44F0 /* CookinTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				5A6059F1256F349800F88F90 /* RecipeData.swift in Sources */,
 				5A60599E25687A5100F88F90 /* User.swift in Sources */,
 				5A80ADD62567627B003EEAE7 /* FirebaseAuthManager.swift in Sources */,
+				5A5524FF259BD68C00FC44F0 /* CookinTabBarController.swift in Sources */,
 				5AF2255A2565C80400D1EB98 /* RegisterViewController.swift in Sources */,
 				5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */,
 				5A6059CF256DEF2A00F88F90 /* RecipeManager.swift in Sources */,

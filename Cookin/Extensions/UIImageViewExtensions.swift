@@ -22,4 +22,12 @@ extension UIImageView {
         }
         
     }
+    
+    func addCircularBorder(borderWidth: CGFloat = K.Border.standardBorderWidth, borderColor: CGColor = K.Border.standardBorderColor) {
+        self.layer.borderWidth = borderWidth
+        self.layer.masksToBounds = false
+        self.layer.borderColor = borderColor
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.clipsToBounds = true
+    }
 }

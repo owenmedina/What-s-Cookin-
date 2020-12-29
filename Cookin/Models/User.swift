@@ -9,9 +9,14 @@
 import Foundation
 import FirebaseFirestore
 
-struct User: Codable {
+class User: Codable {
     let id: String
     let name: String
+    
+    init(id: String, name: String) {
+        self.id = id
+        self.name = name
+    }
     
     static func createUserFromDocument(_ documentSnapshot: DocumentSnapshot) -> User? {
         let id = documentSnapshot.documentID
@@ -23,4 +28,7 @@ struct User: Codable {
         }
         return nil
     }
+    
+    // TODO: Find a better solution to replace Singleton
+    static var shared = User(id: "", name: "")
 }
