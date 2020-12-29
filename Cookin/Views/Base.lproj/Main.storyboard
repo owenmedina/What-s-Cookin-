@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,27 +35,27 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60w-SD-s7L" customClass="CurveView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="410"/>
+                                <rect key="frame" x="0.0" y="44.000000000000014" width="390" height="253.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqn-Ev-zRo">
-                                <rect key="frame" x="20" y="388.5" width="614.5" height="116.5"/>
+                                <rect key="frame" x="20" y="203.66666666666666" width="234" height="116.66666666666666"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create thousands of unforgettable memories with great cooking." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-NE-kbv">
-                                <rect key="frame" x="20" y="505" width="819" height="35"/>
+                                <rect key="frame" x="20" y="320.33333333333331" width="312" height="69.333333333333314"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-Cc-WaH">
-                                <rect key="frame" x="205" y="1093" width="614" height="75"/>
+                                <rect key="frame" x="78" y="675.33333333333337" width="234" height="46.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration" label="Log In Button"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-XQ-noc">
-                                <rect key="frame" x="205" y="1180" width="614" height="75"/>
+                                <rect key="frame" x="78" y="733.66666666666663" width="234" height="46.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration" label="Log In Button"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
@@ -114,35 +114,35 @@
             <objects>
                 <viewController id="DxB-ic-vCF" customClass="LoginViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QCA-L4-jcQ">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvs-A7-TuI" customClass="BottomCurveView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="746.5" width="704" height="249"/>
+                                <rect key="frame" x="0.0" y="592.66666666666663" width="390" height="197.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark more exciting experiences." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVR-uv-9S0">
-                                <rect key="frame" x="35" y="204" width="563.5" height="89"/>
+                                <rect key="frame" x="19.666666666666657" y="133.66666666666666" width="312" height="88.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-TV-4qC" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="88" y="498" width="528" height="47"/>
+                                <rect key="frame" x="48.666666666666657" y="378" width="292.66666666666674" height="37.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Password Text Field"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwL-dN-HFQ" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="88" y="402.5" width="528" height="50"/>
+                                <rect key="frame" x="48.666666666666657" y="304" width="292.66666666666674" height="39.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Text Field"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcf-z4-c4h">
-                                <rect key="frame" x="176" y="622" width="352" height="35"/>
+                                <rect key="frame" x="97.666666666666686" y="493.66666666666669" width="195" height="35.000000000000057"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" name="Orange"/>
@@ -152,14 +152,14 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AB8-SI-ELh">
-                                <rect key="frame" x="88" y="452.5" width="528" height="14"/>
+                                <rect key="frame" x="48.666666666666657" y="343.66666666666669" width="292.66666666666674" height="14"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Say-eF-eeg">
-                                <rect key="frame" x="88" y="545" width="528" height="14"/>
+                                <rect key="frame" x="48.666666666666657" y="415.33333333333331" width="292.66666666666674" height="14"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Password Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="12"/>
                                 <color key="textColor" name="Red"/>
@@ -214,17 +214,17 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="rKN-Jq-fj2" customClass="HomeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUz-DF-kZO">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bc0-zn-1yG" userLabel="Card View" customClass="CardView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="57" y="136" width="910" height="543.5"/>
+                                <rect key="frame" x="29.333333333333343" y="117.33333333333333" width="331.33333333333326" height="236.33333333333337"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQ5-iL-goy">
-                                        <rect key="frame" x="0.0" y="0.0" width="910" height="543.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="236.33333333333334"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Recipe Title" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-vF-74w">
-                                        <rect key="frame" x="22.5" y="27.5" width="466" height="57.5"/>
+                                        <rect key="frame" x="8.3333333333333286" y="12.000000000000014" width="228.33333333333337" height="28"/>
                                         <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="42"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -258,7 +258,7 @@
                                 </connections>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-cM-MgC">
-                                <rect key="frame" x="46" y="699" width="932" height="602"/>
+                                <rect key="frame" x="17.666666666666657" y="364.33333333333326" width="354.66666666666674" height="396.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Oco-hM-vg9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -268,18 +268,18 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Recipe Collection View Cell" id="QZk-DV-HjD" customClass="RecipeCollectionViewCell" customModule="Cookin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="435.5" height="128"/>
+                                        <rect key="frame" x="86" y="50" width="182.66666666666663" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EFu-xr-riE">
-                                            <rect key="frame" x="0.0" y="0.0" width="435.5" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182.66666666666663" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-8T-muz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="435.5" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="182.66666666666666" height="128"/>
                                                     <gestureRecognizers/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOd-ki-FXd">
-                                                    <rect key="frame" x="22" y="6.5" width="226.5" height="50.5"/>
+                                                    <rect key="frame" x="9" y="6.3333333333333321" width="94.666666666666671" height="21"/>
                                                     <fontDescription key="fontDescription" name="HindSiliguri-Medium" family="Hind Siliguri" pointSize="43"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -308,11 +308,11 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Recipe Collection View Header" id="OU8-Un-onN">
-                                    <rect key="frame" x="0.0" y="0.0" width="932" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="354.66666666666674" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ji3-AQ-j6B">
-                                            <rect key="frame" x="14" y="5" width="466" height="40"/>
+                                            <rect key="frame" x="14" y="5" width="177.33333333333334" height="40"/>
                                             <fontDescription key="fontDescription" name="Lora-Medium" family="Lora" pointSize="58"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -333,7 +333,7 @@
                                 </collectionReusableView>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Cookin, Astrid?" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y16-w3-Wgh">
-                                <rect key="frame" x="16" y="40" width="870.5" height="70"/>
+                                <rect key="frame" x="10" y="35.333333333333343" width="331.66666666666669" height="52.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="60"/>
                                 <color key="textColor" name="Orange"/>
                                 <nil key="highlightedColor"/>
@@ -382,8 +382,8 @@
                         <outlet property="featuredImageView" destination="KQ5-iL-goy" id="Fef-O7-iVx"/>
                         <outlet property="featuredRecipeTitleLabel" destination="1sK-vF-74w" id="1Cc-LB-RlK"/>
                         <outlet property="navigationBarTitleLabel" destination="Y16-w3-Wgh" id="vkc-QA-KV8"/>
-                        <segue destination="OPe-3J-wpG" kind="show" identifier="HomeToRecipeDetail" id="U42-Vs-EBA"/>
                         <segue destination="oGt-Ag-Ag3" kind="show" identifier="HomeToCategory" id="kcX-It-Kf3"/>
+                        <segue destination="DYK-MP-FqS" kind="show" identifier="HomeToRecipeDetail" id="MFo-lC-lAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fE3-rT-qXA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -400,7 +400,7 @@
             <objects>
                 <viewController id="2t7-jy-dTr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A26-wg-yXG">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="NkM-KL-JxJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -412,67 +412,106 @@
             <point key="canvasLocation" x="2931" y="193"/>
         </scene>
         <!--Recipe View Controller-->
-        <scene sceneID="cba-zy-G9T">
+        <scene sceneID="1m9-mR-gab">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="OPe-3J-wpG" customClass="RecipeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PGQ-2H-Zjj">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                <viewController hidesBottomBarWhenPushed="YES" id="DYK-MP-FqS" customClass="RecipeViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VYE-SJ-Qar">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDQ-TC-pKx">
-                                <rect key="frame" x="71" y="174" width="178" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-hD-rXX">
+                                <rect key="frame" x="39" y="257.33333333333331" width="312" height="34"/>
+                                <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tD-1n-Rzc">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="253.33333333333334"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Ih-yi-BwN">
+                                <rect key="frame" x="0.0" y="329" width="390" height="481"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w6Z-Qj-Rqf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hhw-sX-GQY">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DDy-n7-cc4">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Axv-O1-mPI"/>
+                        <viewLayoutGuide key="safeArea" id="cvn-4X-fJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8tD-1n-Rzc" firstAttribute="top" secondItem="VYE-SJ-Qar" secondAttribute="top" id="2vy-De-5pP"/>
+                            <constraint firstItem="2Ih-yi-BwN" firstAttribute="height" secondItem="VYE-SJ-Qar" secondAttribute="height" multiplier="0.57" id="3o4-u2-2FS"/>
+                            <constraint firstItem="8tD-1n-Rzc" firstAttribute="leading" secondItem="cvn-4X-fJe" secondAttribute="leading" id="7A7-SY-mvd"/>
+                            <constraint firstItem="cvn-4X-fJe" firstAttribute="bottom" secondItem="2Ih-yi-BwN" secondAttribute="bottom" id="DNs-IV-K93"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ih-yi-BwN" secondAttribute="trailing" id="Epd-Tl-pTE"/>
+                            <constraint firstItem="2Ih-yi-BwN" firstAttribute="leading" secondItem="VYE-SJ-Qar" secondAttribute="leading" id="Tle-xF-J1r"/>
+                            <constraint firstItem="Yfx-hD-rXX" firstAttribute="top" secondItem="8tD-1n-Rzc" secondAttribute="bottom" constant="4" id="ZOB-u1-QHe"/>
+                            <constraint firstItem="Yfx-hD-rXX" firstAttribute="width" secondItem="VYE-SJ-Qar" secondAttribute="width" multiplier="0.8" id="Zd6-TE-9XR"/>
+                            <constraint firstItem="Yfx-hD-rXX" firstAttribute="centerX" secondItem="VYE-SJ-Qar" secondAttribute="centerX" id="bG0-fJ-bvC"/>
+                            <constraint firstItem="8tD-1n-Rzc" firstAttribute="trailing" secondItem="cvn-4X-fJe" secondAttribute="trailing" id="vjM-YK-ckt"/>
+                            <constraint firstItem="8tD-1n-Rzc" firstAttribute="height" secondItem="VYE-SJ-Qar" secondAttribute="height" multiplier="0.3" id="xRz-Z7-foh"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MJ0-Ed-kMf"/>
+                    <navigationItem key="navigationItem" id="h0b-yZ-TqC"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="label" destination="HDQ-TC-pKx" id="Vos-lo-cTI"/>
+                        <outlet property="bodyCollectionView" destination="2Ih-yi-BwN" id="eXR-cf-IuW"/>
+                        <outlet property="recipeImageView" destination="8tD-1n-Rzc" id="Nql-vH-tzr"/>
+                        <outlet property="recipeTitleLabel" destination="Yfx-hD-rXX" id="jLC-V4-7hc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BO9-ei-L7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTr-US-2TS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3984" y="-994"/>
+            <point key="canvasLocation" x="3981.5384615384614" y="-983.17535545023691"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="5Cz-eI-pzJ">
             <objects>
                 <viewController id="t3b-7T-McG" customClass="RegisterViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GqF-yA-nBP">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9l-pA-XOk" customClass="BottomCurveView" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="746.5" width="704" height="249"/>
+                                <rect key="frame" x="0.0" y="592.66666666666663" width="390" height="197.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special moments start here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-qV-Pby">
-                                <rect key="frame" x="35" y="248.5" width="563.5" height="44.5"/>
+                                <rect key="frame" x="19.666666666666657" y="133.66666666666666" width="312" height="88.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Lora-Regular" family="Lora" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayt-IZ-zw8" userLabel="Name Text Field" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="88" y="365" width="528" height="50"/>
+                                <rect key="frame" x="48.666666666666657" y="275.66666666666669" width="292.66666666666674" height="39.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Name Text Field" label="Name"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-xW-x6D" userLabel="Email Text Field" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="88" y="456.5" width="528" height="47"/>
+                                <rect key="frame" x="48.666666666666657" y="346.66666666666669" width="292.66666666666674" height="37.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Text Field" label="Email"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACB-f3-oGb">
-                                <rect key="frame" x="176" y="663.5" width="352" height="35"/>
+                                <rect key="frame" x="97.666666666666686" y="526.66666666666663" width="195" height="35"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" name="Orange"/>
@@ -482,28 +521,28 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETf-VP-WOu" userLabel="Password Text Field" customClass="UnderlineTextField" customModule="Cookin" customModuleProvider="target">
-                                <rect key="frame" x="88" y="554" width="528" height="49.5"/>
+                                <rect key="frame" x="48.666666666666657" y="422.33333333333331" width="292.66666666666674" height="39.666666666666686"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Password Text Field" label="Password"/>
                                 <color key="textColor" name="Orange"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7q-eO-irs">
-                                <rect key="frame" x="88" y="415" width="528" height="15.5"/>
+                                <rect key="frame" x="48.666666666666657" y="315" width="292.66666666666674" height="15.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Name Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ypm-MM-IQl">
-                                <rect key="frame" x="88" y="503.5" width="528" height="15.5"/>
+                                <rect key="frame" x="48.666666666666657" y="384" width="292.66666666666674" height="15.333333333333314"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Email Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOI-ZB-kYf">
-                                <rect key="frame" x="88" y="603.5" width="528" height="62"/>
+                                <rect key="frame" x="48.666666666666657" y="462" width="292.66666666666674" height="66.666666666666629"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Password Validation Error"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="13"/>
                                 <color key="textColor" name="Red"/>
@@ -598,7 +637,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r0g-ex-oaz">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Lora-Bold" family="Lora" pointSize="19"/>
@@ -621,7 +660,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="oGt-Ag-Ag3" customClass="CategoryViewController" customModule="Cookin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXb-mh-vSY">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="z7U-JP-Vv4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

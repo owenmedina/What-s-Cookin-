@@ -18,9 +18,20 @@ struct Recipe {
     var cuisine: Cuisine
 }
 
-struct Ingredient {
+class Ingredient: NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        return Ingredient(name: name, measure: measure, checked: checked)
+    }
+    
     var name: String
     var measure: String
+    var checked: Bool
+    
+    init(name: String, measure: String, checked: Bool = false) {
+        self.name = name
+        self.measure = measure
+        self.checked = checked
+    }
 //    var quantity: Double?
 //    var quantityDescriptor: String
 }

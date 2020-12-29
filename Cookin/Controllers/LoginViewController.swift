@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
                 continue
             }
             textFieldAndLabel.label.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 textFieldAndLabel.label.isHidden = result.valid
             }
             if !result.valid {
@@ -129,7 +129,7 @@ extension LoginViewController: UITextFieldDelegate {
         case K.Accessibility.emailTextFieldIdentifier:
             let result = validator.validateTextField(textField)
             emailValidationLabel.text = result.message
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.emailValidationLabel.isHidden = result.valid
             }
             if result.valid {
@@ -146,11 +146,11 @@ extension LoginViewController: UITextFieldDelegate {
         // after the validation label is shown and once editing has begun, hide the label
         switch textField.accessibilityIdentifier {
         case K.Accessibility.emailTextFieldIdentifier:
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.emailValidationLabel.isHidden = true
             }
         case K.Accessibility.passwordTextFieldIdentifier:
-            UIView.animate(withDuration: K.standardAnimationDuration) {
+            UIView.animate(withDuration: K.Animation.standardDuration) {
                 self.passwordValidationLabel.isHidden = true
             }
         default:
@@ -212,7 +212,7 @@ extension LoginViewController: FirestoreManagerLogInDelegate {
     
     func didGetUser(_ manager: FirestoreManager, user: User) {
         print("Successful sign in!")
-        performSegue(withIdentifier: K.loginToHome, sender: self)
+        performSegue(withIdentifier: K.Segue.loginToHome, sender: self)
     }
 }
 

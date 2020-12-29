@@ -76,8 +76,11 @@ struct K {
         }
     }
     // Animations
-    static let standardAnimationDuration = 0.25
-    static let shortAnimationDuration = 0.10
+    struct Animation {
+        static let standardDuration = 0.25
+        static let shortDuration = 0.10
+        static let mediumDuration = 0.50
+    }
     // Assets
     struct Assets {
         struct Colors {
@@ -90,6 +93,12 @@ struct K {
                 static let regular = "Lora-Regular"
                 static let bold = "Lora-Bold"
                 static let medium = "Lora-Medium"
+            }
+            
+            struct HindSiliguri {
+                static let regular = "HindSiliguri-Regular"
+                static let bold = "HindSiliguri-Bold"
+                static let medium = "HindSiliguri-Medium"
             }
         }
     }
@@ -104,6 +113,7 @@ struct K {
         static let incorrectPassword = "Password is incorrect."
         static let couldNotCreateURLFromString = "Invalid URL String:"
         static let dataReturnedWasNil = "Data returned was nil"
+        static let cannotBindViewFrameToSuperviewFrame = "View does not have a superview to bind its frame to. Call addSubview(view: UIView) before calling bindFrameToSuperviewBounds() to fix this."
     }
     // Firebase
     struct Firebase {
@@ -147,10 +157,12 @@ struct K {
             }
         }
     }
+    // Misc.
+    static let standardSpaceBetweenViews = 20
     // Regular Expressions
-        // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
+    // ^ start of regex, $ end of regex, ?=.*[A-za-z] at least one numeric, ?=.*\\d at least one number, [A-Za-z\\d] any number of alphanumerics, {8,} 8 or more characters
     static let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
-        // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
+    // First part is user-defined then @ then the server portion (punctuated with a .) then the TLD section
     static let emailRegex = "[A-Z0-9a-z]([A-Z0-9a-z._%+-]{0,30}[A-Z0-9a-z])?" + "@" + "([A-Z0-9a-z]([A-Z0-9a-z-]{0,30}[A-Z0-9a-z])?\\.){1,5}" + "[A-Za-z]{2,8}"
     // Screens
     struct Screens {
@@ -201,6 +213,17 @@ struct K {
         static let numberOfPlaceholderCells = 4
     }
     
+    struct ImageView {
+        static let standardCornerRadius = CGFloat(15)
+    }
+    
+    struct MenuBar {
+        static let defaultNumberOfMenuItems = 1
+        static let menuBarItemCellIdentifier = "Menu Bar Item Cell"
+        static let horizontalBarHeight = CGFloat(4)
+        static let heightMultiplierFromSuperView = CGFloat(0.05)
+    }
+    
     struct RecipeCollectionView {
         struct Cell {
             static let identifier = "Recipe Collection View Cell"
@@ -211,8 +234,33 @@ struct K {
         
     }
     
+    struct RecipeViewController {
+        static let numberOfMenuItems = 2
+        static let menuItemTitles = ["Steps", "Ingredients"]
+        static let ingredientsViewCellIdentifier = "Ingredients View Cell"
+        static let stepsViewCellIdentifier = "Steps View Cell"
+    }
+    
     struct ShadowRoundedView {
         static let standardCornerRadius = CGFloat(15)
         static let largeCornerRadius = CGFloat(20)
+    }
+    
+    struct IngredientsTableView {
+        static let averageRowHeight = CGFloat(44)
+        
+        struct IngredientsTableViewCell {
+            static let identifier = "Ingredients Table View Cell"
+            static let nibName = "IngredientsTableViewCell"
+        }
+    }
+    
+    struct StepsTableView {
+        static let averageRowHeight = CGFloat(44)
+        
+        struct StepsTableViewCell {
+            static let identifier = "Steps Table View Cell"
+            static let nibName = "StepsTableViewCell"
+        }
     }
 }

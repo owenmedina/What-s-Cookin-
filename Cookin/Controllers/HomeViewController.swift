@@ -89,6 +89,7 @@ class HomeViewController: UIViewController {
         print("viewDidLayoutSubviews: width \(categoriesCollectionView.frame.size.width) height \(categoriesCollectionView.frame.size.height)")
     }
     
+    // For catching size-class change (if portrait and landsape orientation of device have different size classes) - consider replacing this with just the bounds changing in general (ex. increase/decrease in points of width or height)
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         print("traitCollectionDidChange: width \(categoriesCollectionView.frame.size.width) height \(categoriesCollectionView.frame.size.height)")
         if isIpadSizeClass {
@@ -215,7 +216,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         if indexPaths[keyword] == nil {
-            unsplashManager.findImage(for: keyword)
+            //unsplashManager.findImage(for: keyword)
             indexPaths[keyword] = indexPath
         }
         
