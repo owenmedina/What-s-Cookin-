@@ -51,7 +51,7 @@ extension StepsViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.StepsTableView.StepsTableViewCell.identifier, for: indexPath) as! StepsTableViewCell
         cell.stepLabel.text = "\(indexPath.item + 1). \(steps?[indexPath.item] ?? "")"
-        
+        print(steps?[indexPath.item])
         return cell
     }
 }

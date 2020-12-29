@@ -22,15 +22,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#. Step" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rQ-7g-hGB">
-                        <rect key="frame" x="16" y="6.5" width="288" height="31"/>
+                        <rect key="frame" x="16" y="8" width="288" height="28"/>
                         <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="1rQ-7g-hGB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="BHL-lo-Qxd"/>
                     <constraint firstItem="1rQ-7g-hGB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GzV-7N-RSk"/>
-                    <constraint firstItem="1rQ-7g-hGB" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.7" id="gv6-Qo-Gci"/>
+                    <constraint firstAttribute="bottom" secondItem="1rQ-7g-hGB" secondAttribute="bottom" constant="8" id="WsI-gy-oG1"/>
                     <constraint firstAttribute="trailing" secondItem="1rQ-7g-hGB" secondAttribute="trailing" constant="16" id="m2f-PF-2t6"/>
                     <constraint firstItem="1rQ-7g-hGB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xag-sh-85r"/>
                 </constraints>
