@@ -9,13 +9,15 @@ import UIKit
 
 extension UILabel {
     func strikeThroughText() {
-        let attributeString =  NSMutableAttributedString(string: self.text ?? "")
-        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))
-        self.attributedText = attributeString
+        let attributedString =  NSMutableAttributedString(string: self.text ?? "")
+        attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributedString.length))
+        self.attributedText = attributedString
     }
     
     func removeStrikeThroughOnText() {
-        let attributeString =  NSMutableAttributedString(string: self.text ?? "")
-        self.attributedText = attributeString
+        let text = self.text
+        self.attributedText = nil
+        self.text = nil
+        self.text = text
     }
 }

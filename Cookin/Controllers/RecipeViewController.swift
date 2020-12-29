@@ -11,6 +11,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var bodyCollectionView: UICollectionView!
+    var ingredients: [Ingredient]?
     let menuBar: MenuBar = {
         let mb = MenuBar()
         mb.numberOfMenuItems = K.RecipeViewController.numberOfMenuItems
@@ -25,6 +26,8 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ingredients = recipe?.ingredients.clone() as! [Ingredient]
         
         // Setup UI
             // Recipe Image
@@ -126,7 +129,7 @@ extension RecipeViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.RecipeViewController.ingredientsViewCellIdentifier, for: indexPath) as! IngredientsViewCell
-            cell.ingredients = recipe?.ingredients
+            cell.ingredients = ingredients
             return cell
         }
         

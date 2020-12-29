@@ -13,6 +13,7 @@ class IngredientsViewCell: UICollectionViewCell {
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero)
         tv.separatorStyle = .none
+        tv.allowsSelection = false
         tv.delegate = self
         tv.dataSource = self
         return tv
@@ -49,8 +50,21 @@ extension IngredientsViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.IngredientsTableView.IngredientsTableViewCell.identifier, for: indexPath) as! IngredientsTableViewCell
+        cell.ingredient = ingredients?[indexPath.item]
+        // Reset the labels
+        cell.ingredientLabel.removeStrikeThroughOnText()
+        cell.ingredientLabel.textColor = .black
+        
         cell.ingredientLabel.text = "\(ingredients?[indexPath.item].measure ?? "") \(ingredients?[indexPath.item].name ?? "")"
-        cell.ingredientCheckBox.isChecked = ingredients?[indexPath.item].checked ?? false
+        if let checked = ingredients?[indexPath.item].checked {
+            cell.ingredientCheckBox.isChecked = checked
+            if checked {
+                cell.ingredientLabel.textColor = K.Assets.Colors.orange
+                cell.ingredientLabel.strikeThroughText()
+                print("\(ingredients?[indexPath.item].name) is checked")
+            }
+        }
+        
         return cell
     }
 }

@@ -13,7 +13,7 @@ class StepsViewCell: UICollectionViewCell {
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero)
         tv.separatorStyle = .none
-        tv.separatorInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        tv.allowsSelection = false
         tv.delegate = self
         tv.dataSource = self
         return tv
