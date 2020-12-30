@@ -20,10 +20,15 @@ protocol FirestoreManagerLogInDelegate {
     func didFailToGetUser(withError error: Error)
 }
 
+protocol FirestoreManagerUpdaterDelegate {
+    func didFailToUpdateUserImage(withError error: Error)
+}
+
 struct FirestoreManager {
     let db = Firestore.firestore()
     var registerDelegate: FirestoreManagerRegisterDelegate?
     var loginDelegate: FirestoreManagerLogInDelegate?
+    var updaterDelegate: FirestoreManagerUpdaterDelegate?
     
     func addNewUser(_ user: User, withID id: String) {
         do {
@@ -52,6 +57,16 @@ struct FirestoreManager {
                 }
             } else {
                 loginDelegate?.didFailToGetUser(withError: FirestoreError.userDoesNotExist)
+            }
+        }
+    }
+    
+    func updateUserImageURL(_ url: URL, forID id: String) {
+        print("Entered updateUserImageURL")
+        let docRef = db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id)
+        docRef.updateData([K.Firebase.Firestore.Collections.Users.imageURLField: url.absoluteString]) { (error) in
+            if error != nil {
+                updaterDelegate?.didFailToUpdateUserImage(withError: error!)
             }
         }
     }

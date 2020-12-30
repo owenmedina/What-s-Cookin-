@@ -12,10 +12,12 @@ import FirebaseFirestore
 class User: Codable {
     let id: String
     let name: String
+    let imageURL: String?
     
-    init(id: String, name: String) {
+    init(id: String, name: String, imageURL: String? = nil) {
         self.id = id
         self.name = name
+        self.imageURL = imageURL
     }
     
     static func createUserFromDocument(_ documentSnapshot: DocumentSnapshot) -> User? {
@@ -23,10 +25,14 @@ class User: Codable {
         guard let data = documentSnapshot.data() else {
             return nil
         }
-        if let name = data[K.Firebase.Firestore.Collections.Users.nameField] as? String {
-            return User(id: id, name: name)
+        guard let name = data[K.Firebase.Firestore.Collections.Users.nameField] as? String else {
+            return nil
+            
         }
-        return nil
+        if let imageURL = data[K.Firebase.Firestore.Collections.Users.imageURLField] as? String {
+            return User(id: id, name: name, imageURL: imageURL)
+        }
+        return User(id: id, name: name)
     }
     
     // TODO: Find a better solution to replace Singleton

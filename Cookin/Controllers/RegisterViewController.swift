@@ -7,8 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameValidationLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,6 +22,7 @@ class RegisterViewController: UIViewController {
     var validator = Validator()
     var firebaseAuthManager = FirebaseAuthManager()
     var firestoreManager = FirestoreManager()
+    private var firebaseStorageManager = FirebaseStorageManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +70,7 @@ class RegisterViewController: UIViewController {
         // Ensures buttons stay circular even if view is re-drawn and frame sizes are re-calculated
         registerButton.layer.cornerRadius = registerButton.frame.size.height/2
     }
-
+    
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         var hasInvalidFields = false
         let results = validator.validateTextFields(textFields)
@@ -202,3 +204,4 @@ extension RegisterViewController: FirestoreManagerRegisterDelegate {
         performSegue(withIdentifier: K.Segue.registerToHome, sender: self)
     }
 }
+

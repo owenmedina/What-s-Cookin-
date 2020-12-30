@@ -28,6 +28,8 @@
 		5A1DF2B5259AC437000035DF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2B4259AC436000035DF /* ArrayExtensions.swift */; };
 		5A1DF2B7259AD719000035DF /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1DF2B6259AD719000035DF /* AccountViewController.swift */; };
 		5A5524FF259BD68C00FC44F0 /* CookinTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5524FE259BD68C00FC44F0 /* CookinTabBarController.swift */; };
+		5A552514259C1FD500FC44F0 /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A552513259C1FD500FC44F0 /* FirebaseStorageManager.swift */; };
+		5A552516259C2BCE00FC44F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A552515259C2BCE00FC44F0 /* NetworkManager.swift */; };
 		5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5C7C612570377900903491 /* UIImageViewExtensions.swift */; };
 		5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A605977256876C500F88F90 /* FirestoreManager.swift */; };
 		5A60599E25687A5100F88F90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A60599D25687A5100F88F90 /* User.swift */; };
@@ -103,6 +105,8 @@
 		5A1DF2B4259AC436000035DF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		5A1DF2B6259AD719000035DF /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		5A5524FE259BD68C00FC44F0 /* CookinTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookinTabBarController.swift; sourceTree = "<group>"; };
+		5A552513259C1FD500FC44F0 /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
+		5A552515259C2BCE00FC44F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5A5C7C612570377900903491 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		5A605977256876C500F88F90 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		5A60599D25687A5100F88F90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 				5A6059F0256F349800F88F90 /* RecipeData.swift */,
 				5A0E6D1B257742F40046ECAA /* UnsplashData.swift */,
 				5A0E6D1D257820840046ECAA /* Photo.swift */,
+				5A552513259C1FD500FC44F0 /* FirebaseStorageManager.swift */,
+				5A552515259C2BCE00FC44F0 /* NetworkManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 				5A605978256876C500F88F90 /* FirestoreManager.swift in Sources */,
 				5A1DF2A1259A6382000035DF /* IngredientsViewCell.swift in Sources */,
 				5AF225572565BD6400D1EB98 /* LoginViewController.swift in Sources */,
+				5A552514259C1FD500FC44F0 /* FirebaseStorageManager.swift in Sources */,
 				5A6059EF256E114500F88F90 /* StringExtensions.swift in Sources */,
 				5AF2256A25661E9D00D1EB98 /* UIViewControllerExtensions.swift in Sources */,
 				5A0E6D1E257820840046ECAA /* Photo.swift in Sources */,
@@ -462,6 +469,7 @@
 				5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */,
 				5A6059CF256DEF2A00F88F90 /* RecipeManager.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
+				5A552516259C2BCE00FC44F0 /* NetworkManager.swift in Sources */,
 				5A1DF2B5259AC437000035DF /* ArrayExtensions.swift in Sources */,
 				5A1DF2AF259A7760000035DF /* StepsViewCell.swift in Sources */,
 				5AF22510256374DB00D1EB98 /* AppDelegate.swift in Sources */,

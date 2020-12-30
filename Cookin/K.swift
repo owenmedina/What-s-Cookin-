@@ -119,6 +119,10 @@ struct K {
         static let couldNotCreateURLFromString = "Invalid URL String:"
         static let dataReturnedWasNil = "Data returned was nil"
         static let cannotBindViewFrameToSuperviewFrame = "View does not have a superview to bind its frame to. Call addSubview(view: UIView) before calling bindFrameToSuperviewBounds() to fix this."
+        static let failedToGetImageTitle = "Failed to Get Image"
+        static let failedToGetImageMessage = "Failed to retrieve the image chosen. Please try again."
+        static let failedToDisplayUserImageTitle = "Failed to Display User Image"
+        static let failedToDisplayUserImageMessage = "Please check your connection then refresh the page."
     }
     // Firebase
     struct Firebase {
@@ -145,6 +149,7 @@ struct K {
                     static let collectionName = "users"
                     static let idField = "id"
                     static let nameField = "name"
+                    static let imageURLField = "imageURL"
                 }
             }
             struct Error {
@@ -159,6 +164,18 @@ struct K {
                 static let resourceExhausted = "Operation could not be completed. Either app or user has reached operation limits. Please try again later and contact support if problem persists."
                 static let unauthenticated = "Must be signed in to perform operation. Please sign in then try again."
                 static let unimplemented = "Application does not currently support this feature. Contact support regarding your interest in it."
+                static let failedToUploadImageTitle = "Failed to Upload Image"
+                static let failedToUploadImageMessage = "Your image was not saved. Please try again."
+            }
+        }
+        
+        struct Storage {
+            static let imagesBasePath = "images/"
+            static let userImageFileName = "user-image.png"
+            static let nilUserPath = "unknown-user/"
+            struct Error {
+                static let failedToUploadImageTitle = "Failed to Upload Image"
+                static let failedToUploadImageMessage = "Your image was not saved. Please try again."
             }
         }
     }
@@ -173,6 +190,13 @@ struct K {
     struct Screens {
         struct Home {
             static let title = "Home"
+        }
+    }
+    // Network
+    struct Network {
+        struct Error {
+            static let imageDataWassNil = "Image data was nil"
+            static let couldNotCreateURLFromString = "Could not create URL from given String"
         }
     }
     // Segues
