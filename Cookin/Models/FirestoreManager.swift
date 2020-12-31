@@ -24,11 +24,40 @@ protocol FirestoreManagerUpdaterDelegate {
     func didFailToUpdateUserImage(withError error: Error)
 }
 
-struct FirestoreManager {
+protocol FirestoreManagerActivityDelegate {
+    func didAddNewActivity(_ manager: FirestoreManager, activity: Activity)
+    func didFailToAddActivity(withError error: Error)
+    func didGetActivities(_ manager: FirestoreManager, activities: [Activity])
+    func didFailToGetActivities(withError error: Error)
+}
+
+class FirestoreManager {
     let db = Firestore.firestore()
     var registerDelegate: FirestoreManagerRegisterDelegate?
     var loginDelegate: FirestoreManagerLogInDelegate?
     var updaterDelegate: FirestoreManagerUpdaterDelegate?
+    var activityDelegate: FirestoreManagerActivityDelegate?
+    var isFetchingActivities = false
+    private var lastActivityReference: DocumentSnapshot?
+    
+    func addNewObject<T: Encodable>(_ object: T, to collection: String, withID id: String) -> Error? {
+        do {
+            try db.collection(collection).document(id).setData(from: object)
+            return nil
+        } catch let error {
+            print("Error writing to collection \(collection) with id \(id)")
+            return error
+        }
+    }
+    
+    func addNewObject(fromDictionary dictionary: [String: Any], to collection: String, withID id: String) -> Error? {
+        do {
+            try db.collection(collection).document(id).setData(dictionary)
+            return nil
+        } catch let error {
+            return error
+        }
+    }
     
     func addNewUser(_ user: User, withID id: String) {
         do {
@@ -40,23 +69,97 @@ struct FirestoreManager {
         }
     }
     
+    func addNewActivity(_ activity: Activity, toUser id: String) {
+        do {
+            try db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id).collection(K.Firebase.Firestore.Collections.Users.Activities.collectionName).addDocument(from: activity)
+            activityDelegate?.didAddNewActivity(self, activity: activity)
+        } catch let error {
+            print("Error writing activity to Firestore")
+            activityDelegate?.didFailToAddActivity(withError: error)
+        }
+    }
+    
+    func getActivities(forUser id: String, numberOfActivities: Int = K.Firebase.Firestore.Collections.Users.Activities.defaultNumberOfActivitiesToFetch) {
+        isFetchingActivities = true
+        var docRef = db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id).collection(K.Firebase.Firestore.Collections.Users.Activities.collectionName).order(by: K.Firebase.Firestore.Collections.Users.Activities.dateField, descending: true).limit(to: numberOfActivities)
+        if lastActivityReference != nil {
+            print("There was a previous activity: \(lastActivityReference!.documentID)")
+            docRef = docRef.start(afterDocument: lastActivityReference!)
+        }
+        docRef.getDocuments { (querySnapshot, error) in
+            guard error == nil else {
+                print("Document does not exist. Error reading activity from Firestore: \(error!)")
+                self.activityDelegate?.didFailToGetActivities(withError: error!)
+                self.isFetchingActivities = false
+                return
+            }
+            
+            var activities = [Activity]()
+            
+            for document in querySnapshot!.documents {
+                if let activity = Activity.fromQueryDocumentSnapshot(document) {
+                    activities.append(activity)
+                }
+            }
+            if let lastSnapshot = querySnapshot?.documents.last {
+                self.lastActivityReference = lastSnapshot
+            }
+            self.isFetchingActivities = false
+            self.activityDelegate?.didGetActivities(self, activities: activities)
+        }
+//        docRef.getDocuments { (document, error) in
+//            if error != nil {
+//                print("Document does not exist. Error reading activity from Firestore: \(error!)")
+//                activityDelegate?.didFailToGetActivities(withError: error!)
+//            } else if let document = document, document.exists {
+//
+//                let id = document.documentID
+//                guard let data = document.data() else {
+//                    print("Cannot create Activity from dictionary: Document Snapshot has no data")
+//                    activityDelegate?.didFailToGetActivities(withError: FirestoreError.couldNotGetActivities)
+//                }
+//                guard let action = data[K.Firebase.Firestore.Collections.Activities.actionField] as? String, let object = data[K.Firebase.Firestore.Collections.Activities.objectField] as? String, let objectType = data[K.Firebase.Firestore.Collections.Activities.objectTypeField] as? String else {
+//                    print("Cannot create Activity from dictionary: One or more of the fields could not be extracted")
+//                    activityDelegate?.didFailToGetActivities(withError: FirestoreError.couldNotGetActivities)
+//                }
+//                switch objectType {
+//                case ObjectType.recipe.rawValue:
+//                    // decode recipe
+//                    guard let recipe = Recipe.fromDictionary(objectDictionary) else {
+//                        print("Cannot create Activity from dictionary: Recipe.fromDictionary() returned nil")
+//                        activityDelegate?.didFailToGetActivities(withError: FirestoreError.couldNotGetActivities)
+//                    }
+//                    let activity = Activity(action: Action(rawValue: action)!, object: recipe)
+//                case ObjectType.user.rawValue:
+//                    // decode user
+//                    let user = User.fromDictionary(objectDictionary)
+//                //            return Activity(action: action, object: user)
+//                default:
+//                    print(K.Error.unrecognizedObject)
+//                    return
+//                }
+//
+//            }
+//        }
+    }
+    
     func getUser(withID id: String) {
         let docRef = db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id)
         docRef.getDocument { (document, error) in
             if error != nil {
                 print("Document does not exist. Error reading user from Firestore: \(error!)")
-                loginDelegate?.didFailToGetUser(withError: error!)
+                self.loginDelegate?.didFailToGetUser(withError: error!)
             } else if let document = document, document.exists {
                 // test code
                 if let user = User.createUserFromDocument(document) {
                     print("User data: \(user.name)")
-                    loginDelegate?.didGetUser(self, user: user)
+                    self.loginDelegate?.didGetUser(self, user: user)
                 } else {
                     print("Couldn't create user from dict")
-                    loginDelegate?.didFailToGetUser(withError: FirestoreError.couldNotGetUser)
+                    self.loginDelegate?.didFailToGetUser(withError: FirestoreError.couldNotGetUser)
                 }
             } else {
-                loginDelegate?.didFailToGetUser(withError: FirestoreError.userDoesNotExist)
+                self.loginDelegate?.didFailToGetUser(withError: FirestoreError.userDoesNotExist)
             }
         }
     }
@@ -66,7 +169,7 @@ struct FirestoreManager {
         let docRef = db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id)
         docRef.updateData([K.Firebase.Firestore.Collections.Users.imageURLField: url.absoluteString]) { (error) in
             if error != nil {
-                updaterDelegate?.didFailToUpdateUserImage(withError: error!)
+                self.updaterDelegate?.didFailToUpdateUserImage(withError: error!)
             }
         }
     }
@@ -83,6 +186,7 @@ enum FirestoreError: Error {
     case couldNotAddNewUser
     case couldNotGetUser
     case userDoesNotExist
+    case couldNotGetActivities
     case unknownError
 
     var message: String {
@@ -93,6 +197,8 @@ enum FirestoreError: Error {
             return K.Firebase.Firestore.Error.couldNotGetUser
         case .userDoesNotExist:
             return K.Firebase.Firestore.Error.userDoesNotExist
+        case .couldNotGetActivities:
+            return K.Firebase.Firestore.Error.couldNotGetActivities
         default:
             return K.Firebase.Auth.Error.unknownError
         }

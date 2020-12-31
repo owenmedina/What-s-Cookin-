@@ -87,6 +87,7 @@ struct K {
             static let red = UIColor(named: "Red")!
             static let yellow = UIColor(named: "Yellow")!
             static let orange = UIColor(named: "Orange")!
+            static let fadedOrange = orange.withAlphaComponent(0.25)
         }
         struct Fonts {
             struct Lora {
@@ -123,6 +124,7 @@ struct K {
         static let failedToGetImageMessage = "Failed to retrieve the image chosen. Please try again."
         static let failedToDisplayUserImageTitle = "Failed to Display User Image"
         static let failedToDisplayUserImageMessage = "Please check your connection then refresh the page."
+        static let unrecognizedObject = "Trying to instantiate Activity with an object with an unrecognized type."
     }
     // Firebase
     struct Firebase {
@@ -145,11 +147,30 @@ struct K {
         // Firestore
         struct Firestore {
             struct Collections {
+                struct Recipes { // No recipes collection yet but recipe object exists in the database as properties
+                    static let titleField = "title"
+                    static let imageURLStringField = "imageURLString"
+                    static let sourceURLStringField =  "sourceURLString"
+                    static let stepsField = "steps"
+                    static let ingredientsField = "ingredients"
+                    static let cuisineField = "cuisine"
+                }
+                
                 struct Users {
                     static let collectionName = "users"
                     static let idField = "id"
                     static let nameField = "name"
                     static let imageURLField = "imageURL"
+                    static let activitiesField = "activities"
+                    struct Activities {
+                        static let collectionName = "activities"
+                        static let actionField = "action"
+                        static let objectField = "object"
+                        static let objectTypeField = "objectType"
+                        static let dateField = "date"
+                        static let defaultNumberOfActivitiesToFetch = 10
+                        static let subsequentNumberOfActivitiesToFetch = 5
+                    }
                 }
             }
             struct Error {
@@ -166,6 +187,16 @@ struct K {
                 static let unimplemented = "Application does not currently support this feature. Contact support regarding your interest in it."
                 static let failedToUploadImageTitle = "Failed to Upload Image"
                 static let failedToUploadImageMessage = "Your image was not saved. Please try again."
+                static let couldNotGetActivities = "Trouble retrieving activities from Cookin' database. Please try again. If problem persists, please contact support."
+                static let failedToGetActivitiesTitle = "Failed to Get User Activities"
+                static let failedToGetActivitiesMessage = "Please reload page."
+            }
+            struct Objects {
+                struct Ingredients {
+                    static let nameField = "name"
+                    static let measureField = "measure"
+                    static let checkedField = "checked"
+                }
             }
         }
         
@@ -224,6 +255,13 @@ struct K {
     }
     
     // Views
+    struct ActivitiesTableView {
+        struct ActivitiesTableViewCell {
+            static let identifier = "Activities Table View Cell"
+        }
+        static let thresholdForRemainingUnseenData = CGFloat(50)
+    }
+    
     struct CollectionView {
         static let standardLineSpacing = CGFloat(8)
         static let largeLineSpacing = CGFloat(24)
@@ -245,6 +283,15 @@ struct K {
     
     struct ImageView {
         static let standardCornerRadius = CGFloat(15)
+    }
+    
+    struct IngredientsTableView {
+        static let averageRowHeight = CGFloat(44)
+        
+        struct IngredientsTableViewCell {
+            static let identifier = "Ingredients Table View Cell"
+            static let nibName = "IngredientsTableViewCell"
+        }
     }
     
     struct MenuBar {
@@ -274,15 +321,6 @@ struct K {
     struct ShadowRoundedView {
         static let standardCornerRadius = CGFloat(15)
         static let largeCornerRadius = CGFloat(20)
-    }
-    
-    struct IngredientsTableView {
-        static let averageRowHeight = CGFloat(44)
-        
-        struct IngredientsTableViewCell {
-            static let identifier = "Ingredients Table View Cell"
-            static let nibName = "IngredientsTableViewCell"
-        }
     }
     
     struct StepsTableView {

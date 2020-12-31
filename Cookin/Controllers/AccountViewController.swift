@@ -12,10 +12,12 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var recipesCreatedCardView: CardView!
     @IBOutlet weak var recipesAuthoredCardView: CardView!
+    @IBOutlet weak var activitiesTableView: UITableView!
     private var currentUser: User?
     fileprivate var firebaseStorageManager = FirebaseStorageManager()
     fileprivate var firestoreManager = FirestoreManager()
     fileprivate var networkManager = NetworkManager()
+    fileprivate var activities = [Activity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,13 @@ class AccountViewController: UIViewController {
         // Setup delegates
         firebaseStorageManager.delegate = self
         firestoreManager.updaterDelegate = self
+        firestoreManager.activityDelegate = self
         networkManager.imageDelegate = self
+        activitiesTableView.delegate = self
+        activitiesTableView.dataSource = self
+        
+        // Load up data
+        firestoreManager.getActivities(forUser: currentUser?.id ?? "")
 
         // Setup UI
             // User Image View
@@ -41,6 +49,10 @@ class AccountViewController: UIViewController {
         recipesCreatedCardView.cornerRadius = K.ShadowRoundedView.standardCornerRadius
             // Recipes Authored Card View
         recipesAuthoredCardView.cornerRadius = K.ShadowRoundedView.standardCornerRadius
+            // Activities Table View
+        activitiesTableView.backgroundColor = K.Assets.Colors.fadedOrange
+        activitiesTableView.layer.cornerRadius = K.ImageView.standardCornerRadius
+        activitiesTableView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     override func viewDidLayoutSubviews() {
@@ -146,5 +158,80 @@ extension AccountViewController: NetworkManagerImageDelegate {
     
     func didFailToGetImage(withError error: Error) {
         infoAlert(message: K.Error.failedToDisplayUserImageMessage, title: K.Error.failedToDisplayUserImageTitle)
+    }
+}
+
+//MARK: - FirestoreManagerActivityDelegate
+extension AccountViewController: FirestoreManagerActivityDelegate {
+    func didAddNewActivity(_ manager: FirestoreManager, activity: Activity) {
+        // Refresh table view
+        self.activities.insert(activity, at: 0)
+        DispatchQueue.main.async {
+            self.activitiesTableView.reloadData()
+        }
+    }
+    
+    func didGetActivities(_ manager: FirestoreManager, activities: [Activity]) {
+        // Refresh table view
+        self.activities.append(contentsOf: activities)
+        DispatchQueue.main.async {
+            self.activitiesTableView.reloadData()
+        }
+    }
+    
+    func didFailToAddActivity(withError error: Error) {
+        print("Failed to add new activity: \(error)")
+    }
+    
+    func didFailToGetActivities(withError error: Error) {
+        print("Failed to get activities: \(error)")
+        infoAlert(message: K.Firebase.Firestore.Error.failedToGetActivitiesMessage, title: K.Firebase.Firestore.Error.failedToGetActivitiesTitle)
+    }
+
+}
+
+//MARK: - UITableViewDelegate Methods
+extension AccountViewController: UITableViewDelegate {
+    
+}
+
+//MARK: - UITableViewDataSource Methods
+extension AccountViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return activities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.ActivitiesTableView.ActivitiesTableViewCell.identifier, for: indexPath) as! ActivitiesTableViewCell
+        cell.activityLabel.text = "\(currentUser!.name) \(activities[indexPath.item].action.rawValue) \(activities[indexPath.item].object)"
+        switch activities[indexPath.item].action {
+        case .viewed:
+            cell.activityImageView.image = #imageLiteral(resourceName: "viewed")
+        case .wrote:
+            cell.activityImageView.image = #imageLiteral(resourceName: "wrote")
+        case .liked:
+            cell.activityImageView.image = #imageLiteral(resourceName: "liked")
+        case .made:
+            fallthrough
+        default:
+            cell.activityImageView.image = #imageLiteral(resourceName: "made")
+        }
+        
+        cell.backgroundColor = K.Assets.Colors.fadedOrange
+        return cell
+    }
+}
+
+//MARK: - ScrollView Methods
+extension AccountViewController {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !firestoreManager.isFetchingActivities else {
+            return
+        }
+        let currentPosition = scrollView.contentOffset.y
+        let thresholdForSeenData = activitiesTableView.contentSize.height - K.ActivitiesTableView.thresholdForRemainingUnseenData
+        if currentPosition > (thresholdForSeenData-scrollView.frame.size.height) { // Subtract Scroll View Height since Content Offset Y is measured at the top of the Scroll View - i.e. the first position seen but not the last)
+            firestoreManager.getActivities(forUser: currentUser?.id ?? "", numberOfActivities: K.Firebase.Firestore.Collections.Users.Activities.subsequentNumberOfActivitiesToFetch)
+        }
     }
 }

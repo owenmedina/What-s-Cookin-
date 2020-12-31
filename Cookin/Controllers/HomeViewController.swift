@@ -152,10 +152,17 @@ extension HomeViewController: RecipeManagerDelegate {
         print("didFetchRandomRecipe in HomeViewController")
         print("\(recipe.title) \(recipe.sourceURL) \(recipe.steps[0]) \(recipe.ingredients[0].name) \(recipe.ingredients[0].measure) \(recipe.cuisine.rawValue)")
         featuredRecipe = recipe
+//        var image: UIImage? = nil
+//        if let imageURL = URL(string: recipe.imageURLString) {
+//            if let data = try? Data(contentsOf: imageURL) {
+//                image = UIImage(data: data)
+//            }
+//        }
         DispatchQueue.main.async {
             // Update UI
             let text = [K.HomeViewController.featuredRecipeTitle: recipe.title]
             self.images[K.HomeViewController.featuredRecipeImage] = recipe.image
+            
             self.updateViewsWithTextContent(text)
             self.updateViewsWithImageContent()
         }

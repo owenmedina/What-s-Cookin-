@@ -39,6 +39,8 @@
 		5A6059ED256E09F000F88F90 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059EC256E09F000F88F90 /* Recipe.swift */; };
 		5A6059EF256E114500F88F90 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059EE256E114500F88F90 /* StringExtensions.swift */; };
 		5A6059F1256F349800F88F90 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6059F0256F349800F88F90 /* RecipeData.swift */; };
+		5A6A0C98259CFC0E003444DF /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A0C97259CFC0E003444DF /* Activity.swift */; };
+		5A6A0C9A259D5A37003444DF /* ActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A0C99259D5A37003444DF /* ActivitiesTableViewCell.swift */; };
 		5A80ADD425675ED4003EEAE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A80ADD325675ED4003EEAE7 /* GoogleService-Info.plist */; };
 		5A80ADD62567627B003EEAE7 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */; };
 		5A80ADD8256771EE003EEAE7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A80ADD7256771EE003EEAE7 /* Validator.swift */; };
@@ -116,6 +118,8 @@
 		5A6059EC256E09F000F88F90 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		5A6059EE256E114500F88F90 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		5A6059F0256F349800F88F90 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
+		5A6A0C97259CFC0E003444DF /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		5A6A0C99259D5A37003444DF /* ActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewCell.swift; sourceTree = "<group>"; };
 		5A80ADD325675ED4003EEAE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5A80ADD52567627B003EEAE7 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		5A80ADD7256771EE003EEAE7 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 				5A0E6D1D257820840046ECAA /* Photo.swift */,
 				5A552513259C1FD500FC44F0 /* FirebaseStorageManager.swift */,
 				5A552515259C2BCE00FC44F0 /* NetworkManager.swift */,
+				5A6A0C97259CFC0E003444DF /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 				5A1DF2AE259A7760000035DF /* StepsViewCell.swift */,
 				5A1DF2B0259A8541000035DF /* StepsTableViewCell.swift */,
 				5A1DF2B1259A8541000035DF /* StepsTableViewCell.xib */,
+				5A6A0C99259D5A37003444DF /* ActivitiesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 				5A6059B8256D920100F88F90 /* HomeViewController.swift in Sources */,
 				5A6059CF256DEF2A00F88F90 /* RecipeManager.swift in Sources */,
 				5AF22514256374DB00D1EB98 /* WelcomeViewController.swift in Sources */,
+				5A6A0C9A259D5A37003444DF /* ActivitiesTableViewCell.swift in Sources */,
 				5A552516259C2BCE00FC44F0 /* NetworkManager.swift in Sources */,
 				5A1DF2B5259AC437000035DF /* ArrayExtensions.swift in Sources */,
 				5A1DF2AF259A7760000035DF /* StepsViewCell.swift in Sources */,
@@ -479,6 +486,7 @@
 				5AF22512256374DB00D1EB98 /* SceneDelegate.swift in Sources */,
 				5A6059BA256DBE3800F88F90 /* CardView.swift in Sources */,
 				5A1DF29B258BFF6E000035DF /* MenuBar.swift in Sources */,
+				5A6A0C98259CFC0E003444DF /* Activity.swift in Sources */,
 				5A1DF29D258C0822000035DF /* UIViewExtensions.swift in Sources */,
 				5AF225522565A33000D1EB98 /* BottomCurveView.swift in Sources */,
 				5A5C7C622570377900903491 /* UIImageViewExtensions.swift in Sources */,

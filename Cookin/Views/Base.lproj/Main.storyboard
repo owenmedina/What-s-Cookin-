@@ -478,28 +478,62 @@
                                     <constraint firstItem="3mg-1L-Pe0" firstAttribute="height" secondItem="UId-KI-9If" secondAttribute="height" id="lyC-Is-iB4"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzN-bg-CpG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w9C-2d-z7W">
                                 <rect key="frame" x="0.0" y="383.33333333333326" width="390" height="377.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Activities Table View Cell" id="15Z-d3-WW2" customClass="ActivitiesTableViewCell" customModule="Cookin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="15Z-d3-WW2" id="BEp-kf-gHp">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PU-eR-Riu">
+                                                    <rect key="frame" x="65" y="12" width="292.66666666666669" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HindSiliguri-Regular" family="Hind Siliguri" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-dU-6LX">
+                                                    <rect key="frame" x="16" y="5.3333333333333321" width="33" height="33.333333333333343"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1PU-eR-Riu" firstAttribute="leading" secondItem="dgN-dU-6LX" secondAttribute="trailing" constant="16" id="3Dw-1D-sTY"/>
+                                                <constraint firstItem="1PU-eR-Riu" firstAttribute="centerY" secondItem="BEp-kf-gHp" secondAttribute="centerY" id="AhG-lB-cti"/>
+                                                <constraint firstItem="dgN-dU-6LX" firstAttribute="width" secondItem="BEp-kf-gHp" secondAttribute="width" multiplier="0.085" id="KKB-7w-6Th"/>
+                                                <constraint firstItem="dgN-dU-6LX" firstAttribute="leading" secondItem="BEp-kf-gHp" secondAttribute="leading" constant="16" id="T78-xx-FXn"/>
+                                                <constraint firstItem="dgN-dU-6LX" firstAttribute="height" secondItem="BEp-kf-gHp" secondAttribute="width" multiplier="0.085" id="ZlR-B1-XNC"/>
+                                                <constraint firstItem="dgN-dU-6LX" firstAttribute="centerY" secondItem="BEp-kf-gHp" secondAttribute="centerY" id="kec-dO-im7"/>
+                                                <constraint firstItem="1PU-eR-Riu" firstAttribute="width" secondItem="BEp-kf-gHp" secondAttribute="width" multiplier="0.75" id="xpt-LH-J5d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityImageView" destination="dgN-dU-6LX" id="j39-24-M6C"/>
+                                            <outlet property="activityLabel" destination="1PU-eR-Riu" id="aNN-4U-zbq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NkM-KL-JxJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="w9C-2d-z7W" firstAttribute="leading" secondItem="NkM-KL-JxJ" secondAttribute="leading" id="2lY-dV-Tjx"/>
                             <constraint firstItem="UId-KI-9If" firstAttribute="centerX" secondItem="A26-wg-yXG" secondAttribute="centerX" id="3QC-ak-rN0"/>
-                            <constraint firstAttribute="trailing" secondItem="kzN-bg-CpG" secondAttribute="trailing" id="3ti-OZ-5Fi"/>
                             <constraint firstItem="GnN-it-sP7" firstAttribute="height" secondItem="A26-wg-yXG" secondAttribute="width" multiplier="0.25" id="A47-qL-LIM"/>
+                            <constraint firstItem="w9C-2d-z7W" firstAttribute="top" secondItem="UId-KI-9If" secondAttribute="bottom" constant="24" id="BAr-B8-yxZ"/>
                             <constraint firstItem="Ziw-PW-YoI" firstAttribute="centerX" secondItem="A26-wg-yXG" secondAttribute="centerX" id="DNH-LP-MpM"/>
-                            <constraint firstItem="kzN-bg-CpG" firstAttribute="leading" secondItem="A26-wg-yXG" secondAttribute="leading" id="HiX-e5-9oX"/>
                             <constraint firstItem="UId-KI-9If" firstAttribute="height" secondItem="A26-wg-yXG" secondAttribute="height" multiplier="0.18" id="KCn-BB-imP"/>
-                            <constraint firstItem="kzN-bg-CpG" firstAttribute="top" secondItem="UId-KI-9If" secondAttribute="bottom" constant="24" id="L7H-zO-iFT"/>
                             <constraint firstItem="GnN-it-sP7" firstAttribute="width" secondItem="A26-wg-yXG" secondAttribute="width" multiplier="0.25" id="NIy-W8-Mfo"/>
                             <constraint firstItem="UId-KI-9If" firstAttribute="top" secondItem="Ziw-PW-YoI" secondAttribute="bottom" constant="16" id="PDb-iz-fyw"/>
-                            <constraint firstItem="NkM-KL-JxJ" firstAttribute="bottom" secondItem="kzN-bg-CpG" secondAttribute="bottom" id="Qvi-Y5-Ifx"/>
                             <constraint firstItem="GnN-it-sP7" firstAttribute="centerX" secondItem="A26-wg-yXG" secondAttribute="centerX" id="T7l-wp-6gj"/>
                             <constraint firstItem="UId-KI-9If" firstAttribute="width" secondItem="A26-wg-yXG" secondAttribute="width" multiplier="0.8" id="Vav-5D-q1e"/>
                             <constraint firstItem="Ziw-PW-YoI" firstAttribute="width" secondItem="A26-wg-yXG" secondAttribute="width" multiplier="0.8" id="dWw-5M-IpP"/>
+                            <constraint firstItem="w9C-2d-z7W" firstAttribute="bottom" secondItem="NkM-KL-JxJ" secondAttribute="bottom" id="gZ8-Sp-hFg"/>
+                            <constraint firstItem="w9C-2d-z7W" firstAttribute="trailing" secondItem="NkM-KL-JxJ" secondAttribute="trailing" id="oXN-GH-kTQ"/>
                             <constraint firstItem="GnN-it-sP7" firstAttribute="top" secondItem="NkM-KL-JxJ" secondAttribute="top" constant="4" id="sPf-nR-mk7"/>
                             <constraint firstItem="Ziw-PW-YoI" firstAttribute="height" secondItem="A26-wg-yXG" secondAttribute="height" multiplier="0.045" id="shn-N2-rKr"/>
                             <constraint firstItem="Ziw-PW-YoI" firstAttribute="top" secondItem="GnN-it-sP7" secondAttribute="bottom" constant="8" id="z7i-bG-exI"/>
@@ -510,6 +544,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="account-unselected" selectedImage="account-selected" id="gIL-Zw-yWB"/>
                     <connections>
+                        <outlet property="activitiesTableView" destination="w9C-2d-z7W" id="bKN-KL-xRY"/>
                         <outlet property="recipesAuthoredCardView" destination="mHA-Gg-Pxy" id="meg-dO-sNh"/>
                         <outlet property="recipesCreatedCardView" destination="3mg-1L-Pe0" id="YXq-kU-SVW"/>
                         <outlet property="userImageView" destination="GnN-it-sP7" id="9ro-wA-BwN"/>
@@ -534,7 +569,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-hD-rXX">
-                                <rect key="frame" x="39" y="257.33333333333331" width="312" height="34"/>
+                                <rect key="frame" x="39" y="257.33333333333331" width="312" height="24.666666666666686"/>
                                 <fontDescription key="fontDescription" name="HindSiliguri-Bold" family="Hind Siliguri" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -802,9 +837,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
