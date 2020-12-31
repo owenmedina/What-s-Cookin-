@@ -18,6 +18,8 @@ class AccountViewController: UIViewController {
     fileprivate var firestoreManager = FirestoreManager()
     fileprivate var networkManager = NetworkManager()
     fileprivate var activities = [Activity]()
+    fileprivate var initialActivities = true
+    fileprivate var refreshingActivities = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,14 @@ class AccountViewController: UIViewController {
         activitiesTableView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !initialActivities {
+            refreshActivities()
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -74,6 +84,11 @@ class AccountViewController: UIViewController {
         DispatchQueue.main.async {
             self.userImageView.image = image
         }
+    }
+    
+    private func refreshActivities() {
+        refreshingActivities = true
+        firestoreManager.getActivities(forUser: currentUser?.id ?? "", fromBeginning: true)
     }
     
     /*
@@ -173,7 +188,15 @@ extension AccountViewController: FirestoreManagerActivityDelegate {
     
     func didGetActivities(_ manager: FirestoreManager, activities: [Activity]) {
         // Refresh table view
-        self.activities.append(contentsOf: activities)
+        initialActivities = false
+        if refreshingActivities {
+            self.activities = activities
+            refreshingActivities = false
+            print("Starting from 0")
+        } else {
+            print("Appending to an array of size \(self.activities.count)")
+            self.activities.append(contentsOf: activities)
+        }
         DispatchQueue.main.async {
             self.activitiesTableView.reloadData()
         }

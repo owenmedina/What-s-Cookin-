@@ -12,6 +12,8 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var bodyCollectionView: UICollectionView!
     var ingredients: [Ingredient]?
+    private var currentUser: User?
+    private var firestoreManager = FirestoreManager()
     let menuBar: MenuBar = {
         let mb = MenuBar()
         mb.numberOfMenuItems = K.RecipeViewController.numberOfMenuItems
@@ -27,7 +29,14 @@ class RecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup current user
+        currentUser = (tabBarController as! CookinTabBarController).currentUser
+        
+        // Get deep copy of ingredients to change checked property without affecting original array
         ingredients = recipe?.ingredients.clone() as! [Ingredient]
+        
+        // Add new "viewed" activity to user
+        firestoreManager.addNewActivity(Activity(action: .viewed, object: recipe?.title ?? K.ActivitiesTableView.defaultRecipeObject, date: Date(), objectType: .recipe), toUser: currentUser?.id ?? "")
         
         // Setup UI
             // Recipe Image

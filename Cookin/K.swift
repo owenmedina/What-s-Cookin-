@@ -260,6 +260,7 @@ struct K {
             static let identifier = "Activities Table View Cell"
         }
         static let thresholdForRemainingUnseenData = CGFloat(50)
+        static let defaultRecipeObject = "a recipe"
     }
     
     struct CollectionView {

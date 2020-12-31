@@ -79,12 +79,14 @@ class FirestoreManager {
         }
     }
     
-    func getActivities(forUser id: String, numberOfActivities: Int = K.Firebase.Firestore.Collections.Users.Activities.defaultNumberOfActivitiesToFetch) {
+    func getActivities(forUser id: String, fromBeginning: Bool = false, numberOfActivities: Int = K.Firebase.Firestore.Collections.Users.Activities.defaultNumberOfActivitiesToFetch) {
         isFetchingActivities = true
         var docRef = db.collection(K.Firebase.Firestore.Collections.Users.collectionName).document(id).collection(K.Firebase.Firestore.Collections.Users.Activities.collectionName).order(by: K.Firebase.Firestore.Collections.Users.Activities.dateField, descending: true).limit(to: numberOfActivities)
-        if lastActivityReference != nil {
+        if lastActivityReference != nil && !fromBeginning {
             print("There was a previous activity: \(lastActivityReference!.documentID)")
             docRef = docRef.start(afterDocument: lastActivityReference!)
+        } else {
+            print("From beginning: \(fromBeginning)")
         }
         docRef.getDocuments { (querySnapshot, error) in
             guard error == nil else {
